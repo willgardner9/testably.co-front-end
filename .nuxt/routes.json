@@ -1,0 +1,58 @@
+[
+  {
+    "name": "dashboard",
+    "path": "/dashboard",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/dashboard/index.vue",
+    "chunkName": "pages/dashboard/index",
+    "_name": "_3c3831d6"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_31cd7930"
+  },
+  {
+    "name": "logout",
+    "path": "/logout",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/logout.vue",
+    "chunkName": "pages/logout",
+    "_name": "_4920321b"
+  },
+  {
+    "name": "pricing",
+    "path": "/pricing",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/pricing.vue",
+    "chunkName": "pages/pricing",
+    "_name": "_596ac0f6"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/register.vue",
+    "chunkName": "pages/register",
+    "_name": "_19878718"
+  },
+  {
+    "name": "dashboard-abtest",
+    "path": "/dashboard/abtest",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/dashboard/abtest.vue",
+    "chunkName": "pages/dashboard/abtest",
+    "_name": "_2e91975f"
+  },
+  {
+    "name": "dashboard-new-abtest",
+    "path": "/dashboard/new-abtest",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/dashboard/new-abtest.vue",
+    "chunkName": "pages/dashboard/new-abtest",
+    "_name": "_385c28a8"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1d71a051"
+  }
+]
