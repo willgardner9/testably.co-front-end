@@ -17,6 +17,8 @@ export default function ({ store, redirect }) {
             store.commit('setAccessTokenExpiresIn', accessTokenExpiresIn)
           }
         })
+        // reload current page fetch() call with new access token
+        .then(() => this.$nuxt.reload())
     }
   }
 }

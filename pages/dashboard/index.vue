@@ -257,7 +257,8 @@ export default {
       },
       withCredentials: true,
     })
-    //  need to implement some kind of refresh for jwt if we get a 401, refresh page
+    // need to implement some kind of refresh for jwt if we get a 401, refresh page
+    // attempted implementation on checkAccessExpiry middleware
     console.log(abtests)
     console.log(abtests.data)
     this.abtestsList = abtests.data
