@@ -91,7 +91,17 @@
                 />
               </svg>
             </div>
-            <div class="mr-2 ml-4 w-full dark:text-white text-lg font-semibold">
+            <div
+              class="
+                mr-2
+                ml-4
+                mb-2
+                w-full
+                dark:text-white
+                text-lg
+                font-semibold
+              "
+            >
               {{ abtest.conversionURL }}
             </div>
             <div class="mr-2 w-24 text-xs flex justify-end dark:text-gray-400">
