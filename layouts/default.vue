@@ -16,7 +16,7 @@
 export default {
   head: {
     bodyAttrs: {
-      class: 'bg-orange-50 dark:bg-gray-900',
+      class: 'bg-white dark:bg-gray-900',
     },
   },
 }

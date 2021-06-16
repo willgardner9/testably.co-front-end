@@ -1,19 +1,6 @@
 <template>
   <!-- header -->
-  <header
-    class="
-      w-full
-      h-10vh
-      bg-white
-      dark:bg-gray-800
-      flex
-      items-center
-      justify-center
-      sticky
-      border-b border-orange-100
-      dark:border-gray-600
-    "
-  >
+  <header class="w-full h-10vh flex items-center justify-center sticky">
     <!-- container -->
     <div class="w-full max-w-6xl px-4 flex justify-between">
       <!-- logo and slogan container -->
@@ -28,7 +15,7 @@
               dark:text-white
             "
           >
-            Ably
+            testably
           </h1>
         </NuxtLink>
         <span
@@ -62,8 +49,10 @@
       <!-- buttons -->
       <div class="flex items-center">
         <div v-if="this.$store.state.loggedIn" class="flex">
+          <Button destination="/dashboard" text="Dashboard" ghost />
           <button
             class="
+              ml-3
               px-2
               py-2
               text-sm
@@ -85,7 +74,6 @@
           >
             Logout
           </button>
-          <Button destination="/dashboard" text="Dashboard" class="ml-3" />
         </div>
         <div v-else class="flex">
           <Button destination="pricing" text="Pricing" ghost />

@@ -13,7 +13,8 @@
         justify-center
         items-center
         rounded-lg
-        border border-orange-100
+        border border-gray-100
+        shadow-sm
       "
     >
       <div class="lds-dual-ring w-1/2"></div>

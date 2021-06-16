@@ -14,9 +14,10 @@
         flex flex-col
         justify-center
         rounded-lg
-        border border-orange-100
+        border border-gray-100
         dark:bg-gray-800
         dark:border-gray-600
+        shadow-sm
       "
       @submit.prevent="processLogin"
     >

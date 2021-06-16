@@ -2,41 +2,41 @@
   <section class="w-full flex items-center justify-center">
     <!-- container -->
     <div
-      class="
-        w-full
-        max-w-6xl
-        px-4
-        flex flex-col
-        justify-between
-        mt-5vh
-        items-center
-      "
+      class="w-full max-w-6xl px-4 flex flex-col justify-between items-center"
     >
       <!-- show abtests -->
       <section
         v-if="abtestsList && abtestsList.length >= 1"
-        class="w-full flex flex-col items-center"
+        class="w-full flex flex-col items-center mt-4"
       >
         <div
           v-for="abtest in abtestsList"
           :key="abtest._id"
           class="
             w-full
-            rounded
+            rounded-lg
             flex flex-col
             items-center
             justify-between
-            border
-            p-4
-            mb-4
-            bg-white
-            border-orange-100
-            dark:bg-gray-800
-            dark:border-gray-700
+            mb-8
+            shadow-sm
           "
         >
-          <p class="w-full mb-2 text-gray-500 text-xs uppercase">details</p>
-          <div class="flex w-full items-center justify-between">
+          <div
+            class="
+              flex
+              w-full
+              items-center
+              justify-between
+              p-4
+              rounded-lg rounded-b-none
+              border border-b-0
+              bg-white
+              border-gray-100
+              dark:bg-gray-800
+              dark:border-gray-700
+            "
+          >
             <div
               v-if="abtest.type === 'src'"
               class="mr-4 w-8 flex justify-start text-gray-400"
@@ -95,25 +95,49 @@
               class="
                 mr-2
                 ml-4
-                mb-2
                 w-full
                 dark:text-white
                 text-lg
                 font-semibold
+                flex
+                items-center
               "
             >
               {{ abtest.conversionURL }}
             </div>
-            <div class="mr-2 w-24 text-xs flex justify-end dark:text-gray-400">
+            <div
+              class="
+                mr-2
+                w-24
+                text-xs
+                flex
+                justify-end
+                text-gray-500
+                dark:text-gray-400
+              "
+            >
               {{ new Date(abtest.createdAt).toLocaleDateString() }}
             </div>
           </div>
-          <p class="w-full mt-4 text-gray-500 text-xs uppercase">variations</p>
+          <div
+            class="
+              flex
+              w-full
+              items-center
+              p-4
+              rounded-lg rounded-t-none
+              border border-t-0 border-gray-100
+              dark:bg-gray-800
+              dark:border-gray-700
+            "
+          >
+            <p class="w-fulltext-gray-500 text-xs uppercase">variations</p>
+          </div>
         </div>
         <Button
           destination="/dashboard/new-abtest"
           text="Create new abtest"
-          class="mt-20 max-w-max"
+          class="mt-8 max-w-max"
         />
       </section>
       <!-- show dialogue to create first abtest -->
@@ -181,7 +205,7 @@
             bg-white
             dark:bg-gray-800
             rounded-md
-            border border-orange-100
+            border border-gray-100
             dark:border-gray-600
             h-32
             flex flex-col
@@ -192,7 +216,7 @@
         >
           <div
             class="
-              bg-orange-100
+              bg-gray-100
               dark:bg-gray-700
               w-full
               h-10
@@ -203,7 +227,7 @@
           <div class="w-full flex mt-4">
             <div
               class="
-                bg-orange-100
+                bg-gray-100
                 dark:bg-gray-700
                 w-1/4
                 h-10
@@ -214,19 +238,7 @@
             ></div>
             <div
               class="
-                bg-orange-100
-                dark:bg-gray-700
-                w-1/4
-                h-10
-                rounded-md
-                animate-pulse
-                ml-2
-                mr-2
-              "
-            ></div>
-            <div
-              class="
-                bg-orange-100
+                bg-gray-100
                 dark:bg-gray-700
                 w-1/4
                 h-10
@@ -238,7 +250,19 @@
             ></div>
             <div
               class="
-                bg-orange-100
+                bg-gray-100
+                dark:bg-gray-700
+                w-1/4
+                h-10
+                rounded-md
+                animate-pulse
+                ml-2
+                mr-2
+              "
+            ></div>
+            <div
+              class="
+                bg-gray-100
                 dark:bg-gray-700
                 w-1/4
                 h-10
@@ -307,10 +331,6 @@ export default {
 </script>
 
 <style scoped>
-.mt-5vh {
-  margin-top: 5vh;
-}
-
 button {
   background-color: #000000;
   color: #fff;
