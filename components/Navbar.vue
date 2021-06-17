@@ -1,6 +1,20 @@
 <template>
   <!-- header -->
-  <header class="w-full h-10vh flex items-center justify-center sticky">
+  <header
+    class="
+      w-full
+      h-10vh
+      flex
+      items-center
+      justify-center
+      sticky
+      shadow-sm
+      border-b border-gray-200
+      bg-white
+      dark:bg-gray-800
+      dark:border-gray-700
+    "
+  >
     <!-- container -->
     <div class="w-full max-w-6xl px-4 flex justify-between">
       <!-- logo and slogan container -->
@@ -50,35 +64,12 @@
       <div class="flex items-center">
         <div v-if="this.$store.state.loggedIn" class="flex">
           <Button destination="/dashboard" text="Dashboard" ghost />
-          <button
-            class="
-              ml-3
-              px-2
-              py-2
-              text-sm
-              flex
-              justify-center
-              transition
-              duration-300
-              ease-in-out
-              rounded
-              bg-white
-              text-gray-700
-              hover:bg-gray-200
-              dark:bg-gray-800
-              dark:text-gray-400
-              dark:hover:bg-gray-700
-              dark:hover:text-white
-            "
-            @click="logoutUser"
-          >
-            Logout
-          </button>
+          <Button text="Logout" ghost class="ml-3" @click.native="logoutUser" />
         </div>
         <div v-else class="flex">
           <Button destination="pricing" text="Pricing" ghost />
           <Button destination="login" text="Login" ghost class="ml-3" />
-          <Button destination="register" text="Try Ably" class="ml-3" />
+          <Button destination="register" text="Try testably →" class="ml-3" />
         </div>
       </div>
     </div>

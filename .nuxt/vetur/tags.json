@@ -10,5 +10,11 @@
   },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
+  },
+  "NewABTestPrompt": {
+    "description": "Auto imported from components/NewABTestPrompt.vue"
+  },
+  "SkeletonLoader": {
+    "description": "Auto imported from components/SkeletonLoader.vue"
   }
 }

@@ -10,3 +10,5 @@ You can directly use them in pages and other components without the need to impo
 - `<Button>` | `<button>` (components/Button.vue)
 - `<Label>` | `<label>` (components/Label.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
+- `<NewABTestPrompt>` | `<new-a-b-test-prompt>` (components/NewABTestPrompt.vue)
+- `<SkeletonLoader>` | `<skeleton-loader>` (components/SkeletonLoader.vue)

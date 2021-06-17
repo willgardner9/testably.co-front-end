@@ -14,8 +14,8 @@
     "
     :class="[
       ghost
-        ? 'bg-white text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
-        : 'bg-black text-white hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-100 dark:hover:text-white',
+        ? 'bg-white border border-gray-100 hover:border-gray-200 text-gray-600 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:hover:text-white'
+        : 'bg-indigo-500 text-white border border-indigo-600 hover:border-indigo-500 hover:bg-indigo-400 dark:bg-indigo-700 dark:border-indigo-600 dark:hover:bg-indigo-600 dark:hover-border-indigo-500',
     ]"
   >
     {{ text }}
@@ -27,7 +27,8 @@ export default {
   props: {
     destination: {
       type: String,
-      required: true,
+      required: false,
+      default: '',
     },
     text: {
       type: String,

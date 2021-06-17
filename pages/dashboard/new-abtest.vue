@@ -1,16 +1,8 @@
 <template>
-  <section class="w-full flex items-center justify-center mt-5vh">
+  <section class="w-full flex items-center justify-center mt-8">
     <!-- container -->
     <div
-      class="
-        w-full
-        max-w-6xl
-        px-4
-        flex flex-col
-        justify-between
-        mt-5vh
-        items-center
-      "
+      class="w-full max-w-6xl px-4 flex flex-col justify-between items-center"
     >
       <form
         class="
@@ -18,12 +10,14 @@
           p-8
           bg-white
           dark:bg-gray-800
+          mt-8
+          shadow-sm
           flex flex-col
           items-center
           justify-center
           rounded-lg
-          border border-orange-100
-          dark:border-gray-600
+          border border-gray-200
+          dark:border-gray-700
         "
         @submit.prevent="addNewAbtest"
       >
@@ -85,6 +79,57 @@
         </div>
         <div class="field w-full mt-8">
           <Label
+            :class="[nameError ? 'text-red-600' : '']"
+            class="label"
+            label="name"
+            :text="nameText"
+          />
+          <div class="flex items-center mb-4">
+            <div class="min-w-max mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 text-gray-600 dark:text-gray-300"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <p class="text-sm text-gray-700 dark:text-gray-300 font-light ml-2">
+              The name of your A/B so you can easily identify it, e.g. 'Landing
+              page headline copy'
+            </p>
+          </div>
+          <input
+            v-model="name"
+            class="
+              input
+              w-full
+              transition
+              duration-150
+              ease-in-out
+              rounded-lg
+              hover:border-indigo-200
+              dark:hover:border-gray-500
+              hover:ring-4 hover:ring-indigo-100
+              border border-gray-200
+              dark:bg-gray-900
+              dark:border-gray-600
+              dark:hover:ring-gray-600
+              dark:text-white
+            "
+            type="text"
+            name="conversion-url"
+            :class="[nameError ? 'text-red-600 input-error' : '']"
+            @focus="dismissError"
+          />
+        </div>
+        <div class="field w-full mt-8">
+          <Label
             :class="[conversionURLError ? 'text-red-600' : '']"
             class="label"
             label="Conversion URL"
@@ -120,9 +165,9 @@
               duration-150
               ease-in-out
               rounded-lg
-              hover:border-orange-200
+              hover:border-indigo-200
               dark:hover:border-gray-500
-              hover:ring-4 hover:ring-orange-100
+              hover:ring-4 hover:ring-indigo-100
               border border-gray-200
               dark:bg-gray-900
               dark:border-gray-600
@@ -148,14 +193,15 @@
             ease-in-out
             mt-8
             rounded-lg
-            bg-black
+            bg-indigo-500
             text-white
-            hover:bg-gray-800
-            dark:bg-gray-600
-            dark:hover:bg-gray-500
-            dark:text-gray-100
-            dark:hover:text-white
-            dark:border dark:border-gray-500
+            border border-indigo-600
+            hover:border-indigo-500
+            hover:bg-indigo-400
+            dark:bg-indigo-700
+            dark:border-indigo-600
+            dark:hover:bg-indigo-600
+            dark:hover-border-indigo-500
           "
         >
           Next
@@ -173,6 +219,9 @@ export default {
       conversionURL: '',
       conversionURLText: 'Conversion URL',
       conversionURLError: false,
+      name: '',
+      nameText: 'A/B Test Name',
+      nameError: false,
       AbtestTypeText: 'Type of A/B test',
       AbtestTypeError: false,
       activeType: '',
@@ -213,6 +262,12 @@ export default {
         return
       }
 
+      if (!this.name) {
+        this.nameText = 'Please enter your Conversion URL'
+        this.nameError = true
+        return
+      }
+
       if (!this.conversionURL) {
         this.conversionURLText = 'Please enter your Conversion URL'
         this.conversionURLError = true
@@ -222,6 +277,7 @@ export default {
       const payload = {
         user: this.$store.state.user._id,
         type: this.activeDbKey,
+        name: this.name,
         conversionURL: this.conversionURL,
       }
 
@@ -231,8 +287,6 @@ export default {
         },
         withCredentials: true,
       }
-
-      console.log(payload)
 
       const res = await this.$axios.post(
         'http://localhost:3001/abtest',
@@ -248,6 +302,8 @@ export default {
     dismissError() {
       this.conversionURLText = 'Conversion URL'
       this.conversionURLError = false
+      this.nameText = 'A/B Test Name'
+      this.nameError = false
       this.AbtestTypeText = 'Type of A/B test'
       this.AbtestTypeError = false
     },

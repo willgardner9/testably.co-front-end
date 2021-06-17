@@ -14,7 +14,7 @@
         flex flex-col
         justify-center
         rounded-lg
-        border border-gray-100
+        border border-gray-200
         dark:bg-gray-800
         dark:border-gray-600
         shadow-sm
@@ -47,12 +47,15 @@
             input
             w-full
             transition
-            duration-300
+            duration-150
             ease-in-out
             rounded-lg
-            hover:border-orange-200
+            hover:border-indigo-200
             dark:hover:border-gray-500
-            hover:ring-2 hover:ring-orange-100
+            hover:ring-4 hover:ring-indigo-200
+            focus:ring-4 focus:ring-indigo-200
+            dark:focus:ring-gray-600
+            outline-none
             border border-gray-200
             dark:bg-gray-900
             dark:border-gray-600
@@ -80,12 +83,15 @@
               input
               w-full
               transition
-              duration-300
+              duration-150
               ease-in-out
               rounded-lg
-              hover:border-orange-200
+              hover:border-indigo-200
               dark:hover:border-gray-500
-              hover:ring-2 hover:ring-orange-100
+              hover:ring-4 hover:ring-indigo-200
+              focus:ring-4 focus:ring-indigo-200
+              dark:focus:ring-gray-600
+              outline-none
               border border-gray-200
               dark:bg-gray-900
               dark:border-gray-600
@@ -168,14 +174,15 @@
           ease-in-out
           mt-8
           rounded-lg
-          bg-black
+          bg-indigo-500
           text-white
-          hover:bg-gray-800
-          dark:bg-gray-600
-          dark:hover:bg-gray-500
-          dark:text-gray-100
-          dark:hover:text-white
-          dark:border dark:border-gray-500
+          border border-indigo-600
+          hover:border-indigo-500
+          hover:bg-indigo-400
+          dark:bg-indigo-700
+          dark:border-indigo-600
+          dark:hover:bg-indigo-600
+          dark:hover-border-indigo-500
         "
       >
         Register
