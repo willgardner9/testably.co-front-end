@@ -31,7 +31,7 @@
 <script>
 export default {
   created() {
-    setTimeout(() => this.$router.push({ path: '/' }), 2000)
+    setTimeout(() => this.$router.push({ path: '/' }), 1000)
   },
 }
 </script>
