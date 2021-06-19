@@ -139,7 +139,9 @@
               flex
               w-full
               items-center
-              p-4
+              px-4
+              pt-2
+              pb-4
               rounded-lg rounded-t-none
               border border-t-0 border-gray-200
               dark:bg-gray-800
@@ -154,17 +156,43 @@
                 text-gray-500 text-xs
                 font-medium
                 pr-2
+                dark:text-gray-400
               "
             >
               <p>Variation</p>
             </div>
-            <div class="flex text-gray-500 text-xs font-medium px-2">
+            <div
+              class="
+                flex
+                text-gray-500 text-xs
+                font-medium
+                px-2
+                dark:text-gray-400
+              "
+            >
               <p>Sessions</p>
             </div>
-            <div class="flex text-gray-500 text-xs font-medium px-2">
+            <div
+              class="
+                flex
+                text-gray-500 text-xs
+                font-medium
+                px-2
+                dark:text-gray-400
+              "
+            >
               <p>Conversions</p>
             </div>
-            <div class="min-w-max flex text-gray-500 text-xs font-medium px-2">
+            <div
+              class="
+                min-w-max
+                flex
+                text-gray-500 text-xs
+                font-medium
+                px-2
+                dark:text-gray-400
+              "
+            >
               <p>Conversion Rate</p>
             </div>
           </div>

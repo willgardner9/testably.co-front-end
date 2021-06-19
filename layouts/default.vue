@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  middleware: ['hideMenuOnLoad'],
   head: {
     bodyAttrs: {
       class: 'bg-gray-50 dark:bg-gray-900',

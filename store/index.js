@@ -3,6 +3,7 @@ export const state = () => ({
   user: {},
   accessToken: undefined,
   accessTokenExpiresIn: undefined,
+  menuVisible: false,
 })
 
 export const mutations = {
@@ -20,5 +21,9 @@ export const mutations = {
 
   setUser(state, user) {
     state.user = user
+  },
+
+  setMenuVisible(state, visibility) {
+    state.menuVisible = visibility
   },
 }
