@@ -9,6 +9,8 @@ You can directly use them in pages and other components without the need to impo
 - `<AbtestType>` | `<abtest-type>` (components/AbtestType.vue)
 - `<Button>` | `<button>` (components/Button.vue)
 - `<Label>` | `<label>` (components/Label.vue)
+- `<MobileNavigation>` | `<mobile-navigation>` (components/MobileNavigation.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
+- `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<NewABTestPrompt>` | `<new-a-b-test-prompt>` (components/NewABTestPrompt.vue)
 - `<SkeletonLoader>` | `<skeleton-loader>` (components/SkeletonLoader.vue)

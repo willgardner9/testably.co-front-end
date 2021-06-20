@@ -8,8 +8,14 @@
   "Label": {
     "description": "Auto imported from components/Label.vue"
   },
+  "MobileNavigation": {
+    "description": "Auto imported from components/MobileNavigation.vue"
+  },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
   },
   "NewABTestPrompt": {
     "description": "Auto imported from components/NewABTestPrompt.vue"
