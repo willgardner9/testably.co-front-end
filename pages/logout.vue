@@ -15,13 +15,33 @@
         rounded-lg
         border border-gray-100
         shadow-sm
+        dark:bg-gray-800
+        dark:border-gray-600
       "
     >
       <div class="lds-dual-ring w-1/2"></div>
-      <h4 class="text-black font-semibold text-3xl sm:mt-0 text-center">
+      <h4
+        class="
+          text-black
+          font-semibold
+          text-3xl
+          sm:mt-0
+          text-center
+          dark:text-white
+        "
+      >
         Logged out
       </h4>
-      <h3 class="text-gray-600 font-normal text-md mt-2 text-center">
+      <h3
+        class="
+          text-gray-600
+          font-normal
+          text-md
+          mt-2
+          text-center
+          dark:text-gray-400
+        "
+      >
         Redirecting soon...
       </h3>
     </div>
@@ -40,10 +60,6 @@ export default {
 .mt-10vh {
   margin-top: 10vh;
 }
-.text-blue-custom {
-  color: #0066ff;
-}
-
 .lds-dual-ring {
   display: inline-block;
   width: 40px;
@@ -57,7 +73,7 @@ export default {
   margin: 4px;
   border-radius: 50%;
   border: 3px solid #fff;
-  border-color: rgb(0, 0, 0) transparent rgb(0, 0, 0) transparent;
+  border-color: #202937 #fff #202937 #fff;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

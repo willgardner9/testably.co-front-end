@@ -11,3 +11,20 @@
     </nav>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logoutUser() {
+      this.$axios.get('http://localhost:3001/user/logout', {
+        withCredentials: true,
+      })
+      this.$store.commit('toggleAuth', false)
+      this.$store.commit('setAccessToken', undefined)
+      this.$store.commit('setUser', {})
+      this.$router.push('/logout')
+      this.$cookiz.set('hasLoggedIn', false)
+    },
+  },
+}
+</script>
