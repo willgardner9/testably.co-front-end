@@ -1,6 +1,5 @@
 <template>
-  <NuxtLink
-    :to="destination"
+  <button
     class="
       px-2
       py-2
@@ -19,17 +18,12 @@
     ]"
   >
     {{ text }}
-  </NuxtLink>
+  </button>
 </template>
 
 <script>
 export default {
   props: {
-    destination: {
-      type: String,
-      required: false,
-      default: '',
-    },
     text: {
       type: String,
       required: true,

@@ -6,11 +6,14 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<AbtestCard>` | `<abtest-card>` (components/AbtestCard.vue)
 - `<AbtestType>` | `<abtest-type>` (components/AbtestType.vue)
 - `<Button>` | `<button>` (components/Button.vue)
+- `<ButtonJS>` | `<button-j-s>` (components/ButtonJS.vue)
 - `<Label>` | `<label>` (components/Label.vue)
 - `<MobileNavigation>` | `<mobile-navigation>` (components/MobileNavigation.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<NewABTestPrompt>` | `<new-a-b-test-prompt>` (components/NewABTestPrompt.vue)
 - `<SkeletonLoader>` | `<skeleton-loader>` (components/SkeletonLoader.vue)
+- `<VariationForm>` | `<variation-form>` (components/VariationForm.vue)

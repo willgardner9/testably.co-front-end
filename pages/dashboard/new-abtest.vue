@@ -1,6 +1,11 @@
 <template>
-  <section class="w-full flex items-center justify-center mt-8">
+  <section class="w-full flex flex-col items-center justify-center mt-8">
     <!-- container -->
+    <div
+      class="w-full max-w-6xl px-4 flex flex-col justify-between items-start"
+    >
+      <Button destination="/dashboard" text="← Dashboard" ghost />
+    </div>
     <div
       class="w-full max-w-6xl px-4 flex flex-col justify-between items-center"
     >

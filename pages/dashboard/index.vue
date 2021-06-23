@@ -9,6 +9,7 @@
         v-if="abtestsList && abtestsList.length >= 1"
         class="w-full flex flex-col items-center mt-12"
       >
+        <!-- dashboard welcome message -->
         <div
           class="
             w-full
@@ -47,155 +48,14 @@
         <div
           v-for="abtest in abtestsList"
           :key="abtest._id"
-          class="
-            w-full
-            rounded-lg
-            flex flex-col
-            items-center
-            justify-between
-            mb-8
-            shadow-sm
-          "
+          class="w-full flex flex-col items-center justify-between"
         >
-          <div
-            class="
-              flex flex-col
-              items-start
-              sm:flex-row
-              w-full
-              sm:items-center
-              p-4
-              rounded-lg rounded-b-none
-              border border-b-0
-              bg-white
-              border-gray-200
-              dark:bg-gray-800
-              dark:border-gray-700
-            "
-          >
-            <div
-              class="
-                dark:text-white
-                text-2xl
-                font-semibold
-                flex
-                items-center
-                mb-2
-                sm:mb-0
-              "
-            >
-              {{ abtest.name }}
-            </div>
-            <span
-              class="
-                mx-2
-                hidden
-                sm:block
-                text-gray-500
-                dark:text-gray-400
-                font-light
-                select-none
-              "
-              >•</span
-            >
-            <div
-              class="
-                text-xs
-                flex
-                justify-end
-                text-gray-500
-                dark:text-gray-400
-                mr-2
-                mb-2
-                sm:mb-0
-              "
-            >
-              <span>Type:&nbsp;</span>
-              <span
-                v-if="abtest.type === 'src'"
-                class="font-medium dark:text-gray-300"
-              >
-                Image/Video</span
-              >
-              <span
-                v-else-if="abtest.type === 'copy'"
-                class="font-medium dark:text-gray-300"
-              >
-                Text</span
-              >
-              <span v-else class="font-medium dark:text-gray-300"> Color</span>
-            </div>
-            <div
-              class="text-xs flex justify-end text-gray-500 dark:text-gray-400"
-            >
-              <span>Created:&nbsp;</span>
-              <span class="font-medium dark:text-gray-300">{{
-                new Date(abtest.createdAt).toLocaleDateString()
-              }}</span>
-            </div>
-          </div>
-          <div
-            class="
-              flex
-              w-full
-              items-center
-              px-4
-              pt-2
-              pb-4
-              rounded-lg rounded-t-none
-              border border-t-0 border-gray-200
-              dark:bg-gray-800
-              dark:border-gray-700
-              overflow-x-auto
-            "
-          >
-            <div
-              class="
-                w-full
-                flex flex-grow
-                text-gray-500 text-xs
-                font-medium
-                pr-2
-                dark:text-gray-400
-              "
-            >
-              <p>Variation</p>
-            </div>
-            <div
-              class="
-                flex
-                text-gray-500 text-xs
-                font-medium
-                px-2
-                dark:text-gray-400
-              "
-            >
-              <p>Sessions</p>
-            </div>
-            <div
-              class="
-                flex
-                text-gray-500 text-xs
-                font-medium
-                px-2
-                dark:text-gray-400
-              "
-            >
-              <p>Conversions</p>
-            </div>
-            <div
-              class="
-                min-w-max
-                flex
-                text-gray-500 text-xs
-                font-medium
-                px-2
-                dark:text-gray-400
-              "
-            >
-              <p>Conversion Rate</p>
-            </div>
-          </div>
+          <AbtestCard
+            :abtest="abtest"
+            class="mb-8"
+            show-prompt
+            show-details-button
+          />
         </div>
       </section>
       <!-- show dialogue to create first abtest -->

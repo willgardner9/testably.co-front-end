@@ -1,9 +1,15 @@
 {
+  "AbtestCard": {
+    "description": "Auto imported from components/AbtestCard.vue"
+  },
   "AbtestType": {
     "description": "Auto imported from components/AbtestType.vue"
   },
   "Button": {
     "description": "Auto imported from components/Button.vue"
+  },
+  "ButtonJS": {
+    "description": "Auto imported from components/ButtonJS.vue"
   },
   "Label": {
     "description": "Auto imported from components/Label.vue"
@@ -22,5 +28,8 @@
   },
   "SkeletonLoader": {
     "description": "Auto imported from components/SkeletonLoader.vue"
+  },
+  "VariationForm": {
+    "description": "Auto imported from components/VariationForm.vue"
   }
 }

@@ -23,7 +23,7 @@
       ghost
       class="w-full justify-start px-4 py-4 text-md mt-4"
     />
-    <Button
+    <ButtonJS
       text="Logout"
       ghost
       class="w-full justify-start px-4 py-4 text-md mt-4"

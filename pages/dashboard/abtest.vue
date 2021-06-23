@@ -1,18 +1,16 @@
 <template>
-  <section class="w-full flex items-center justify-center mt-5vh">
+  <section class="w-full flex flex-col items-center justify-center mt-8">
+    <div
+      class="w-full max-w-6xl px-4 flex flex-col justify-between items-start"
+    >
+      <Button destination="/dashboard" text="← Dashboard" ghost />
+    </div>
     <!-- container -->
     <div
-      class="
-        w-full
-        max-w-6xl
-        px-4
-        flex flex-col
-        justify-between
-        mt-5vh
-        items-center
-      "
+      class="w-full max-w-6xl px-4 flex flex-col justify-between items-center"
     >
-      Variations
+      <AbtestCard v-if="abtest" :abtest="abtest" class="mt-8" />
+      <VariationForm />
     </div>
   </section>
 </template>
@@ -20,9 +18,27 @@
 <script>
 export default {
   middleware: ['customAuth', 'checkAccessExpiry'],
-  data() {
-    return {}
+  async fetch() {
+    const abtest = await this.$axios.get(
+      `http://localhost:3001/abtest/${this.$route.query.t}`,
+      {
+        params: {
+          user: this.$store.state.user._id,
+        },
+        headers: {
+          Authorization: `Bearer ${this.$store.state.accessToken}`,
+        },
+        withCredentials: true,
+      }
+    )
+    this.abtest = abtest.data
   },
+  data() {
+    return {
+      abtest: null,
+    }
+  },
+  computed: {},
   //  refresh token every 19 mins
   created() {
     setTimeout(
@@ -48,7 +64,5 @@ export default {
       19 * 60 * 1000
     )
   },
-
-  methods: {},
 }
 </script>
