@@ -32,7 +32,7 @@
           class="
             min-w-max
             dark:text-white
-            text-2xl
+            text-xl
             font-semibold
             flex
             items-center
@@ -40,7 +40,7 @@
             sm:mb-0
           "
         >
-          {{ abtest.name }}
+          <h3 class="break-normal">{{ abtest.name }}</h3>
         </div>
         <div class="flex w-full justify-start items-center">
           <span
@@ -101,18 +101,16 @@
           v-if="showDetailsButton"
           class="text-xs justify-start edit-button min-w-max"
           :destination="'dashboard/abtest/?t=' + abtest._id"
-          text="Edit ›"
+          text="More ›"
           ghost
         />
       </div>
       <div
         class="
-          flex flex-col
           w-full
           items-center
           px-4
-          pt-2
-          pb-4
+          py-2
           rounded-lg rounded-t-none
           border border-t-0 border-gray-200
           dark:bg-gray-800
@@ -120,78 +118,47 @@
           overflow-x-auto
         "
       >
-        <div class="w-full flex flex-row py-1">
-          <div
-            class="
-              w-full
-              flex flex-grow
-              text-gray-500 text-xs
-              font-medium
-              pr-2
-              dark:text-gray-400
-            "
-          >
-            <p>Variation</p>
-          </div>
-          <div
-            class="
-              flex
-              text-gray-500 text-xs
-              font-medium
-              px-2
-              dark:text-gray-400
-            "
-          >
-            <p>Sessions</p>
-          </div>
-          <div
-            class="
-              flex
-              text-gray-500 text-xs
-              font-medium
-              px-2
-              dark:text-gray-400
-            "
-          >
-            <p>Conversions</p>
-          </div>
-          <div
-            class="
-              min-w-max
-              flex
-              text-gray-500 text-xs
-              font-medium
-              px-2
-              dark:text-gray-400
-            "
-          >
-            <p>Conversion Rate</p>
-          </div>
-        </div>
-        <div v-if="abtest.variations.length === 0 && showPrompt" class="mt-4">
+        <div
+          v-if="abtest.variations.length === 0 && showPrompt"
+          class="flex w-full justify-center"
+        >
           <Button
             :destination="'dashboard/abtest/?t=' + abtest._id"
             text="Create first variation"
             ghost
+            class="max-w-max"
           />
         </div>
-        <div
-          v-else-if="abtest.variations.length === 0 && !showPrompt"
-          class="mt-4"
-        >
+        <div v-else-if="abtest.variations.length === 0 && !showPrompt">
           <p class="text-sm text-gray-500">Create your first variation below</p>
         </div>
-        <div
-          v-for="variation in abtest.variations"
-          v-else
-          :key="variation._id"
-          class="w-full flex flex-row py-1"
-        >
-          {{ variation.variable }}
-          {{ variation.sessions }}
-          {{ variation.conversions }}
-          {{ variation.sessions / variation.conversions }}
-        </div>
+        <table v-else class="min-w-full py-1 table-auto">
+          <thead>
+            <tr>
+              <TableHead text="Variation" />
+              <TableHead text="Sessions" text-center />
+              <TableHead text="Conversions" text-center />
+              <TableHead text="CVR" text-center />
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
+            <tr v-for="variation in abtest.variations" :key="variation._id">
+              <TableData :text="variation.variable" />
+              <TableData :text="variation.sessions" text-center />
+              <TableData :text="variation.conversions" text-center />
+              <TableData
+                v-if="variation.conversions !== 0 && variation.sessions !== 0"
+                :text="variation.conversions / variation.sessions"
+                text-center
+              />
+              <TableData
+                v-if="variation.conversions === 0 && variation.sessions === 0"
+                text="0%"
+                text-center
+              />
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>

@@ -208,7 +208,7 @@
 
 <script>
 export default {
-  middleware: ['refreshOnLoad', 'checkAccessExpiry'],
+  middleware: ['refreshOnLoad', 'checkAccessExpiry', 'redirectIfLoggedIn'],
 
   data() {
     return {

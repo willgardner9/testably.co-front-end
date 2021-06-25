@@ -10,7 +10,7 @@
       class="w-full max-w-6xl px-4 flex flex-col justify-between items-center"
     >
       <AbtestCard v-if="abtest" :abtest="abtest" class="mt-8" />
-      <VariationForm />
+      <VariationForm v-if="abtest" :test-type="abtest.type" />
     </div>
   </section>
 </template>

@@ -10,6 +10,8 @@ export { default as Navbar } from '../../components/Navbar.vue'
 export { default as Navigation } from '../../components/Navigation.vue'
 export { default as NewABTestPrompt } from '../../components/NewABTestPrompt.vue'
 export { default as SkeletonLoader } from '../../components/SkeletonLoader.vue'
+export { default as TableData } from '../../components/TableData.vue'
+export { default as TableHead } from '../../components/TableHead.vue'
 export { default as VariationForm } from '../../components/VariationForm.vue'
 
 export const LazyAbtestCard = import('../../components/AbtestCard.vue' /* webpackChunkName: "components/abtest-card" */).then(c => wrapFunctional(c.default || c))
@@ -22,4 +24,6 @@ export const LazyNavbar = import('../../components/Navbar.vue' /* webpackChunkNa
 export const LazyNavigation = import('../../components/Navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c))
 export const LazyNewABTestPrompt = import('../../components/NewABTestPrompt.vue' /* webpackChunkName: "components/new-a-b-test-prompt" */).then(c => wrapFunctional(c.default || c))
 export const LazySkeletonLoader = import('../../components/SkeletonLoader.vue' /* webpackChunkName: "components/skeleton-loader" */).then(c => wrapFunctional(c.default || c))
+export const LazyTableData = import('../../components/TableData.vue' /* webpackChunkName: "components/table-data" */).then(c => wrapFunctional(c.default || c))
+export const LazyTableHead = import('../../components/TableHead.vue' /* webpackChunkName: "components/table-head" */).then(c => wrapFunctional(c.default || c))
 export const LazyVariationForm = import('../../components/VariationForm.vue' /* webpackChunkName: "components/variation-form" */).then(c => wrapFunctional(c.default || c))

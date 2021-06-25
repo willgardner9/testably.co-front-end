@@ -29,6 +29,12 @@
   "SkeletonLoader": {
     "description": "Auto imported from components/SkeletonLoader.vue"
   },
+  "TableData": {
+    "description": "Auto imported from components/TableData.vue"
+  },
+  "TableHead": {
+    "description": "Auto imported from components/TableHead.vue"
+  },
   "VariationForm": {
     "description": "Auto imported from components/VariationForm.vue"
   }

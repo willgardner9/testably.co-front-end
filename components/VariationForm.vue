@@ -1,6 +1,11 @@
 <template>
   <section class="w-full flex flex-col items-center">
-    <div class="w-full rounded-lg flex flex-col justify-between mt-8">
+    <div class="w-full mt-8">
+      <p v-if="testType === 'copy'">Text</p>
+      <p v-else-if="testType === 'src'">Image/Video</p>
+      <p v-else>Color</p>
+    </div>
+    <div class="w-full rounded-lg flex flex-col justify-between mt-4">
       <form class="w-full flex" @submit.prevent="handleNewVariation">
         <Label
           :class="[variationError ? 'text-red-600' : '']"
@@ -14,7 +19,7 @@
           :placeholder="variationText"
           :class="[variationError ? 'text-red-600 input-error' : '']"
           class="
-            p-2
+            p-3
             text-sm
             input
             w-full
@@ -52,6 +57,12 @@
 
 <script>
 export default {
+  props: {
+    testType: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       variationError: false,

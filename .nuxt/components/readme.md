@@ -16,4 +16,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<NewABTestPrompt>` | `<new-a-b-test-prompt>` (components/NewABTestPrompt.vue)
 - `<SkeletonLoader>` | `<skeleton-loader>` (components/SkeletonLoader.vue)
+- `<TableData>` | `<table-data>` (components/TableData.vue)
+- `<TableHead>` | `<table-head>` (components/TableHead.vue)
 - `<VariationForm>` | `<variation-form>` (components/VariationForm.vue)

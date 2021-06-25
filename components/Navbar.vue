@@ -1,6 +1,6 @@
 <template>
   <!-- header -->
-  <div>
+  <div class="sticky top-0">
     <header
       class="
         w-full
@@ -8,7 +8,7 @@
         flex
         items-center
         justify-center
-        sticky
+        z-50
         shadow-sm
         border-b border-gray-200
         bg-white

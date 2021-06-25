@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default function ({ store, redirect }) {
+export default function ({ store, redirect, route }) {
   //  check auth workflow required
   if (store.state.accessTokenExpiresIn) {
     // check if access token has expired, or will expire in 1 minute
@@ -18,7 +18,8 @@ export default function ({ store, redirect }) {
           }
         })
         // reload current page fetch() call with new access token
-        .then(() => this.$nuxt.reload())
+        //  this line isnt working
+        .then(() => redirect(route))
     }
   }
 }

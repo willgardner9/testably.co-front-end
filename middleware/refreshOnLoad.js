@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default function ({ app, store, redirect }) {
+export default function ({ app, store, redirect, route }) {
   const hasLoggedIn = app.$cookiz.get('hasLoggedIn')
   if (!store.state.accessToken && hasLoggedIn) {
     // attempt refresh
@@ -24,8 +24,8 @@ export default function ({ app, store, redirect }) {
             .then(() => redirect('/dashboard'))
         }
       })
-      .catch(() => {
-        return ''
+      .catch((error) => {
+        console.log(error)
       })
   }
 }

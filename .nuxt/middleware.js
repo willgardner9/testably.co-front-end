@@ -9,6 +9,9 @@ middleware['customAuth'] = middleware['customAuth'].default || middleware['custo
 middleware['hideMenuOnLoad'] = require('../middleware/hideMenuOnLoad.js')
 middleware['hideMenuOnLoad'] = middleware['hideMenuOnLoad'].default || middleware['hideMenuOnLoad']
 
+middleware['redirectIfLoggedIn'] = require('../middleware/redirectIfLoggedIn.js')
+middleware['redirectIfLoggedIn'] = middleware['redirectIfLoggedIn'].default || middleware['redirectIfLoggedIn']
+
 middleware['refreshOnLoad'] = require('../middleware/refreshOnLoad.js')
 middleware['refreshOnLoad'] = middleware['refreshOnLoad'].default || middleware['refreshOnLoad']
 
