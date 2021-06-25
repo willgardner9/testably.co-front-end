@@ -1,7 +1,80 @@
 <template>
   <section class="w-full flex flex-col items-center">
     <div class="w-full mt-8">
-      <p v-if="testType === 'copy'">Text</p>
+      <div v-if="testType === 'copy'" class="flex flex-col items-start">
+        <div class="flex items-center">
+          <div class="min-w-max mr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-gray-600 dark:text-gray-300"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            This A/B test changes the <span class="font-semibold">text</span> of
+            some copy on your website. Your variations should be different copy
+            you want to try out.
+          </p>
+          <button
+            v-show="showCopyExamples"
+            class="
+              ml-2
+              font-semibold
+              text-gray-500
+              dark:text-gray-300
+              text-sm
+              border-b border-dashed border-gray-500
+              dark:border-gray-300
+            "
+            @click="revealCopyExamples"
+          >
+            Hide examples
+          </button>
+          <button
+            v-show="!showCopyExamples"
+            class="
+              ml-2
+              font-semibold
+              text-gray-500
+              dark:text-gray-300
+              text-sm
+              border-b border-dashed border-gray-500
+              dark:border-gray-300
+            "
+            @click="revealCopyExamples"
+          >
+            Show examples
+          </button>
+        </div>
+        <div
+          v-show="showCopyExamples"
+          class="ml-6 mt-2 text-gray-500 dark:text-gray-300 text-sm"
+        >
+          <p class="mt-2">
+            If you're A/B testing a subscription button, your variations might
+            be:
+          </p>
+          <ul class="list-disc list-inside ml-2">
+            <li>"Choose plan"</li>
+            <li>"Get started for free"</li>
+          </ul>
+          <p class="mt-2">
+            If you're A/B testing your landing page headline, your variations
+            might be:
+          </p>
+          <ul class="list-disc list-inside ml-2">
+            <li>"A/B Testing Made Easy"</li>
+            <li>"Simple A/B Testing"</li>
+          </ul>
+        </div>
+      </div>
       <p v-else-if="testType === 'src'">Image/Video</p>
       <p v-else>Color</p>
     </div>
@@ -59,7 +132,7 @@
 export default {
   props: {
     testType: {
-      type: Object,
+      type: String,
       required: true,
     },
   },
@@ -68,6 +141,7 @@ export default {
       variationError: false,
       variationText: 'Type your variation',
       variationValue: '',
+      showCopyExamples: false,
     }
   },
   methods: {
@@ -107,6 +181,10 @@ export default {
         this.$nuxt.refresh()
         this.variationValue = ''
       }
+    },
+
+    revealCopyExamples() {
+      this.showCopyExamples = !this.showCopyExamples
     },
   },
 }

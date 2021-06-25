@@ -19,7 +19,7 @@ export default function ({ store, redirect, route }) {
         })
         // reload current page fetch() call with new access token
         //  this line isnt working
-        .then(() => redirect(route))
+        .then(() => location.reload())
     }
   }
 }
