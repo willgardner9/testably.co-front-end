@@ -13,6 +13,7 @@ export { default as SkeletonLoader } from '../../components/SkeletonLoader.vue'
 export { default as TableData } from '../../components/TableData.vue'
 export { default as TableHead } from '../../components/TableHead.vue'
 export { default as VariationForm } from '../../components/VariationForm.vue'
+export { default as VariationTips } from '../../components/VariationTips.vue'
 
 export const LazyAbtestCard = import('../../components/AbtestCard.vue' /* webpackChunkName: "components/abtest-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyAbtestType = import('../../components/AbtestType.vue' /* webpackChunkName: "components/abtest-type" */).then(c => wrapFunctional(c.default || c))
@@ -27,3 +28,4 @@ export const LazySkeletonLoader = import('../../components/SkeletonLoader.vue' /
 export const LazyTableData = import('../../components/TableData.vue' /* webpackChunkName: "components/table-data" */).then(c => wrapFunctional(c.default || c))
 export const LazyTableHead = import('../../components/TableHead.vue' /* webpackChunkName: "components/table-head" */).then(c => wrapFunctional(c.default || c))
 export const LazyVariationForm = import('../../components/VariationForm.vue' /* webpackChunkName: "components/variation-form" */).then(c => wrapFunctional(c.default || c))
+export const LazyVariationTips = import('../../components/VariationTips.vue' /* webpackChunkName: "components/variation-tips" */).then(c => wrapFunctional(c.default || c))

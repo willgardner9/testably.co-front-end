@@ -2,78 +2,17 @@
   <section class="w-full flex flex-col items-center">
     <div class="w-full mt-8">
       <div v-if="testType === 'copy'" class="flex flex-col items-start">
-        <div class="flex items-center">
-          <div class="min-w-max mr-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-gray-600 dark:text-gray-300"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 text-sm">
-            This A/B test changes the <span class="font-semibold">text</span> of
-            some copy on your website. Your variations should be different copy
-            you want to try out.
-          </p>
-          <button
-            v-show="showCopyExamples"
-            class="
-              ml-2
-              font-semibold
-              text-gray-500
-              dark:text-gray-300
-              text-sm
-              border-b border-dashed border-gray-500
-              dark:border-gray-300
-            "
-            @click="revealCopyExamples"
-          >
-            Hide examples
-          </button>
-          <button
-            v-show="!showCopyExamples"
-            class="
-              ml-2
-              font-semibold
-              text-gray-500
-              dark:text-gray-300
-              text-sm
-              border-b border-dashed border-gray-500
-              dark:border-gray-300
-            "
-            @click="revealCopyExamples"
-          >
-            Show examples
-          </button>
-        </div>
-        <div
-          v-show="showCopyExamples"
-          class="ml-6 mt-2 text-gray-500 dark:text-gray-300 text-sm"
-        >
-          <p class="mt-2">
-            If you're A/B testing a subscription button, your variations might
-            be:
-          </p>
-          <ul class="list-disc list-inside ml-2">
-            <li>"Choose plan"</li>
-            <li>"Get started for free"</li>
-          </ul>
-          <p class="mt-2">
-            If you're A/B testing your landing page headline, your variations
-            might be:
-          </p>
-          <ul class="list-disc list-inside ml-2">
-            <li>"A/B Testing Made Easy"</li>
-            <li>"Simple A/B Testing"</li>
-          </ul>
-        </div>
+        <VariationTips
+          variation-desc-start="This A/B test varies some"
+          variation-desc-type="text"
+          variation-desc-end="on your website. Your variations should be different copy you want to measure the performance of."
+          variation-example-one="If you are testing a 'Subscribe now' button on your website, your variations might be:"
+          variation-example-one-item-a="'Get started for free!'"
+          variation-example-one-item-b="'Start your 7 day free trial'"
+          variation-example-two="If you are testing the headline on your landing page, your variations might be:"
+          variation-example-two-item-a="'A/B testing made easy'"
+          variation-example-two-item-b="'Simple A/B testing'"
+        />
       </div>
       <p v-else-if="testType === 'src'">Image/Video</p>
       <p v-else>Color</p>
@@ -176,10 +115,15 @@ export default {
         payload,
         options
       )
-      //  successfully created new abtest, redirect to that test to create variations
+      //  successfully created new abtest, refresh to show new test and reset value
       if (res.status === 200) {
         this.$nuxt.refresh()
         this.variationValue = ''
+      }
+
+      // access token has expired, reload to generate new token
+      if (res.status === 401) {
+        location.reload()
       }
     },
 

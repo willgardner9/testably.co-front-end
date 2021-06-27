@@ -37,5 +37,8 @@
   },
   "VariationForm": {
     "description": "Auto imported from components/VariationForm.vue"
+  },
+  "VariationTips": {
+    "description": "Auto imported from components/VariationTips.vue"
   }
 }

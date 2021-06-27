@@ -3,7 +3,7 @@
     scope="col"
     class="
       py-3
-      pr-3
+      px-2
       sm:px-0
       text-xs
       font-medium

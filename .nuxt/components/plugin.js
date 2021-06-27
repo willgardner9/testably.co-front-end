@@ -14,7 +14,8 @@ const components = {
   SkeletonLoader: () => import('../../components/SkeletonLoader.vue' /* webpackChunkName: "components/skeleton-loader" */).then(c => wrapFunctional(c.default || c)),
   TableData: () => import('../../components/TableData.vue' /* webpackChunkName: "components/table-data" */).then(c => wrapFunctional(c.default || c)),
   TableHead: () => import('../../components/TableHead.vue' /* webpackChunkName: "components/table-head" */).then(c => wrapFunctional(c.default || c)),
-  VariationForm: () => import('../../components/VariationForm.vue' /* webpackChunkName: "components/variation-form" */).then(c => wrapFunctional(c.default || c))
+  VariationForm: () => import('../../components/VariationForm.vue' /* webpackChunkName: "components/variation-form" */).then(c => wrapFunctional(c.default || c)),
+  VariationTips: () => import('../../components/VariationTips.vue' /* webpackChunkName: "components/variation-tips" */).then(c => wrapFunctional(c.default || c))
 }
 
 for (const name in components) {

@@ -19,3 +19,4 @@ You can directly use them in pages and other components without the need to impo
 - `<TableData>` | `<table-data>` (components/TableData.vue)
 - `<TableHead>` | `<table-head>` (components/TableHead.vue)
 - `<VariationForm>` | `<variation-form>` (components/VariationForm.vue)
+- `<VariationTips>` | `<variation-tips>` (components/VariationTips.vue)

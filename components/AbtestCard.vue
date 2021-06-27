@@ -28,9 +28,10 @@
           dark:border-gray-700
         "
       >
-        <div
+        <h3
           class="
-            min-w-max
+            break-normal
+            sm:min-w-max
             dark:text-white
             text-xl
             font-semibold
@@ -40,9 +41,18 @@
             sm:mb-0
           "
         >
-          <h3 class="break-normal">{{ abtest.name }}</h3>
-        </div>
-        <div class="flex w-full justify-start items-center">
+          {{ abtest.name }}
+        </h3>
+        <div
+          class="
+            flex flex-col
+            sm:flex-row
+            w-full
+            justify-start
+            items-start
+            sm:items-center
+          "
+        >
           <span
             class="
               mx-2
@@ -99,7 +109,7 @@
         </div>
         <Button
           v-if="showDetailsButton"
-          class="text-xs justify-start edit-button min-w-max"
+          class="my-4 sm:my-0 text-xs justify-start edit-button min-w-max"
           :destination="'dashboard/abtest/?t=' + abtest._id"
           text="More ›"
           ghost
@@ -132,13 +142,13 @@
         <div v-else-if="abtest.variations.length === 0 && !showPrompt">
           <p class="text-sm text-gray-500">Create your first variation below</p>
         </div>
-        <table v-else class="min-w-full py-1 table-auto">
+        <table v-else class="min-w-full py-1 table-fixed">
           <thead>
             <tr>
-              <TableHead text="Variation" />
-              <TableHead text="Sessions" text-center />
-              <TableHead text="Conversions" text-center />
-              <TableHead text="CVR" text-center />
+              <TableHead class="min-w-14 pl-0" text="Variation" />
+              <TableHead class="w-32" text="Sessions" text-center />
+              <TableHead class="w-32" text="Conversions" text-center />
+              <TableHead class="w-32" text="CVR" text-center />
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200 dark:divide-gray-600">
@@ -192,5 +202,9 @@ export default {
 }
 .visual-v-align {
   margin-top: 0.125rem;
+}
+
+.min-w-14 {
+  min-width: 14rem;
 }
 </style>
