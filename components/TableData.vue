@@ -1,10 +1,11 @@
 <template>
-  <th
-    class="py-3 text-gray-700 text-sm font-normal dark:text-gray-300"
+  <td
+    class="py-3 text-gray-700 text-sm font-normal dark:text-gray-300 rounded"
     :class="textCenter ? 'text-center' : 'text-left'"
+    :style="{ backgroundColor: text }"
   >
     {{ text }}
-  </th>
+  </td>
 </template>
 
 <script>

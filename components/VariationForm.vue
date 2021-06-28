@@ -14,49 +14,96 @@
           variation-example-two-item-b="'Simple A/B testing'"
         />
       </div>
-      <p v-else-if="testType === 'src'">Image/Video</p>
-      <p v-else>Color</p>
+      <p v-else-if="testType === 'src'">
+        <VariationTips
+          variation-desc-start="This A/B test varies an"
+          variation-desc-type="image / video"
+          variation-desc-end="on your website. Your variations should be URLs to different images or videos you want to measure the performance of."
+          variation-example-one="If you are testing your hero image on your landing page, your variations might be:"
+          variation-example-one-item-a="An image showcasing your product"
+          variation-example-one-item-b="An image showcasing your product with people"
+          variation-example-two="If you are testing your production demonstration video, your variations might be:"
+          variation-example-two-item-a="Your video with subtitles"
+          variation-example-two-item-b="Your video with no subtitles"
+        />
+      </p>
+      <p v-else>
+        <VariationTips
+          variation-desc-start="This A/B test varies the"
+          variation-desc-type="color"
+          variation-desc-end="of an element on your website. Your variations should be hex codes of colors you want to measure the performance of."
+          variation-example-one="If you are testing the colour of your CTA button, your variations might be:"
+          variation-example-one-item-a="A blue color in keeping with your website"
+          variation-example-one-item-b="A red color that stands out"
+          variation-example-two="If you are testing the background of your pricing section, your variations might be:"
+          variation-example-two-item-a="A dark color that stands out"
+          variation-example-two-item-b="A light color that blends in"
+        />
+      </p>
     </div>
     <div class="w-full rounded-lg flex flex-col justify-between mt-4">
       <form class="w-full flex" @submit.prevent="handleNewVariation">
-        <Label
-          :class="[variationError ? 'text-red-600' : '']"
-          class="text-gray-500 text-sm hidden"
-          label="email"
-          :text="variationText"
-          aria-hidden="false"
-        />
-        <input
-          v-model="variationValue"
-          :placeholder="variationText"
-          :class="[variationError ? 'text-red-600 input-error' : '']"
-          class="
-            p-3
-            text-sm
-            input
-            w-full
-            transition
-            duration-150
-            ease-in-out
-            rounded
-            mr-1
-            text-gray-500
-            hover:border-indigo-200
-            dark:hover:border-gray-700
-            hover:ring-2 hover:ring-indigo-200
-            focus:ring-2 focus:ring-indigo-200
-            dark:focus:ring-gray-600
-            outline-none
-            border border-gray-200
-            dark:bg-gray-900
-            dark:border-gray-600
-            dark:hover:ring-gray-600
-            dark:text-white
-          "
-          type="text"
-          name="variation"
-          @focus="dismissError"
-        />
+        <div
+          v-if="testType === 'copy' || testType === 'src'"
+          class="w-full flex"
+        >
+          <Label
+            :class="[variationError ? 'text-red-600' : '']"
+            class="text-gray-500 text-sm hidden"
+            label="email"
+            :text="variationText"
+            aria-hidden="false"
+          />
+          <input
+            v-model="variationValue"
+            :placeholder="variationText"
+            :class="[variationError ? 'text-red-600 input-error' : '']"
+            class="
+              p-3
+              text-sm
+              input
+              w-full
+              transition
+              duration-150
+              ease-in-out
+              rounded
+              mr-1
+              text-gray-500
+              hover:border-indigo-200
+              dark:hover:border-gray-700
+              hover:ring-2 hover:ring-indigo-200
+              focus:ring-2 focus:ring-indigo-200
+              dark:focus:ring-gray-600
+              outline-none
+              border border-gray-200
+              dark:bg-gray-900
+              dark:border-gray-600
+              dark:hover:ring-gray-600
+              dark:text-white
+            "
+            type="text"
+            name="variation"
+            @focus="dismissError"
+          />
+        </div>
+        <div v-else class="w-full flex items-center">
+          <label
+            id="colorPickerLabel"
+            class="w-4/5 h-full rounded-md shadow-sm border border-gray-200"
+            :style="{ backgroundColor: variationValue }"
+          >
+            <input
+              id="colorpicker"
+              v-model="variationValue"
+              type="color"
+              name="Color picker"
+              class="invisible w-full h-full"
+            />
+          </label>
+          <p :style="{ color: variationValue }" class="ml-2 text-sm">
+            {{ variationValue }}
+          </p>
+        </div>
         <ButtonJS
           text="Add variation"
           ghost

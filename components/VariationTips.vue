@@ -30,6 +30,7 @@
           text-sm
           border-b border-dashed border-gray-500
           dark:border-gray-300
+          min-w-max
         "
         @click="revealExamples"
       >
@@ -45,6 +46,7 @@
           text-sm
           border-b border-dashed border-gray-500
           dark:border-gray-300
+          min-w-max
         "
         @click="revealExamples"
       >

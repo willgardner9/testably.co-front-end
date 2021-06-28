@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full flex flex-col items-center justify-center mt-8">
+  <section class="w-full flex flex-col items-center justify-center my-8">
     <!-- container -->
     <div
       class="w-full max-w-6xl px-4 flex flex-col justify-between items-start"
