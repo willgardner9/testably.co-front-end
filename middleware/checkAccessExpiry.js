@@ -1,10 +1,11 @@
 import axios from 'axios'
 
-export default function ({ store, redirect, route }) {
-  //  check auth workflow required
+export default function ({ store, redirect, route, from }) {
+  //  check if auth workflow required
   if (store.state.accessTokenExpiresIn) {
     // check if access token has expired, or will expire in 1 minute
     if (store.state.accessTokenExpiresIn < Date.now() + 60 * 1000) {
+      console.log('checkAccessExpiry fired')
       //  refresh access token if so
       axios
         .get('http://localhost:3001/token/refresh', { withCredentials: true })
@@ -17,9 +18,9 @@ export default function ({ store, redirect, route }) {
             store.commit('setAccessTokenExpiresIn', accessTokenExpiresIn)
           }
         })
-        // reload current page fetch() call with new access token
-        //  this line isnt working
-        .then(() => location.reload())
+        .then(() => {
+          redirect('/dashboard')
+        })
     }
   }
 }

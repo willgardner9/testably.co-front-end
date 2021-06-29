@@ -87,8 +87,6 @@ export default {
       },
       withCredentials: true,
     })
-
-    console.log(abtests)
     this.abtestsList = abtests.data
   },
   data() {

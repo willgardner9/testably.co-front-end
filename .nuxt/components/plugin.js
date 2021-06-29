@@ -6,6 +6,7 @@ const components = {
   AbtestType: () => import('../../components/AbtestType.vue' /* webpackChunkName: "components/abtest-type" */).then(c => wrapFunctional(c.default || c)),
   Button: () => import('../../components/Button.vue' /* webpackChunkName: "components/button" */).then(c => wrapFunctional(c.default || c)),
   ButtonJS: () => import('../../components/ButtonJS.vue' /* webpackChunkName: "components/button-j-s" */).then(c => wrapFunctional(c.default || c)),
+  CodeSnippet: () => import('../../components/CodeSnippet.vue' /* webpackChunkName: "components/code-snippet" */).then(c => wrapFunctional(c.default || c)),
   Label: () => import('../../components/Label.vue' /* webpackChunkName: "components/label" */).then(c => wrapFunctional(c.default || c)),
   MobileNavigation: () => import('../../components/MobileNavigation.vue' /* webpackChunkName: "components/mobile-navigation" */).then(c => wrapFunctional(c.default || c)),
   Navbar: () => import('../../components/Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c)),

@@ -1,6 +1,6 @@
 <template>
   <section class="w-full flex flex-col items-center">
-    <div class="w-full mt-8">
+    <div class="w-full">
       <div v-if="testType === 'copy'" class="flex flex-col items-start">
         <VariationTips
           variation-desc-start="This A/B test varies some"
@@ -89,7 +89,14 @@
         <div v-else class="w-full flex items-center">
           <label
             id="colorPickerLabel"
-            class="w-4/5 h-full rounded-md shadow-sm border border-gray-200"
+            class="
+              w-4/5
+              h-full
+              rounded-md
+              shadow-sm
+              border border-gray-200
+              dark:border-gray-700
+            "
             :style="{ backgroundColor: variationValue }"
           >
             <input

@@ -10,6 +10,7 @@ You can directly use them in pages and other components without the need to impo
 - `<AbtestType>` | `<abtest-type>` (components/AbtestType.vue)
 - `<Button>` | `<button>` (components/Button.vue)
 - `<ButtonJS>` | `<button-j-s>` (components/ButtonJS.vue)
+- `<CodeSnippet>` | `<code-snippet>` (components/CodeSnippet.vue)
 - `<Label>` | `<label>` (components/Label.vue)
 - `<MobileNavigation>` | `<mobile-navigation>` (components/MobileNavigation.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)

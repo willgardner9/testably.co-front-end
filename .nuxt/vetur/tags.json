@@ -11,6 +11,9 @@
   "ButtonJS": {
     "description": "Auto imported from components/ButtonJS.vue"
   },
+  "CodeSnippet": {
+    "description": "Auto imported from components/CodeSnippet.vue"
+  },
   "Label": {
     "description": "Auto imported from components/Label.vue"
   },

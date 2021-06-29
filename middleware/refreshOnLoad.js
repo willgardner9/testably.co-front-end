@@ -1,8 +1,9 @@
 import axios from 'axios'
 
-export default function ({ app, store, redirect, route }) {
+export default function ({ app, store, redirect, route, from }) {
   const hasLoggedIn = app.$cookiz.get('hasLoggedIn')
   if (!store.state.accessToken && hasLoggedIn) {
+    console.log('refreshOnLoad fired')
     // attempt refresh
     axios
       .get('http://localhost:3001/token/refresh', { withCredentials: true })
@@ -21,7 +22,15 @@ export default function ({ app, store, redirect, route }) {
             .then((res) => {
               store.commit('setUser', res.data)
             })
-            .then(() => redirect('/dashboard'))
+            .then(() => {
+              if (from.name === 'dashboard-abtest') {
+                return redirect(from.fullPath)
+              }
+              if (route.path === '/login') {
+                return redirect('/dashboard')
+              }
+              return redirect(route.path)
+            })
         }
       })
       .catch((error) => {

@@ -4,6 +4,7 @@ export { default as AbtestCard } from '../../components/AbtestCard.vue'
 export { default as AbtestType } from '../../components/AbtestType.vue'
 export { default as Button } from '../../components/Button.vue'
 export { default as ButtonJS } from '../../components/ButtonJS.vue'
+export { default as CodeSnippet } from '../../components/CodeSnippet.vue'
 export { default as Label } from '../../components/Label.vue'
 export { default as MobileNavigation } from '../../components/MobileNavigation.vue'
 export { default as Navbar } from '../../components/Navbar.vue'
@@ -19,6 +20,7 @@ export const LazyAbtestCard = import('../../components/AbtestCard.vue' /* webpac
 export const LazyAbtestType = import('../../components/AbtestType.vue' /* webpackChunkName: "components/abtest-type" */).then(c => wrapFunctional(c.default || c))
 export const LazyButton = import('../../components/Button.vue' /* webpackChunkName: "components/button" */).then(c => wrapFunctional(c.default || c))
 export const LazyButtonJS = import('../../components/ButtonJS.vue' /* webpackChunkName: "components/button-j-s" */).then(c => wrapFunctional(c.default || c))
+export const LazyCodeSnippet = import('../../components/CodeSnippet.vue' /* webpackChunkName: "components/code-snippet" */).then(c => wrapFunctional(c.default || c))
 export const LazyLabel = import('../../components/Label.vue' /* webpackChunkName: "components/label" */).then(c => wrapFunctional(c.default || c))
 export const LazyMobileNavigation = import('../../components/MobileNavigation.vue' /* webpackChunkName: "components/mobile-navigation" */).then(c => wrapFunctional(c.default || c))
 export const LazyNavbar = import('../../components/Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c))
