@@ -43,12 +43,13 @@
         shadow-inner
         p-4
         flex flex-col
+        mt-2
       "
     >
-      <code class="text-sm">data-testably-abtest-id="{{ abtest._id }}"</code>
       <code class="text-sm"
         >data-testably-count="{{ abtest.variations.length }}"</code
       >
+      <code class="text-sm">data-testably-abtest-id="{{ abtest._id }}"</code>
       <code
         v-for="(variation, index) in abtest.variations"
         :key="variation._id"
