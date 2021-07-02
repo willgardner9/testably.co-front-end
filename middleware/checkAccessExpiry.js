@@ -19,7 +19,7 @@ export default function ({ store, redirect, route, from }) {
           }
         })
         .then(() => {
-          redirect('/dashboard')
+          location.reload()
         })
     }
   }

@@ -87,6 +87,7 @@ export default {
       },
       withCredentials: true,
     })
+    console.log('abtests on index.vue', abtests)
     this.abtestsList = abtests.data
   },
   data() {

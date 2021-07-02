@@ -49,6 +49,9 @@
       <code class="text-sm"
         >data-testably-count="{{ abtest.variations.length }}"</code
       >
+      <code class="text-sm"
+        >data-testably-conversion-url="{{ abtest.conversionURL }}"</code
+      >
       <code class="text-sm">data-testably-abtest-id="{{ abtest._id }}"</code>
       <code
         v-for="(variation, index) in abtest.variations"
