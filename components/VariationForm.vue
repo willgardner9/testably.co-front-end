@@ -1,6 +1,50 @@
 <template>
   <section class="w-full flex flex-col items-center">
-    <div class="w-full">
+    <div
+      class="
+        flex flex-col
+        items-start
+        justify-between
+        sm:flex-row
+        w-full
+        sm:items-center
+        p-4
+        rounded-lg rounded-b-none
+        border border-b-0
+        bg-white
+        border-gray-200
+        dark:bg-gray-800
+        dark:border-gray-700
+      "
+    >
+      <h3
+        class="
+          break-normal
+          sm:min-w-max
+          dark:text-white
+          text-xl
+          font-semibold
+          flex
+          items-center
+          mb-2
+          sm:mb-0
+        "
+      >
+        Add variations
+      </h3>
+    </div>
+    <div
+      class="
+        w-full
+        items-center
+        px-4
+        py-2
+        rounded-lg rounded-t-none
+        border border-t-0 border-gray-200
+        dark:bg-gray-800
+        dark:border-gray-700
+      "
+    >
       <div v-if="testType === 'copy'" class="flex flex-col items-start">
         <VariationTips
           variation-desc-start="This A/B test varies some"
@@ -40,83 +84,83 @@
           variation-example-two-item-b="A light color that blends in"
         />
       </p>
-    </div>
-    <div class="w-full rounded-lg flex flex-col justify-between mt-4">
-      <form class="w-full flex" @submit.prevent="handleNewVariation">
-        <div
-          v-if="testType === 'copy' || testType === 'src'"
-          class="w-full flex"
-        >
-          <Label
-            :class="[variationError ? 'text-red-600' : '']"
-            class="text-gray-500 text-sm hidden"
-            label="email"
-            :text="variationText"
-            aria-hidden="false"
-          />
-          <input
-            v-model="variationValue"
-            :placeholder="variationText"
-            :class="[variationError ? 'text-red-600 input-error' : '']"
-            class="
-              p-3
-              text-sm
-              input
-              w-full
-              transition
-              duration-150
-              ease-in-out
-              rounded
-              mr-1
-              text-gray-500
-              hover:border-indigo-200
-              dark:hover:border-gray-700
-              hover:ring-2 hover:ring-indigo-200
-              focus:ring-2 focus:ring-indigo-200
-              dark:focus:ring-gray-600
-              outline-none
-              border border-gray-200
-              dark:bg-gray-900
-              dark:border-gray-600
-              dark:hover:ring-gray-600
-              dark:text-white
-            "
-            type="text"
-            name="variation"
-            @focus="dismissError"
-          />
-        </div>
-        <div v-else class="w-full flex items-center">
-          <label
-            id="colorPickerLabel"
-            class="
-              w-4/5
-              h-full
-              rounded-md
-              shadow-sm
-              border border-gray-200
-              dark:border-gray-700
-            "
-            :style="{ backgroundColor: variationValue }"
+      <div class="w-full rounded-lg flex flex-col justify-between mt-4">
+        <form class="w-full flex" @submit.prevent="handleNewVariation">
+          <div
+            v-if="testType === 'copy' || testType === 'src'"
+            class="w-full flex"
           >
-            <input
-              id="colorpicker"
-              v-model="variationValue"
-              type="color"
-              name="Color picker"
-              class="invisible w-full h-full"
+            <Label
+              :class="[variationError ? 'text-red-600' : '']"
+              class="text-gray-500 text-sm hidden"
+              label="email"
+              :text="variationText"
+              aria-hidden="false"
             />
-          </label>
-          <p :style="{ color: variationValue }" class="ml-2 text-sm">
-            {{ variationValue }}
-          </p>
-        </div>
-        <ButtonJS
-          text="Add variation"
-          ghost
-          class="ml-1 min-w-max items-center border-gray-200"
-        />
-      </form>
+            <input
+              v-model="variationValue"
+              :placeholder="variationText"
+              :class="[variationError ? 'text-red-600 input-error' : '']"
+              class="
+                p-3
+                text-sm
+                input
+                w-full
+                transition
+                duration-150
+                ease-in-out
+                rounded
+                mr-1
+                text-gray-500
+                hover:border-indigo-200
+                dark:hover:border-gray-700
+                hover:ring-2 hover:ring-indigo-200
+                focus:ring-2 focus:ring-indigo-200
+                dark:focus:ring-gray-600
+                outline-none
+                border border-gray-200
+                dark:bg-gray-900
+                dark:border-gray-600
+                dark:hover:ring-gray-600
+                dark:text-white
+              "
+              type="text"
+              name="variation"
+              @focus="dismissError"
+            />
+          </div>
+          <div v-else class="w-full flex items-center">
+            <label
+              id="colorPickerLabel"
+              class="
+                w-4/5
+                h-full
+                rounded-md
+                shadow-sm
+                border border-gray-200
+                dark:border-gray-700
+              "
+              :style="{ backgroundColor: variationValue }"
+            >
+              <input
+                id="colorpicker"
+                v-model="variationValue"
+                type="color"
+                name="Color picker"
+                class="invisible w-full h-full"
+              />
+            </label>
+            <p :style="{ color: variationValue }" class="ml-2 text-sm">
+              {{ variationValue }}
+            </p>
+          </div>
+          <ButtonJS
+            text="Add variation"
+            ghost
+            class="ml-1 min-w-max items-center border-gray-200"
+          />
+        </form>
+      </div>
     </div>
   </section>
 </template>

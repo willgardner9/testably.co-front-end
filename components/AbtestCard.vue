@@ -160,7 +160,7 @@
                 v-if="variation.conversions !== 0 && variation.sessions !== 0"
                 :text="
                   ((variation.conversions / variation.sessions) * 100).toFixed(
-                    1
+                    0
                   ) + '%'
                 "
                 text-center
