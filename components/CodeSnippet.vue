@@ -46,19 +46,47 @@
         mt-2
       "
     >
+      <code class="text-sm">id="testably-{{ abtest._id }}"</code>
+    </div>
+    <div class="mt-4 flex flex-col">
+      <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
+        2) JavaScript snippet
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Please copy and paste this snippet onto the page of your website running
+        the A/B test.
+      </p>
+    </div>
+    <div
+      class="
+        rounded
+        bg-gray-100
+        border border-gray-200
+        shadow-inner
+        p-4
+        flex flex-col
+        mt-2
+      "
+    >
+      <code class="text-sm">const elId = 'testably-{{ abtest._id }}'</code>
+      <code class="text-sm">const testType = '{{ abtest.type }}'</code>
       <code class="text-sm"
-        >data-testably-count="{{ abtest.variations.length }}"</code
+        >const variationCount = {{ abtest.variations.length }}</code
       >
       <code class="text-sm"
-        >data-testably-conversion-url="{{ abtest.conversionURL }}"</code
+        >const conversionUrl = '{{ abtest.conversionURL }}'</code
       >
-      <code class="text-sm">data-testably-abtest-id="{{ abtest._id }}"</code>
-      <code
-        v-for="(variation, index) in abtest.variations"
-        :key="variation._id"
-        class="text-sm"
-        >data-testably-variation-{{ index }}-id="{{ variation._id }}"</code
-      >
+
+      <code class="text-sm">
+        const variationInfo = [
+        <code
+          v-for="variation in abtest.variations"
+          :key="variation._id"
+          class="text-sm"
+          >['{{ variation._id }}', '{{ variation.variable }}'],</code
+        >
+        ]
+      </code>
     </div>
   </section>
 </template>
