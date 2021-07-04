@@ -158,7 +158,11 @@
               <TableData :text="variation.conversions" text-center />
               <TableData
                 v-if="variation.conversions !== 0 && variation.sessions !== 0"
-                :text="(variation.conversions / variation.sessions) * 100 + '%'"
+                :text="
+                  ((variation.conversions / variation.sessions) * 100).toFixed(
+                    1
+                  ) + '%'
+                "
                 text-center
               />
               <TableData

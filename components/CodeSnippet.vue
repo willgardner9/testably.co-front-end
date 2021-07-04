@@ -46,7 +46,7 @@
         mt-2
       "
     >
-      <code class="text-sm">id="testably-{{ abtest._id }}"</code>
+      <code class="text-xs">id="testably-{{ abtest._id }}"</code>
     </div>
     <div class="mt-4 flex flex-col">
       <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
@@ -68,25 +68,35 @@
         mt-2
       "
     >
-      <code class="text-sm">const elId = 'testably-{{ abtest._id }}'</code>
-      <code class="text-sm">const testType = '{{ abtest.type }}'</code>
-      <code class="text-sm"
+      <code class="text-xs">{{ startScriptTag }}</code>
+      <code class="text-xs">const elId = 'testably-{{ abtest._id }}'</code>
+      <code class="text-xs">const testType = '{{ abtest.type }}'</code>
+      <code class="text-xs"
         >const variationCount = {{ abtest.variations.length }}</code
       >
-      <code class="text-sm"
+      <code class="text-xs"
         >const conversionUrl = '{{ abtest.conversionURL }}'</code
       >
 
-      <code class="text-sm">
+      <code class="text-xs">
         const variationInfo = [
         <code
           v-for="variation in abtest.variations"
           :key="variation._id"
-          class="text-sm"
+          class="text-xs"
           >['{{ variation._id }}', '{{ variation.variable }}'],</code
         >
         ]
       </code>
+      <code class="text-xs"
+        >const
+        el=document.getElementById(elId),getActiveVariationIndex=(e,t)=>Math.floor(Math.random()*(t-e+1))+e,activeVariationIndex=getActiveVariationIndex(0,variationCount-1);"copy"===testType&&(el.textContent=variationInfo[activeVariationIndex][1]),"src"===testType&&(el.src=variationInfo[activeVariationIndex][1]),"colour"===testType&&(el.style.backgroundColor=variationInfo[activeVariationIndex][1]);const
+        testablyUpdate=e=>{const t=new
+        XMLHttpRequest;t.open("PATCH",`http://localhost:1407/${variationInfo[activeVariationIndex][0]}`),t.setRequestHeader("Accept","application/json"),t.setRequestHeader("Content-Type","application/json"),t.setRequestHeader("Access-Control-Allow-Origin",window.location.href);const
+        n={id:variationInfo[activeVariationIndex][0],sessions:!0,conversions:e};t.send(JSON.stringify(n))};window.onload=testablyUpdate(!1);const
+        conversionURLElements=document.querySelectorAll(`a[href="${conversionUrl}"]`);conversionURLElements.forEach(e=>e.addEventListener("click",function(){testablyUpdate(!0)}));</code
+      >
+      <code class="text-xs">{{ endScriptTag }}t></code>
     </div>
   </section>
 </template>
@@ -98,6 +108,12 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      startScriptTag: `<script>`,
+      endScriptTag: `</scrip`,
+    }
   },
 }
 </script>
