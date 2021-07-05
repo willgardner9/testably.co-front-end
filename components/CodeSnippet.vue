@@ -54,11 +54,45 @@
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Text snippet
         </h3>
-        <div class="flex items-center">
-          <p class="text-gray-600 text-sm">
-            Copy and paste this snippet into the element whose text you are
-            testing.
-          </p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <p class="text-gray-600 text-sm dark:text-gray-400">
+              Copy and paste this snippet into the element whose text you are
+              testing.
+            </p>
+            <button
+              v-show="!showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Show examples
+            </button>
+            <button
+              v-show="showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Hide examples
+            </button>
+          </div>
           <ButtonJS
             text="copy"
             class="px-1 py-1 ml-2"
@@ -66,16 +100,72 @@
             @click.native="copyIDCode"
           />
         </div>
+        <div
+          v-show="showOneExample"
+          id="javascriptcode"
+          class="
+            rounded
+            bg-indigo-50
+            dark:bg-gray-900
+            border border-gray-200
+            dark:border-gray-700
+            dark:text-gray-400
+            shadow-inner
+            p-4
+            flex flex-col
+            mt-2
+            overflow-auto
+          "
+        >
+          <code class="text-xs">{{ exampleBeginSnippet }}</code>
+          <code class="text-xs">{{ textSnippetExample }}</code>
+          <code class="text-xs">{{ textSnippetExampleOne }}</code>
+        </div>
       </div>
+
       <div v-if="abtest.type === 'colour'" class="mt-4 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Color snippet
         </h3>
-        <div class="flex items-center">
-          <p class="text-gray-600 text-sm">
-            Copy and paste this snippet into the element whose color you are
-            testing.
-          </p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <p class="text-gray-600 text-sm dark:text-gray-400">
+              Copy and paste this snippet into the element whose color you are
+              testing.
+            </p>
+            <button
+              v-show="!showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Show examples
+            </button>
+            <button
+              v-show="showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Hide examples
+            </button>
+          </div>
           <ButtonJS
             text="copy"
             class="px-1 py-1 ml-2"
@@ -83,22 +173,99 @@
             @click.native="copyIDCode"
           />
         </div>
+        <div
+          v-show="showOneExample"
+          id="javascriptcode"
+          class="
+            rounded
+            bg-indigo-50
+            dark:bg-gray-900
+            border border-gray-200
+            dark:border-gray-700
+            dark:text-gray-400
+            shadow-inner
+            p-4
+            flex flex-col
+            mt-2
+            overflow-auto
+          "
+        >
+          <code class="text-xs">{{ exampleBeginSnippet }}</code>
+          <code class="text-xs">{{ colorSnippetExample }}</code>
+          <code class="text-xs">{{ colorSnippetExampleOne }}</code>
+        </div>
       </div>
+
       <div v-if="abtest.type === 'src'" class="mt-4 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Image / Video snippet
         </h3>
-        <div class="flex items-center">
-          <p class="text-gray-600 text-sm">
-            Copy and paste this snippet into the element whose image / video you
-            are testing.
-          </p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <p class="text-gray-600 text-sm dark:text-gray-400">
+              Copy and paste this snippet into the element whose image / video
+              you are testing.
+            </p>
+            <button
+              v-show="!showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Show examples
+            </button>
+            <button
+              v-show="showOneExample"
+              class="
+                ml-2
+                font-semibold
+                text-gray-500
+                dark:text-gray-300
+                text-sm
+                border-b border-dashed border-gray-500
+                dark:border-gray-300
+                min-w-max
+              "
+              @click="revealOneExample"
+            >
+              Hide examples
+            </button>
+          </div>
           <ButtonJS
             text="copy"
             class="px-1 py-1 ml-2"
             ghost
             @click.native="copyIDCode"
           />
+        </div>
+        <div
+          v-show="showOneExample"
+          id="javascriptcode"
+          class="
+            rounded
+            bg-indigo-50
+            dark:bg-gray-900
+            border border-gray-200
+            dark:border-gray-700
+            dark:text-gray-400
+            shadow-inner
+            p-4
+            flex flex-col
+            mt-2
+            overflow-auto
+          "
+        >
+          <code class="text-xs">{{ exampleBeginSnippet }}</code>
+          <code class="text-xs">{{ srcSnippetExample }}</code>
+          <code class="text-xs">{{ srcSnippetExampleOne }}</code>
         </div>
       </div>
       <div
@@ -106,7 +273,10 @@
         class="
           rounded
           bg-gray-100
+          dark:bg-gray-900
           border border-gray-200
+          dark:border-gray-700
+          dark:text-gray-400
           shadow-inner
           p-4
           flex flex-col
@@ -120,10 +290,11 @@
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           2) JavaScript snippet
         </h3>
-        <div class="flex items-center">
-          <p class="text-gray-600 text-sm">
-            Copy and paste this snippet onto the page of your website running
-            the A/B test.
+        <div class="flex items-center justify-between">
+          <p class="text-gray-600 text-sm dark:text-gray-400">
+            Copy and paste this snippet just before the {{ bodyTag }} tag closes
+            on the page of your website running the A/B test, like this
+            {{ bodyTagExample }}.
           </p>
           <ButtonJS
             text="copy"
@@ -138,7 +309,10 @@
         class="
           rounded
           bg-gray-100
+          dark:bg-gray-900
           border border-gray-200
+          dark:border-gray-700
+          dark:text-gray-400
           shadow-inner
           p-4
           flex flex-col
@@ -192,6 +366,28 @@ export default {
     return {
       startScriptTag: `<script>`,
       endScriptTag: `</scrip`,
+      showOneExample: false,
+      exampleBeginSnippet: `<!-- Example code -->`,
+      textSnippetExample: `
+      <button id="add-the-below-id-here">Click me!</button> 
+      `,
+      textSnippetExampleOne: `
+      <h1 id="add-the-below-id-here">Attention-grabbing tag line</h1> 
+      `,
+      colorSnippetExample: `
+      <button id="add-the-below-id-here">Click me!</button> 
+      `,
+      colorSnippetExampleOne: `
+      <div id="add-the-below-id-here">...</div> 
+      `,
+      srcSnippetExample: `
+      <video id="add-the-below-id-here" src="..." />
+      `,
+      srcSnippetExampleOne: `
+      <img id="add-the-below-id-here" src="..." />
+      `,
+      bodyTag: `<body>`,
+      bodyTagExample: `<body>...paste here</body>`,
     }
   },
   methods: {
@@ -214,6 +410,9 @@ export default {
         }),
       ]
       navigator.clipboard.write(data)
+    },
+    revealOneExample() {
+      this.showOneExample = !this.showOneExample
     },
   },
 }
