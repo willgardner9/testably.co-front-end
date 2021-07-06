@@ -22,8 +22,8 @@
       <!-- container -->
       <div class="w-full max-w-6xl px-4 flex justify-between">
         <!-- logo and slogan container -->
-        <div class="flex items-center">
-          <NuxtLink to="/" class="flex items-center">
+        <div class="relative min-w-max">
+          <NuxtLink to="/" class="absolute flex items-center">
             <h1
               class="
                 font-extrabold
@@ -36,31 +36,6 @@
               testably
             </h1>
           </NuxtLink>
-          <span
-            class="
-              mx-2
-              hidden
-              sm:block
-              text-gray-500
-              dark:text-gray-400
-              font-light
-              select-none
-            "
-            >•</span
-          >
-          <h2
-            class="
-              text-sm
-              font-light
-              text-gray-600
-              dark:text-gray-400
-              hidden
-              sm:block
-              select-none
-            "
-          >
-            A/B testing made easy
-          </h2>
         </div>
         <!-- menu links -->
 
@@ -136,14 +111,5 @@ h2 {
 
 .h-10vh {
   height: 10vh;
-}
-
-.ghost-button {
-  color: #4a5568;
-}
-
-.ghost-button:hover {
-  background-color: #edf2f7;
-  color: #2d3748;
 }
 </style>
