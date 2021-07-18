@@ -1,5 +1,11 @@
 [
   {
+    "name": "account",
+    "path": "/account",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/account.vue",
+    "chunkName": "pages/account"
+  },
+  {
     "name": "dashboard",
     "path": "/dashboard",
     "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/dashboard/index.vue",

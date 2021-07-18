@@ -5,10 +5,12 @@ export default function ({ store, redirect, route, from }) {
   if (store.state.accessTokenExpiresIn) {
     // check if access token has expired, or will expire in 1 minute
     if (store.state.accessTokenExpiresIn < Date.now() + 60 * 1000) {
-      console.log('checkAccessExpiry fired')
       //  refresh access token if so
       axios
-        .get('http://localhost:3001/token/refresh', { withCredentials: true })
+        .get(
+          'https://testably-back-end-iadh5.ondigitalocean.app/token/refresh',
+          { withCredentials: true }
+        )
         .then((res) => {
           // refresh token is valid: set new access token, accesstokenexpires in
           if (res.status === 200) {

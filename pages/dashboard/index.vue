@@ -23,7 +23,7 @@
           <h3 class="text-base text-gray-500 dark:text-gray-400 font-light">
             Hi
             <span class="font-medium text-black dark:text-gray-300">{{
-              userEmail
+              userObj.email
             }}</span
             >, you are currently running
             <span v-if="abtestsList.length >= 2"
@@ -78,16 +78,18 @@
 export default {
   middleware: ['customAuth', 'checkAccessExpiry'],
   async fetch() {
-    const abtests = await this.$axios.get('http://localhost:3001/abtest/', {
-      params: {
-        user: this.$store.state.user._id,
-      },
-      headers: {
-        Authorization: `Bearer ${this.$store.state.accessToken}`,
-      },
-      withCredentials: true,
-    })
-    console.log('abtests on index.vue', abtests)
+    const abtests = await this.$axios.get(
+      'https://testably-back-end-iadh5.ondigitalocean.app/abtest/',
+      {
+        params: {
+          user: this.$store.state.user._id,
+        },
+        headers: {
+          Authorization: `Bearer ${this.$store.state.accessToken}`,
+        },
+        withCredentials: true,
+      }
+    )
     this.abtestsList = abtests.data
   },
   data() {
@@ -96,34 +98,14 @@ export default {
     }
   },
   computed: {
-    userEmail() {
-      return this.$store.state.user.email
+    userObj() {
+      return this.$store.state.user
     },
   },
-  //  refresh token every 19 mins
-  created() {
-    setTimeout(
-      () =>
-        this.$axios
-          .get('http://localhost:3001/token/refresh', { withCredentials: true })
-          .then((res) => {
-            // refresh token is valid: set new access token and access token expires in
-            if (res.status === 200) {
-              this.$store.commit(
-                'setAccessToken',
-                res.data.accessTokenObj.accessToken
-              )
-              this.$store.commit(
-                'setAccessTokenExpiresIn',
-                res.data.accessTokenObj.accessTokenExpiresIn
-              )
-            }
-          })
-          .catch(() => {
-            return ''
-          }),
-      19 * 60 * 1000
-    )
+  mounted() {
+    if (!this.userObj.currentPlan) {
+      return this.$router.push('/account')
+    }
   },
 }
 </script>

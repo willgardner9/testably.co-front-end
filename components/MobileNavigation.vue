@@ -23,6 +23,12 @@
       ghost
       class="w-full justify-start px-4 py-4 text-md mt-4"
     />
+    <Button
+      destination="/account"
+      text="Account"
+      ghost
+      class="w-full justify-start px-4 py-4 text-md mt-4"
+    />
     <ButtonJS
       text="Logout"
       ghost
@@ -49,20 +55,20 @@
     "
   >
     <Button
-      destination="pricing"
+      destination="/pricing"
       text="Pricing"
       class="w-full justify-start px-4 py-4 text-md mt-4"
       ghost
     />
     <Button
-      destination="login"
+      destination="/login"
       text="Login"
       class="w-full justify-start px-4 py-4 text-md mt-2"
       ghost
     />
     <Button
-      destination="register"
-      text="Try testably →"
+      destination="/register/?plan=free"
+      text="Try for free"
       class="w-full justify-start px-4 py-4 text-md mt-2"
     />
   </nav>
@@ -72,9 +78,12 @@
 export default {
   methods: {
     logoutUser() {
-      this.$axios.get('http://localhost:3001/user/logout', {
-        withCredentials: true,
-      })
+      this.$axios.get(
+        'https://testably-back-end-iadh5.ondigitalocean.app/user/logout',
+        {
+          withCredentials: true,
+        }
+      )
       this.$store.commit('toggleAuth', false)
       this.$store.commit('setAccessToken', undefined)
       this.$store.commit('setUser', {})

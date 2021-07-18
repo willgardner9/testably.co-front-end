@@ -37,11 +37,18 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookiz' }],
+    [
+      'nuxt-stripe-module',
+      {
+        publishableKey:
+          'pk_test_51InUqNBn4cPkjuwoy3Wsd4Lj5u4xU4jinXXCYt2aeNptAY22iM3W8X4W4Q9U09QkoUClqiBgeaekva5DVxNco9TX00bhGjSnIQ',
+      },
+    ],
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://localhost:3001',
+    baseURL: 'https://testably-back-end-iadh5.ondigitalocean.app/',
     credentials: false,
   },
 

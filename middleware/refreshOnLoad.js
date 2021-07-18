@@ -3,11 +3,13 @@ import axios from 'axios'
 export default function ({ app, store, redirect, route, from }) {
   const hasLoggedIn = app.$cookiz.get('hasLoggedIn')
   if (!store.state.accessToken && hasLoggedIn) {
-    console.log('refreshOnLoad fired')
     // attempt refresh
     axios
-      .get('http://localhost:3001/token/refresh', { withCredentials: true })
+      .get('https://testably-back-end-iadh5.ondigitalocean.app/token/refresh', {
+        withCredentials: true,
+      })
       .then((res) => {
+        console.log('refreshonload res', res)
         // refresh token is valid: login user, set new access token, redirect to dashboard
         if (res.status === 200) {
           store.commit('toggleAuth', true)
@@ -16,10 +18,14 @@ export default function ({ app, store, redirect, route, from }) {
           store.commit('setAccessToken', accessToken)
           store.commit('setAccessTokenExpiresIn', accessTokenExpiresIn)
           axios
-            .get(`http://localhost:3001/user/${res.data.id}`, {
-              withCredentials: true,
-            })
+            .get(
+              `https://testably-back-end-iadh5.ondigitalocean.app/user/${res.data.id}`,
+              {
+                withCredentials: true,
+              }
+            )
             .then((res) => {
+              console.log('user', res)
               store.commit('setUser', res.data)
             })
             .then(() => {
@@ -27,7 +33,7 @@ export default function ({ app, store, redirect, route, from }) {
                 return redirect(from.fullPath)
               }
               if (route.path === '/login') {
-                return redirect('/dashboard')
+                return redirect(from.fullPath)
               }
               return redirect(route.path)
             })

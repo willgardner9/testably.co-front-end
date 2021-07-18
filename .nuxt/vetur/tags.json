@@ -5,11 +5,17 @@
   "AbtestType": {
     "description": "Auto imported from components/AbtestType.vue"
   },
+  "AccountPlans": {
+    "description": "Auto imported from components/AccountPlans.vue"
+  },
   "Button": {
     "description": "Auto imported from components/Button.vue"
   },
   "ButtonJS": {
     "description": "Auto imported from components/ButtonJS.vue"
+  },
+  "ChooseAPlanPrompt": {
+    "description": "Auto imported from components/ChooseAPlanPrompt.vue"
   },
   "CodeSnippet": {
     "description": "Auto imported from components/CodeSnippet.vue"
@@ -28,6 +34,12 @@
   },
   "NewABTestPrompt": {
     "description": "Auto imported from components/NewABTestPrompt.vue"
+  },
+  "PricingCard": {
+    "description": "Auto imported from components/PricingCard.vue"
+  },
+  "PricingTable": {
+    "description": "Auto imported from components/PricingTable.vue"
   },
   "SkeletonLoader": {
     "description": "Auto imported from components/SkeletonLoader.vue"

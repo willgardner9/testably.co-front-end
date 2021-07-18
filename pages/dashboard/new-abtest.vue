@@ -233,32 +233,6 @@ export default {
       activeDbKey: '',
     }
   },
-  //  refresh token every 19 mins
-  created() {
-    setTimeout(
-      () =>
-        this.$axios
-          .get('http://localhost:3001/token/refresh', { withCredentials: true })
-          .then((res) => {
-            // refresh token is valid: set new access token and access token expires in
-            if (res.status === 200) {
-              this.$store.commit(
-                'setAccessToken',
-                res.data.accessTokenObj.accessToken
-              )
-              this.$store.commit(
-                'setAccessTokenExpiresIn',
-                res.data.accessTokenObj.accessTokenExpiresIn
-              )
-            }
-          })
-          .catch(() => {
-            return ''
-          }),
-      19 * 60 * 1000
-    )
-  },
-
   methods: {
     async addNewAbtest() {
       if (!this.activeType) {
@@ -294,7 +268,7 @@ export default {
       }
 
       const res = await this.$axios.post(
-        'http://localhost:3001/abtest',
+        'https://testably-back-end-iadh5.ondigitalocean.app/abtest',
         payload,
         options
       )

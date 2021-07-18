@@ -85,9 +85,12 @@ export default {
   },
   methods: {
     logoutUser() {
-      this.$axios.get('http://localhost:3001/user/logout', {
-        withCredentials: true,
-      })
+      this.$axios.get(
+        'https://testably-back-end-iadh5.ondigitalocean.app/user/logout',
+        {
+          withCredentials: true,
+        }
+      )
       this.$store.commit('toggleAuth', false)
       this.$store.commit('setAccessToken', undefined)
       this.$store.commit('setUser', {})

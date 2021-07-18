@@ -21,7 +21,11 @@
       <span class="italic gradient-text">forever</span>
     </h3>
     <div class="flex w-full items-center justify-center">
-      <Button destination="register" text="Get started" class="mx-2" />
+      <Button
+        destination="register/?plan=free"
+        text="Try for free"
+        class="mx-2"
+      />
       <Button destination="features" text="Learn how" ghost class="mx-2" />
     </div>
   </div>

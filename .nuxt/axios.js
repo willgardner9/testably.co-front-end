@@ -143,8 +143,8 @@ export default (ctx, inject) => {
   const runtimeConfig = ctx.$config && ctx.$config.axios || {}
   // baseURL
   const baseURL = process.browser
-    ? (runtimeConfig.browserBaseURL || runtimeConfig.baseURL || 'http://localhost:3001')
-      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'http://localhost:3001')
+    ? (runtimeConfig.browserBaseURL || runtimeConfig.baseURL || 'https://testably-back-end-iadh5.ondigitalocean.app/')
+      : (runtimeConfig.baseURL || process.env._AXIOS_BASE_URL_ || 'https://testably-back-end-iadh5.ondigitalocean.app/')
 
   // Create fresh objects for all default header scopes
   // Axios creates only one which is shared across SSR requests!

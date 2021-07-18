@@ -37,8 +37,7 @@
       class="
         w-full
         items-center
-        px-4
-        py-2
+        p-4
         rounded-lg rounded-t-none
         border border-t-0 border-gray-200
         dark:bg-gray-800
@@ -209,7 +208,7 @@ export default {
       }
 
       const res = await this.$axios.post(
-        'http://localhost:3001/variation',
+        'https://testably-back-end-iadh5.ondigitalocean.app/variation',
         payload,
         options
       )

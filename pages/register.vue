@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 <template>
   <!-- section -->
   <section class="w-full flex flex-col h-80vh items-center mt-10vh">
@@ -103,7 +102,7 @@
             @focus="dismissError"
           />
           <button
-            class="absolute r-4 t-4"
+            class="absolute r-4 t-4 focus:ring-2 ring-indigo-300 rounded"
             type="button"
             @click="showHidePassword"
           >
@@ -179,10 +178,16 @@
           border border-indigo-600
           hover:border-indigo-500
           hover:bg-indigo-400
+          hover:shadow-sm
           dark:bg-indigo-700
           dark:border-indigo-600
           dark:hover:bg-indigo-600
           dark:hover-border-indigo-500
+          focus:ring-4
+          ring-indigo-200
+          dark:ring-indigo-800
+          outline-none
+          dark:focus:border-indigo-500
         "
       >
         Register
@@ -200,11 +205,11 @@
         "
       >
         By registering you agree to our
-        <NuxtLink to="/terms" class="text-blue-custom font-light mx-1"
+        <NuxtLink to="/terms" class="text-indigo-400 font-light mx-1"
           >Terms</NuxtLink
         >
         and
-        <NuxtLink to="/privacy" class="text-blue-custom font-light ml-1"
+        <NuxtLink to="/privacy" class="text-indigo-400 font-light ml-1"
           >Privacy Policy</NuxtLink
         >
       </p>
@@ -219,7 +224,7 @@
         "
       >
         Already have an account?
-        <NuxtLink to="/login" class="ml-1 text-blue-custom font-light"
+        <NuxtLink to="/login" class="ml-1 text-indigo-400 font-light"
           >Login</NuxtLink
         >
       </p>
@@ -259,14 +264,81 @@ export default {
           email: this.email,
           password: this.password,
         })
-        this.errorMessage = ''
-        this.$router.push('/login')
-        return res
+        return res ? this.processLogin() : ''
       } catch (error) {
         this.emailText = 'Oops, this email is already registered.'
         this.emailError = true
         return error
       }
+    },
+
+    async processLogin() {
+      try {
+        const res = await this.$axios.post(
+          'user/login',
+          {
+            email: this.email,
+            password: this.password,
+          },
+          { withCredentials: true }
+        )
+        this.$store.commit('toggleAuth', true)
+        this.$store.commit(
+          'setAccessToken',
+          res.data.accessTokenObj.accessToken
+        )
+        this.$store.commit(
+          'setAccessTokenExpiresIn',
+          res.data.accessTokenObj.accessTokenExpiresIn
+        )
+        this.$store.commit('setUser', res.data.user)
+        this.$router.push('/account')
+        return res ? this.goToStripePlan() : ''
+      } catch (error) {
+        this.emailError = true
+        this.emailText = 'Email or password incorrect'
+        this.passwordError = true
+        this.passwordText = 'Email or password incorrect'
+        return error
+      }
+    },
+
+    async goToStripePlan() {
+      let activePlan
+      switch (this.$route.query.plan) {
+        case null || undefined || '':
+          activePlan = 'price_1JDRsWBn4cPkjuwoDUnMQiia'
+          break
+        case 'free':
+          activePlan = 'price_1JDRsWBn4cPkjuwoDUnMQiia'
+          break
+        case 'basic':
+          activePlan = 'price_1JDRtBBn4cPkjuwouQMmS6S1'
+          break
+        case 'premium':
+          activePlan = 'price_1JDRthBn4cPkjuwonqCcVJvQ'
+          break
+      }
+
+      const payload = {
+        priceId: activePlan,
+        stripeCustomerID: this.$store.state.user.stripeCustomerID,
+      }
+
+      const options = {
+        headers: {
+          Authorization: `Bearer ${this.$store.state.accessToken}`,
+        },
+        withCredentials: true,
+      }
+
+      const session = await this.$axios.post(
+        'https://testably-back-end-iadh5.ondigitalocean.app/stripe/create-checkout-session',
+        payload,
+        options
+      )
+
+      return this.$stripe.redirectToCheckout({ sessionId: session.data })
     },
 
     dismissError() {
@@ -286,6 +358,10 @@ export default {
 </script>
 
 <style scoped>
+button:focus {
+  outline: none !important;
+}
+
 .h-80vh {
   height: 80vh;
 }
@@ -324,32 +400,6 @@ h4 {
 
 .t-4 {
   top: 1rem;
-}
-
-.blue-button {
-  background-color: #000000;
-  color: #fff;
-}
-
-.blue-button:hover {
-  background-color: #1a202c;
-}
-
-.bg-blue-custom {
-  background-color: #0066ff;
-}
-
-.text-blue-custom {
-  color: #0066ff;
-}
-
-.bg-side {
-  background: rgb(0, 102, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 102, 255, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
 }
 
 .mt-10vh {

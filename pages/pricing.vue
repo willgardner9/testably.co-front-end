@@ -1,10 +1,12 @@
 <template>
-  <p>pricing page</p>
+  <div class="w-full flex justify-center">
+    <PricingTable class="mt-8" />
+  </div>
 </template>
 
 <script>
 export default {
-  middleware: ['checkAccessExpiry'],
+  middleware: ['checkAccessExpiry', 'refreshOnLoad'],
 }
 </script>
 

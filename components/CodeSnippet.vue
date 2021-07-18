@@ -37,8 +37,7 @@
       class="
         w-full
         items-center
-        px-4
-        py-2
+        p-4
         rounded-lg rounded-t-none
         border border-t-0 border-gray-200
         dark:bg-gray-800
@@ -46,11 +45,12 @@
       "
     >
       <h4 class="text-gray-600 dark:text-gray-300 mt-2">
-        Follow the instructions below to add the two testably code snippets to
-        your website and get your A/B test started.
+        Follow the instructions below to add the testably code snippets to your
+        website and get your A/B test started.
       </h4>
 
-      <div v-if="abtest.type === 'copy'" class="mt-4 flex flex-col">
+      <!-- Copy test section -->
+      <div v-if="abtest.type === 'copy'" class="mt-8 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Text snippet
         </h3>
@@ -102,9 +102,8 @@
         </div>
         <div
           v-show="showOneExample"
-          id="javascriptcode"
           class="
-            rounded
+            rounded-lg
             bg-indigo-50
             dark:bg-gray-900
             border border-gray-200
@@ -122,8 +121,10 @@
           <code class="text-xs">{{ textSnippetExampleOne }}</code>
         </div>
       </div>
+      <!-- End copy test section -->
 
-      <div v-if="abtest.type === 'colour'" class="mt-4 flex flex-col">
+      <!-- Color test section -->
+      <div v-if="abtest.type === 'colour'" class="mt-8 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Color snippet
         </h3>
@@ -175,7 +176,6 @@
         </div>
         <div
           v-show="showOneExample"
-          id="javascriptcode"
           class="
             rounded
             bg-indigo-50
@@ -195,8 +195,10 @@
           <code class="text-xs">{{ colorSnippetExampleOne }}</code>
         </div>
       </div>
+      <!-- End color test section -->
 
-      <div v-if="abtest.type === 'src'" class="mt-4 flex flex-col">
+      <!-- Src test section -->
+      <div v-if="abtest.type === 'src'" class="mt-8 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
           1) Image / Video snippet
         </h3>
@@ -248,9 +250,8 @@
         </div>
         <div
           v-show="showOneExample"
-          id="javascriptcode"
           class="
-            rounded
+            rounded-lg
             bg-indigo-50
             dark:bg-gray-900
             border border-gray-200
@@ -268,10 +269,13 @@
           <code class="text-xs">{{ srcSnippetExampleOne }}</code>
         </div>
       </div>
+      <!-- End src test section -->
+
+      <!-- Id snippet -->
       <div
         id="textcode"
         class="
-          rounded
+          rounded-lg
           bg-gray-100
           dark:bg-gray-900
           border border-gray-200
@@ -286,28 +290,31 @@
       >
         <code class="text-xs">id="testably-{{ abtest._id }}"</code>
       </div>
-      <div class="mt-4 flex flex-col">
+      <!-- End Id snippet -->
+
+      <!-- Conversion snippet -->
+      <div class="mt-8 flex flex-col">
         <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
-          2) JavaScript snippet
+          2) Conversions snippet
         </h3>
         <div class="flex items-center justify-between">
           <p class="text-gray-600 text-sm dark:text-gray-400">
-            Copy and paste this snippet just before the {{ bodyTag }} tag closes
-            on the page of your website running the A/B test, like this
-            {{ bodyTagExample }}.
+            Copy and paste this snippet into the button(s) and link(s) that lead
+            to your conversion goal, for example your CTA buttons.
           </p>
           <ButtonJS
             text="copy"
             class="px-1 py-1 ml-2"
             ghost
-            @click.native="copyJavaScriptCode"
+            @click.native="copyConversionCode"
           />
         </div>
       </div>
+
       <div
-        id="javascriptcode"
+        id="conversioncode"
         class="
-          rounded
+          rounded-lg
           bg-gray-100
           dark:bg-gray-900
           border border-gray-200
@@ -320,16 +327,54 @@
           overflow-auto
         "
       >
-        <code class="text-xs">{{ startScriptTag }}</code>
-        <code class="text-xs">const elId = 'testably-{{ abtest._id }}'</code>
-        <code class="text-xs">const testType = '{{ abtest.type }}'</code>
-        <code class="text-xs"
-          >const variationCount = {{ abtest.variations.length }}</code
-        >
-        <code class="text-xs"
-          >const conversionUrl = '{{ abtest.conversionURL }}'</code
-        >
+        <code class="text-xs">data-testably-conversion</code>
+      </div>
+      <!-- End conversion snippet -->
 
+      <!-- JavaScript snippet explainer -->
+      <div class="mt-8 flex flex-col">
+        <h3 class="text-lg text-gray-900 font-medium dark:text-gray-200">
+          3) JavaScript snippet
+        </h3>
+        <div class="flex items-center justify-between">
+          <p class="text-gray-600 text-sm dark:text-gray-400">
+            Copy and paste this snippet just before the
+            <span class="font-mono">{{ bodyTag }}</span> tag closes on the page
+            of your website running the A/B test.
+          </p>
+          <ButtonJS
+            text="copy"
+            class="px-1 py-1 ml-2"
+            ghost
+            @click.native="copyJavaScriptCode"
+          />
+        </div>
+      </div>
+      <!-- End JavaScript snippet explainer -->
+
+      <!-- JavaScript snippet -->
+      <div
+        id="javascriptcode"
+        class="
+          rounded-lg
+          bg-gray-100
+          dark:bg-gray-900
+          border border-gray-200
+          dark:border-gray-700
+          dark:text-gray-400
+          shadow-inner
+          p-4
+          flex flex-col
+          mt-2
+          overflow-auto
+        "
+      >
+        <code class="text-xs">{{ startScriptTag }};</code>
+        <code class="text-xs">const elId = 'testably-{{ abtest._id }}';</code>
+        <code class="text-xs">const testType = '{{ abtest.type }}';</code>
+        <code class="text-xs"
+          >const variationCount = {{ abtest.variations.length }};</code
+        >
         <code class="text-xs">
           const variationInfo = [
           <code
@@ -340,16 +385,17 @@
           >
           ]
         </code>
-        <code class="text-xs"
-          >const
-          el=document.getElementById(elId),getActiveVariationIndex=(e,t)=>Math.floor(Math.random()*(t-e+1))+e,activeVariationIndex=getActiveVariationIndex(0,variationCount-1);"copy"===testType&&(el.textContent=variationInfo[activeVariationIndex][1]),"src"===testType&&(el.src=variationInfo[activeVariationIndex][1]),"colour"===testType&&(el.style.backgroundColor=variationInfo[activeVariationIndex][1]);const
-          testablyUpdate=e=>{const t=new
-          XMLHttpRequest;t.open("PATCH",`http://localhost:1407/${variationInfo[activeVariationIndex][0]}`),t.setRequestHeader("Accept","application/json"),t.setRequestHeader("Content-Type","application/json"),t.setRequestHeader("Access-Control-Allow-Origin",window.location.href);const
-          n={id:variationInfo[activeVariationIndex][0],sessions:!0,conversions:e};t.send(JSON.stringify(n))};window.onload=testablyUpdate(!1);const
-          conversionURLElements=document.querySelectorAll(`a[href="${conversionUrl}"]`);conversionURLElements.forEach(e=>e.addEventListener("click",function(){testablyUpdate(!0)}));</code
-        >
+        <code class="text-xs">
+          const
+          el=document.getElementById(elId),getActiveVariationIndex=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,activeVariationIndex=getActiveVariationIndex(0,variationCount-1);"copy"===testType&&(el.textContent=variationInfo[activeVariationIndex][1]),"src"===testType&&(el.src=variationInfo[activeVariationIndex][1]),"colour"===testType&&(el.style.backgroundColor=variationInfo[activeVariationIndex][1]);const
+          testablyUpdate=a=>{const b=new
+          XMLHttpRequest;b.open("PATCH",`http://localhost:1407/${variationInfo[activeVariationIndex][0]}`),b.setRequestHeader("Accept","application/json"),b.setRequestHeader("Content-Type","application/json"),b.setRequestHeader("Access-Control-Allow-Origin",window.location.href);const
+          c={id:variationInfo[activeVariationIndex][0],sessions:!0,conversions:a};b.send(JSON.stringify(c))};window.onload=testablyUpdate(!1);const
+          conversionElements=document.querySelectorAll("[data-testably-conversion]");conversionElements.forEach(a=>a.addEventListener("click",function(){testablyUpdate(!0)}));
+        </code>
         <code class="text-xs">{{ endScriptTag }}t></code>
       </div>
+      <!-- End JavaScript snippet -->
     </div>
   </section>
 </template>
@@ -404,6 +450,16 @@ export default {
     copyIDCode() {
       const { ClipboardItem } = window
       const rawData = document.getElementById('textcode').textContent
+      const data = [
+        new ClipboardItem({
+          'text/plain': new Blob([rawData], { type: 'text/plain' }),
+        }),
+      ]
+      navigator.clipboard.write(data)
+    },
+    copyConversionCode() {
+      const { ClipboardItem } = window
+      const rawData = document.getElementById('conversioncode').textContent
       const data = [
         new ClipboardItem({
           'text/plain': new Blob([rawData], { type: 'text/plain' }),
