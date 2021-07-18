@@ -231,6 +231,8 @@ export default {
   },
   methods: {
     async processLogin() {
+      console.log('firing processLogin')
+
       try {
         if (!this.email) {
           this.emailError = true
@@ -243,14 +245,17 @@ export default {
           return
         }
 
+        console.log('still here')
+
         const res = await this.$axios.post(
           `https://testably-back-end-iadh5.ondigitalocean.app/user/login`,
           {
             email: this.email,
             password: this.password,
-          },
-          { withCredentials: true }
+          }
         )
+
+        console.log('res', res)
 
         this.$cookiz.set('loggedOut', false)
         this.errorMessage = ''

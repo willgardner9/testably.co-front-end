@@ -3,10 +3,13 @@
     <!-- container -->
     <div class="w-full max-w-6xl flex flex-col justify-between items-center">
       <div v-if="userObj.currentPlan === 'none'" class="w-full">
-        <h3 class="font-light text-xl text-center dark:text-gray-30 mt-12 px-4">
-          Hi <span class="font-medium">{{ userObj.email }}</span> you don't
-          currently have an active plan. Please Choose a plan below to start A/B
-          testing.
+        <h3
+          class="font-light text-xl text-center dark:text-gray-300 mt-12 px-4"
+        >
+          Hi
+          <span class="font-medium dark:text-white">{{ userObj.email }}</span>
+          you don't currently have an active plan. Please Choose a plan below to
+          start A/B testing.
         </h3>
         <PricingTable class="mt-8" />
       </div>
