@@ -2,7 +2,7 @@
   <section class="w-full flex items-center justify-center">
     <!-- container -->
     <div class="w-full max-w-6xl flex flex-col justify-between items-center">
-      <div v-if="!userObj.currentPlan" class="w-full">
+      <div v-if="userObj.currentPlan === 'none'" class="w-full">
         <h3 class="font-light text-xl text-center dark:text-gray-30 mt-12 px-4">
           Hi <span class="font-medium">{{ userObj.email }}</span> you don't
           currently have an active plan. Please Choose a plan below to start A/B
