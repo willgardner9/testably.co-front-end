@@ -49,7 +49,7 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: 'https://testably-back-end-iadh5.ondigitalocean.app/',
-    credentials: false,
+    credentials: true,
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
