@@ -31,7 +31,7 @@ export default {
       this.$store.commit('setAccessToken', undefined)
       this.$store.commit('setUser', {})
       this.$router.push('/logout')
-      this.$cookiz.set('hasLoggedIn', false)
+      this.$cookiz.set('loggedOut', true)
     },
   },
 }

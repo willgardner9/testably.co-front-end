@@ -252,7 +252,7 @@ export default {
           { withCredentials: true }
         )
 
-        console.log(res)
+        this.$cookiz.set('loggedOut', false)
         this.errorMessage = ''
         this.$store.commit('toggleAuth', true)
         this.$store.commit(
