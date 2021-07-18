@@ -56,4 +56,8 @@ export default {
   build: {},
 
   loading: false,
+
+  generate: {
+    dir: 'build',
+  },
 }
