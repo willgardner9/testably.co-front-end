@@ -282,6 +282,8 @@ export default {
           },
           { withCredentials: true }
         )
+        this.$cookiz.set('loggedOut', false)
+
         this.$store.commit('toggleAuth', true)
         this.$store.commit(
           'setAccessToken',
