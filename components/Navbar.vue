@@ -12,8 +12,8 @@
         shadow-sm
         border-b border-gray-200
         bg-white
-        dark:bg-gray-800
-        dark:border-gray-700
+        dark:bg-gray-700
+        dark:border-gray-600
         backdrop-filter backdrop-blur-md
         bg-opacity-30
         dark:bg-opacity-30

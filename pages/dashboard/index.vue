@@ -103,7 +103,7 @@ export default {
     },
   },
   mounted() {
-    if (!this.userObj.currentPlan) {
+    if (this.userObj.currentPlan === 'none') {
       return this.$router.push('/account')
     }
   },

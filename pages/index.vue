@@ -3,6 +3,7 @@
     class="
       h-80vh
       bg-white
+      dark:bg-gray-900
       flex flex-col
       w-full
       items-center
@@ -12,11 +13,17 @@
   >
     <h4
       id="tagline"
-      class="text-lg text-gray-500 font-light text-center uppercase"
+      class="
+        text-lg text-gray-500
+        dark:text-gray-400
+        font-light
+        text-center
+        uppercase
+      "
     >
       A/B testing made easy
     </h4>
-    <h3 class="text-5xl text-black font-bold text-center mb-8">
+    <h3 class="text-5xl text-black dark:text-white font-bold text-center mb-8">
       Boost your conversion rate
       <span class="italic gradient-text">forever</span>
     </h3>
