@@ -34,6 +34,29 @@
               class="w-8 h-auto mr-2 dark:text-white"
             >
               <defs>
+                <clipPath id="_clipPath_VolGTqHEAuUn6w20vShWDBR1zMBg2F76">
+                  <rect width="100" height="100" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#_clipPath_VolGTqHEAuUn6w20vShWDBR1zMBg2F76)">
+                <path
+                  d=" M 67.321 50 L 50 20 L 32.679 50 L 67.321 50 Z  M 73.094 60 L 84.641 80 L 50 80 L 15.359 80 L 26.906 60 L 73.094 60 Z "
+                  fill-rule="evenodd"
+                  fill="currentColor"
+                />
+              </g>
+            </svg>
+
+            <!-- <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              style="isolation: isolate"
+              viewBox="0 0 100 100"
+              width="100pt"
+              height="100pt"
+              class="w-8 h-auto mr-2 dark:text-white"
+            >
+              <defs>
                 <clipPath id="_clipPath_1CpPgUN5A72802e4nb0dwvRqtCfdAuZ8">
                   <rect width="100" height="100" />
                 </clipPath>
@@ -45,7 +68,7 @@
                   fill="currentColor"
                 />
               </g>
-            </svg>
+            </svg> -->
             <h1
               class="
                 font-extrabold
