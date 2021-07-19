@@ -246,6 +246,11 @@ export default {
       emailText: 'Email',
     }
   },
+  mounted() {
+    if (this.$store.state.loggedIn === true) {
+      return this.$router.push('/account')
+    }
+  },
   methods: {
     async processRegister() {
       try {

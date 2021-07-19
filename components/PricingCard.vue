@@ -16,8 +16,8 @@
       items-center
       rounded-lg
       border border-gray-200
-      dark:bg-gray-800
-      dark:border-gray-600
+      dark:bg-gray-900
+      dark:border-gray-700
       shadow-sm
     "
   >

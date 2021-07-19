@@ -172,7 +172,6 @@ export default {
           isDisabled = true
         }
       }
-      console.log(isDisabled)
       return isDisabled
     },
   },

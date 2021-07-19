@@ -99,11 +99,27 @@
               text-gray-500
               dark:text-gray-400
               visual-v-align
+              mr-2
             "
           >
             <span>Created:&nbsp;</span>
             <span class="font-medium dark:text-gray-300">{{
               new Date(abtest.createdAt).toLocaleDateString()
+            }}</span>
+          </div>
+          <div
+            class="
+              text-xs
+              flex
+              justify-end
+              text-gray-500
+              dark:text-gray-400
+              visual-v-align
+            "
+          >
+            <span>Conversion URL:&nbsp;</span>
+            <span class="font-medium dark:text-gray-300">{{
+              abtest.conversionURL
             }}</span>
           </div>
         </div>

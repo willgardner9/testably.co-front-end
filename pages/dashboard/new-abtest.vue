@@ -156,9 +156,9 @@
               </svg>
             </div>
             <p class="text-sm text-gray-700 dark:text-gray-300 font-light ml-2">
-              The URL you want visitors to click through to. This will commonly
-              be a sales or CTA page, e.g. your registration or free trial sign
-              up page.
+              The URL you want visitors to click through to so you can keep
+              track of conversion goals. This will commonly be a sales or CTA
+              page, e.g. your registration or free trial sign up page.
             </p>
           </div>
           <input
