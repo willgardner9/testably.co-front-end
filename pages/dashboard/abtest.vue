@@ -87,7 +87,7 @@ export default {
 
     async handleDelete() {
       const deletedTest = await this.$axios.delete(
-        `https://testably-back-end-iadh5.ondigitalocean.app/${this.$route.query.t}`,
+        `https://testably-back-end-iadh5.ondigitalocean.app/abtest/${this.$route.query.t}`,
         {
           params: {
             user: this.$store.state.user._id,

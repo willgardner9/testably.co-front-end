@@ -20,28 +20,74 @@
             mb-8
           "
         >
-          <h3 class="text-base text-gray-500 dark:text-gray-400 font-light">
-            Hi
-            <span class="font-medium text-black dark:text-gray-300">{{
-              userObj.email
-            }}</span
-            >, you are currently running
-            <span v-if="abtestsList.length >= 2"
-              ><span class="font-medium text-black dark:text-gray-300">{{
-                abtestsList.length
-              }}</span>
-              A/B tests:</span
+          <div class="flex flex-col">
+            <h3 class="text-base text-gray-500 dark:text-gray-400 font-light">
+              Hi
+              <span class="font-medium text-black dark:text-gray-300">{{
+                userObj.email
+              }}</span
+              >, you are currently running
+              <span v-if="abtestsList.length >= 2"
+                ><span class="font-medium text-black dark:text-gray-300">{{
+                  abtestsList.length
+                }}</span>
+                A/B tests.</span
+              >
+              <span v-else
+                ><span class="font-medium text-black dark:text-gray-300">{{
+                  abtestsList.length
+                }}</span>
+                A/B test.</span
+              >
+            </h3>
+            <div
+              v-show="userObj.currentPlan === 'none'"
+              class="
+                flex flex-row
+                text-sm text-gray-500
+                dark:text-gray-500
+                font-light
+              "
             >
-            <span v-else
-              ><span class="font-medium text-black dark:text-gray-300">{{
-                abtestsList.length
-              }}</span>
-              A/B test:</span
+              <h4 class="mr-4">{{ abtestsList.length }}/1 tests</h4>
+              <h4>{{ totalSessions }}/500 sessions</h4>
+            </div>
+            <div
+              v-show="userObj.currentPlan === '699'"
+              class="
+                flex flex-row
+                text-sm text-gray-500
+                dark:text-gray-500
+                font-light
+              "
             >
-          </h3>
+              <h4 class="mr-4">{{ abtestsList.length }}/3 tests</h4>
+              <h4>{{ totalSessions }}/5000 sessions</h4>
+            </div>
+            <div
+              v-show="userObj.currentPlan === '1499'"
+              class="
+                flex flex-row
+                text-sm text-gray-500
+                dark:text-gray-500
+                font-light
+              "
+            >
+              <h4 class="mr-4">{{ abtestsList.length }}/unlimited tests</h4>
+              <h4>{{ totalSessions }}/unlimited sessions</h4>
+            </div>
+          </div>
+
           <Button
+            v-show="!isButtonDisabled"
             destination="/dashboard/new-abtest"
             text="Create new A/B test"
+            class="max-w-max mt-4 sm:mt-0"
+          />
+          <Button
+            v-show="isButtonDisabled"
+            destination="/account"
+            text="Upgrade plan"
             class="max-w-max mt-4 sm:mt-0"
           />
         </div>
@@ -100,6 +146,34 @@ export default {
   computed: {
     userObj() {
       return this.$store.state.user
+    },
+
+    totalSessions() {
+      const variationArray = []
+      this.abtestsList.forEach((test) => {
+        variationArray.push(test.variations)
+      })
+      let totalSessions = 0
+      variationArray.flat().forEach((variation) => {
+        totalSessions += variation.sessions
+      })
+      return totalSessions
+    },
+
+    isButtonDisabled() {
+      let isDisabled = false
+      if (this.userObj.currentPlan === 'none') {
+        if (this.totalSessions >= 500 || this.abtestsList.length >= 1) {
+          isDisabled = true
+        }
+      }
+      if (this.userObj.currentPlan === '699') {
+        if (this.totalSessions >= 5000 || this.abtestsList.length >= 3) {
+          isDisabled = true
+        }
+      }
+      console.log(isDisabled)
+      return isDisabled
     },
   },
   mounted() {

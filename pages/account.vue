@@ -11,37 +11,42 @@
           you don't currently have an active plan. Please Choose a plan below to
           start A/B testing.
         </h3>
-        <PricingTable class="mt-8" />
+        <PricingTable class="mt-12" />
       </div>
       <div v-else>
-        <h3
-          class="
-            text-base text-gray-500
-            dark:text-gray-400
-            font-light
-            mt-12
-            px-4
-          "
-        >
-          Hi
-          <span class="font-medium text-black dark:text-gray-300">{{
-            userObj.email
-          }}</span
-          >, you're currently on the
-          <span class="font-medium text-black dark:text-gray-300">{{
-            userObj.currentPlan === '0' ? 'free plan.' : ''
-          }}</span>
-          <span class="font-medium text-black dark:text-gray-300">{{
-            userObj.currentPlan === '699' ? 'basic plan.' : ''
-          }}</span>
-          <span class="font-medium text-black dark:text-gray-300">{{
-            userObj.currentPlan === '1499' ? 'premium plan.' : ''
-          }}</span>
-          If you want to change or cancel your plan, please click the button
-          below. As a reminder, testably plans are show below.
-        </h3>
-        <div class="px-4 mt-8">
-          <ButtonJS text="Manage billing" @click.native="handleManageBilling" />
+        <div class="flex flex-col sm:flex-row w-full items-center px-4 mt-12">
+          <h3
+            class="
+              text-base text-gray-500
+              dark:text-gray-400
+              font-light
+              sm:mr-2
+            "
+          >
+            Hi
+            <span class="font-medium text-black dark:text-gray-300">{{
+              userObj.email
+            }}</span
+            >, you're currently on the
+            <span class="font-medium text-black dark:text-gray-300">{{
+              userObj.currentPlan === '0' ? 'free plan.' : ''
+            }}</span>
+            <span class="font-medium text-black dark:text-gray-300">{{
+              userObj.currentPlan === '699' ? 'basic plan.' : ''
+            }}</span>
+            <span class="font-medium text-black dark:text-gray-300">{{
+              userObj.currentPlan === '1499' ? 'premium plan.' : ''
+            }}</span>
+            If you want to change or cancel your plan, please click the button
+            below. As a reminder, testably plans are show below.
+          </h3>
+          <div>
+            <ButtonJS
+              text="Manage billing"
+              class="min-w-max sm:ml-2 mt-8 sm:mt-0"
+              @click.native="handleManageBilling"
+            />
+          </div>
         </div>
         <PricingTable no-buttons-control class="mt-8" />
       </div>
