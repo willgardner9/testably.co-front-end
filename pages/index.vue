@@ -39,7 +39,22 @@
       </div>
 
       <!-- Video demo -->
-      <div class="video-wrapper bg-gray-300 rounded shadow-lg mt-16"></div>
+      <div
+        class="
+          bg-gray-100
+          rounded-lg
+          shadow-lg
+          mt-16
+          flex flex-col
+          video-wrapper
+        "
+      >
+        <!-- <div class="w-full h-9 bg-gray-100 flex items-center action-bar">
+          <div class="w-3 h-3 rounded-full bg-red-400 mx-2 ml-4"></div>
+          <div class="w-3 h-3 rounded-full bg-orange-400 mx-2"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400 mx-2"></div>
+        </div> -->
+      </div>
     </div>
     <!-- below the fold -->
     <div
@@ -68,10 +83,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .video-wrapper {
   width: 1280px;
   height: 720px;
+}
+.action-bar {
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .gradient-text {
