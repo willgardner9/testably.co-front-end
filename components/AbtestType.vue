@@ -9,8 +9,8 @@
       flex
       cursor-pointer
       border border-gray-200
-      hover:border-indigo-200
-      hover:ring-4 hover:ring-indigo-100
+      hover:border-green-200
+      hover:ring-4 hover:ring-green-100
       dark:border-gray-600
       dark:hover:border-gray-400
       dark:hover:bg-gray-700
@@ -20,7 +20,7 @@
       ease-in-out
     "
     :class="{
-      'border-indigo-300 dark:bg-gray-700 dark:border-gray-400 ring-4 ring-indigo-100 dark:ring-gray-300':
+      'border-green-300 dark:bg-gray-700 dark:border-gray-400 ring-4 ring-green-100 dark:ring-gray-300':
         activeType === abTestType,
     }"
     tabindex="1"

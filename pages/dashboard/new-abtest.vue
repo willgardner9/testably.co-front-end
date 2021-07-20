@@ -118,9 +118,9 @@
               duration-150
               ease-in-out
               rounded-lg
-              hover:border-indigo-200
+              hover:border-green-200
               dark:hover:border-gray-500
-              hover:ring-4 hover:ring-indigo-100
+              hover:ring-4 hover:ring-green-100
               border border-gray-200
               dark:bg-gray-900
               dark:border-gray-600
@@ -170,9 +170,9 @@
               duration-150
               ease-in-out
               rounded-lg
-              hover:border-indigo-200
+              hover:border-green-200
               dark:hover:border-gray-500
-              hover:ring-4 hover:ring-indigo-100
+              hover:ring-4 hover:ring-green-100
               border border-gray-200
               dark:bg-gray-900
               dark:border-gray-600
@@ -198,15 +198,15 @@
             ease-in-out
             mt-8
             rounded-lg
-            bg-indigo-500
+            bg-green-500
             text-white
-            border border-indigo-600
-            hover:border-indigo-500
-            hover:bg-indigo-400
-            dark:bg-indigo-700
-            dark:border-indigo-600
-            dark:hover:bg-indigo-600
-            dark:hover-border-indigo-500
+            border border-green-600
+            hover:border-green-500
+            hover:bg-green-400
+            dark:bg-green-700
+            dark:border-green-600
+            dark:hover:bg-green-600
+            dark:hover-border-green-500
           "
         >
           Next

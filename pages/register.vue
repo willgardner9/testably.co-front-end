@@ -49,10 +49,10 @@
             duration-150
             ease-in-out
             rounded-lg
-            hover:border-indigo-200
+            hover:border-green-200
             dark:hover:border-gray-500
-            hover:ring-4 hover:ring-indigo-200
-            focus:ring-4 focus:ring-indigo-200
+            hover:ring-4 hover:ring-green-200
+            focus:ring-4 focus:ring-green-200
             dark:focus:ring-gray-600
             outline-none
             border border-gray-200
@@ -85,10 +85,10 @@
               duration-150
               ease-in-out
               rounded-lg
-              hover:border-indigo-200
+              hover:border-green-200
               dark:hover:border-gray-500
-              hover:ring-4 hover:ring-indigo-200
-              focus:ring-4 focus:ring-indigo-200
+              hover:ring-4 hover:ring-green-200
+              focus:ring-4 focus:ring-green-200
               dark:focus:ring-gray-600
               outline-none
               border border-gray-200
@@ -102,7 +102,7 @@
             @focus="dismissError"
           />
           <button
-            class="absolute r-4 t-4 focus:ring-2 ring-indigo-300 rounded"
+            class="absolute r-4 t-4 focus:ring-2 ring-green-300 rounded"
             type="button"
             @click="showHidePassword"
           >
@@ -173,21 +173,21 @@
           ease-in-out
           mt-8
           rounded-lg
-          bg-indigo-500
+          bg-green-500
           text-white
-          border border-indigo-600
-          hover:border-indigo-500
-          hover:bg-indigo-400
+          border border-green-600
+          hover:border-green-500
+          hover:bg-green-400
           hover:shadow-sm
-          dark:bg-indigo-700
-          dark:border-indigo-600
-          dark:hover:bg-indigo-600
-          dark:hover-border-indigo-500
+          dark:bg-green-700
+          dark:border-green-600
+          dark:hover:bg-green-600
+          dark:hover-border-green-500
           focus:ring-4
-          ring-indigo-200
-          dark:ring-indigo-800
+          ring-green-200
+          dark:ring-green-800
           outline-none
-          dark:focus:border-indigo-500
+          dark:focus:border-green-500
         "
       >
         Register
@@ -205,11 +205,11 @@
         "
       >
         By registering you agree to our
-        <NuxtLink to="/terms" class="text-indigo-400 font-light mx-1"
+        <NuxtLink to="/terms" class="text-green-400 font-light mx-1"
           >Terms</NuxtLink
         >
         and
-        <NuxtLink to="/privacy" class="text-indigo-400 font-light ml-1"
+        <NuxtLink to="/privacy" class="text-green-400 font-light ml-1"
           >Privacy Policy</NuxtLink
         >
       </p>
@@ -224,7 +224,7 @@
         "
       >
         Already have an account?
-        <NuxtLink to="/login" class="ml-1 text-indigo-400 font-light"
+        <NuxtLink to="/login" class="ml-1 text-green-400 font-light"
           >Login</NuxtLink
         >
       </p>

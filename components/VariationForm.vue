@@ -111,10 +111,10 @@
                 rounded
                 mr-1
                 text-gray-500
-                hover:border-indigo-200
+                hover:border-green-200
                 dark:hover:border-gray-700
-                hover:ring-2 hover:ring-indigo-200
-                focus:ring-2 focus:ring-indigo-200
+                hover:ring-2 hover:ring-green-200
+                focus:ring-2 focus:ring-green-200
                 dark:focus:ring-gray-600
                 outline-none
                 border border-gray-200

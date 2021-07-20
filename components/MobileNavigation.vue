@@ -8,13 +8,14 @@
       flex flex-col
       absolute
       w-full
-      items-star
       px-4
-      bg-white
-      dark:bg-gray-900
+      bg-gray-200
+      shadow
+      dark:bg-gray-600
       pb-4
-      border-b border-gray-200
-      dark:border-gray-700
+      backdrop-filter backdrop-blur-md
+      bg-opacity-30
+      dark:bg-opacity-30
     "
   >
     <Button
@@ -30,7 +31,7 @@
       class="w-full justify-start px-4 py-4 text-md mt-4"
     />
     <ButtonJS
-      text="Logout"
+      text="Sign out"
       ghost
       class="w-full justify-start px-4 py-4 text-md mt-4"
       @click.native="logoutUser"
@@ -45,13 +46,14 @@
       flex flex-col
       absolute
       w-full
-      items-star
       px-4
-      bg-white
-      dark:bg-gray-900
+      bg-gray-200
+      shadow
+      dark:bg-gray-600
       pb-4
-      border-b border-gray-200
-      dark:border-gray-700
+      backdrop-filter backdrop-blur-md
+      bg-opacity-30
+      dark:bg-opacity-30
     "
   >
     <Button
@@ -62,13 +64,13 @@
     />
     <Button
       destination="/login"
-      text="Login"
+      text="Sign in"
       class="w-full justify-start px-4 py-4 text-md mt-2"
       ghost
     />
     <Button
       destination="/register/?plan=free"
-      text="Try for free"
+      text="Sign up"
       class="w-full justify-start px-4 py-4 text-md mt-2"
     />
   </nav>

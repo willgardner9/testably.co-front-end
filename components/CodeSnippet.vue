@@ -104,7 +104,7 @@
           v-show="showOneExample"
           class="
             rounded-lg
-            bg-indigo-50
+            bg-green-50
             dark:bg-gray-900
             border border-gray-200
             dark:border-gray-700
@@ -178,7 +178,7 @@
           v-show="showOneExample"
           class="
             rounded
-            bg-indigo-50
+            bg-green-50
             dark:bg-gray-900
             border border-gray-200
             dark:border-gray-700
@@ -252,7 +252,7 @@
           v-show="showOneExample"
           class="
             rounded-lg
-            bg-indigo-50
+            bg-green-50
             dark:bg-gray-900
             border border-gray-200
             dark:border-gray-700

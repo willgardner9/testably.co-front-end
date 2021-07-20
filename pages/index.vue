@@ -10,42 +10,36 @@
         items-center
         justify-center
         px-12
-        h-90vh
       "
     >
-      <!-- Video demo -->
-      <div class="video-wrapper bg-gray-300 rounded shadow-lg -mt-8"></div>
-
-      <!-- Tagline and main copy -->
-      <h4
-        id="tagline"
-        class="
-          mt-14
-          text-lg text-gray-500
-          dark:text-gray-400
-          font-light
-          text-center
-          uppercase
-        "
-      >
-        Simple A/B testing
-      </h4>
-      <h3
-        class="text-5xl text-black dark:text-white font-bold text-center mb-8"
-      >
-        Your landing page should
-        <span class="italic gradient-text">convert more.</span>
-      </h3>
-
-      <!-- CTA buttons -->
-      <div class="flex w-full items-center justify-center mt-4">
-        <ButtonJS text="How it works" ghost class="mx-x text-lg" />
+      <!-- Tagline, main copy, CTA -->
+      <div class="mt-12 flex flex-col max-w-4xl items-center justify-center">
+        <h3
+          class="
+            text-6xl text-black
+            dark:text-white
+            font-semibold
+            text-center
+            max-w-xl
+          "
+        >
+          Your landing page can
+          <span class="italic gradient-text">perform better.</span>
+        </h3>
+        <p class="mt-6 text-center text-xl text-gray-700 dark:text-gray-400">
+          A/B testing increases conversions and sales. But existing tools are
+          complex, expensive, and slow. We built testably so you can start
+          optimising your landing page in 5 minutes at a fraction of the cost.
+        </p>
         <Button
-          destination="register/?plan=free"
-          text="Try for free"
-          class="mx-4 text-lg"
+          destination="/register/?plan=free"
+          text="Try for FREE"
+          class="text-base mt-6"
         />
       </div>
+
+      <!-- Video demo -->
+      <div class="video-wrapper bg-gray-300 rounded shadow-lg mt-16"></div>
     </div>
     <!-- below the fold -->
     <div
@@ -55,12 +49,11 @@
         items-center
         bg-gray-50
         dark:bg-gray-800
-        border-t border-gray-200
-        dark:border-gray-700
+        mt-16
       "
     >
       <!-- Pricing table -->
-      <PricingTable class="mt-32" />
+      <PricingTable class="mt-16" />
     </div>
   </div>
 </template>
@@ -71,26 +64,20 @@ export default {
   data() {
     return {}
   },
+  methods: {},
 }
 </script>
 
 <style>
-.h-90vh {
-  height: 90vh;
-}
-
 .video-wrapper {
-  width: 768px;
-  height: 400px;
-}
-
-#tagline {
-  font-family: 'Space Grotesk', sans-serif;
+  width: 1280px;
+  height: 720px;
 }
 
 .gradient-text {
-  background: -webkit-linear-gradient(#4338ca, #818cf8);
+  background: -webkit-linear-gradient(#047857, #34d399);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-left: 3px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full flex flex-col h-80vh items-center mt-10vh">
+  <section class="w-full h-50vh flex flex-col items-center justify-center">
     <!-- container -->
     <div
       class="
@@ -13,7 +13,6 @@
         justify-center
         items-center
         rounded-lg
-        border border-orange-100
       "
     >
       <div class="lds-dual-ring"></div>
@@ -24,10 +23,6 @@
         We couldn't find the requested URL
         <code class="bg-gray-200 p-1 rounded">{{ this.$route.path }}</code
         >, redirecting you soon!
-      </h3>
-      <h3 class="text-gray-600 font-light text-xs mt-4 text-center">
-        Or if you don't want to wait, press the back button or use the menu
-        above
       </h3>
     </div>
   </section>
@@ -42,11 +37,8 @@ export default {
 </script>
 
 <style>
-.mt-10vh {
-  margin-top: 10vh;
-}
-.text-blue-custom {
-  color: #0066ff;
+.h-50vh {
+  height: 50vh;
 }
 
 .lds-dual-ring {
