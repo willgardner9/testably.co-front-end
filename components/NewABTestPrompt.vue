@@ -9,7 +9,7 @@
     </div>
     <Button
       destination="/dashboard/new-abtest"
-      text="Create new abtest"
+      text="Create new A/B test"
       class="max-w-max mt-12"
     />
   </div>

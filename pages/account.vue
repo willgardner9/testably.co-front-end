@@ -37,8 +37,8 @@
             <span class="font-medium text-black dark:text-gray-300">{{
               userObj.currentPlan === '1499' ? 'premium plan.' : ''
             }}</span>
-            If you want to change or cancel your plan, please click the button
-            below. As a reminder, testably plans are show below.
+            If you want to change or cancel your plan, please click the 'Manage
+            billing' button. As a reminder, testably plans are show below.
           </h3>
           <div>
             <ButtonJS
