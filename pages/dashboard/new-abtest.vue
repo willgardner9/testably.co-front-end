@@ -12,17 +12,13 @@
       <form
         class="
           w-full
-          p-8
           bg-white
           dark:bg-gray-800
           mt-8
-          shadow-sm
           flex flex-col
           items-center
           justify-center
           rounded-lg
-          border border-gray-200
-          dark:border-gray-700
         "
         @submit.prevent="addNewAbtest"
       >
@@ -137,7 +133,7 @@
           <Label
             :class="[conversionURLError ? 'text-red-600' : '']"
             class="label"
-            label="Conversion URL"
+            label="Conversion Goal"
             :text="conversionURLText"
           />
           <div class="flex items-center mb-4">
@@ -242,13 +238,13 @@ export default {
       }
 
       if (!this.name) {
-        this.nameText = 'Please enter your Conversion URL'
+        this.nameText = 'Please enter your A/B test name'
         this.nameError = true
         return
       }
 
       if (!this.conversionURL) {
-        this.conversionURLText = 'Please enter your Conversion URL'
+        this.conversionURLText = 'Please enter your Conversion Goal'
         this.conversionURLError = true
         return
       }
@@ -279,7 +275,7 @@ export default {
     },
 
     dismissError() {
-      this.conversionURLText = 'Conversion URL'
+      this.conversionURLText = 'Conversion Goal'
       this.conversionURLError = false
       this.nameText = 'A/B Test Name'
       this.nameError = false

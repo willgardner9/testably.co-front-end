@@ -1,6 +1,6 @@
 <template>
   <!-- header -->
-  <div class="sticky top-0">
+  <div class="sticky top-0 relative z-50">
     <header
       class="
         w-full
@@ -8,12 +8,11 @@
         flex flex-col
         items-center
         justify-center
-        z-50
         bg-white
         dark:bg-gray-900
         backdrop-filter backdrop-blur-md
-        bg-opacity-30
-        dark:bg-opacity-30
+        bg-opacity-50
+        dark:bg-opacity-50
       "
     >
       <!-- container -->
