@@ -4,15 +4,12 @@
     <header
       class="
         w-full
-        h-10vh
+        h-9vh
         flex flex-col
         items-center
         justify-center
         bg-white
         dark:bg-gray-900
-        backdrop-filter backdrop-blur-md
-        bg-opacity-50
-        dark:bg-opacity-50
       "
     >
       <!-- container -->
@@ -133,8 +130,8 @@ h2 {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.h-10vh {
-  height: 10vh;
+.h-9vh {
+  height: 9vh;
 }
 
 .shadow-drop {

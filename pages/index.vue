@@ -13,7 +13,9 @@
       "
     >
       <!-- Tagline, main copy, CTA -->
-      <div class="mt-12 flex flex-col max-w-4xl items-center justify-center">
+      <div
+        class="mt-12 mb-2 flex flex-col max-w-4xl items-center justify-center"
+      >
         <h3
           class="
             text-6xl text-black
@@ -52,7 +54,7 @@
         "
         aria-hidden
       >
-        <h5 class="scribble-text text-base sm:text-xl select-none">
+        <h5 class="scribble-text text-base sm:text-2xl select-none">
           Which landing page copy do you think will convert more?
         </h5>
         <svg
@@ -158,7 +160,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="50"
+          width="70"
           height="60"
           class="-mt-4"
         >
@@ -178,13 +180,23 @@
             />
           </g>
         </svg>
-        <h5 class="scribble-text text-base sm:text-xl select-none mt-5 ml-2">
+        <h5 class="scribble-text text-base sm:text-2xl select-none mt-5">
           Leave the hunches and guesswork behind!
         </h5>
       </div>
 
       <!-- secondary tagline and copy -->
-      <div class="flex flex-col sm:flex-row max-w-6xl mt-8">
+      <div
+        class="
+          flex flex-col
+          sm:flex-row
+          max-w-6xl
+          my-4
+          bg-green-100
+          rounded-lg
+          p-4
+        "
+      >
         <h4
           class="
             text-3xl text-black
@@ -199,8 +211,36 @@
           to optimise your landing page.
         </h4>
         <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4">
-          testably allows you to quickly and easily A/B test different copy,
-          colours, images, and videos to boost your conversion rate.
+          With <span class="font-semibold">testably</span>, you can quickly and
+          easily A/B test different copy, colours, images, and videos to make
+          your landing page perform better.
+        </h5>
+      </div>
+
+      <!-- scribble text and arrow 3 -->
+      <div
+        class="flex flex-col w-full items-center justify-center text-gray-400"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" height="70" viewBox="0 0 20 75">
+          <defs />
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+          >
+            <path
+              d="M10.01 2.35c.07 9.49-1.68 19.22-.27 28.65.44 2.88 1.48 9.7 4.86 10.94 2.8 1.03 3.58-1.4 3.37-3.87-.22-2.5-2.11-6.75-5.12-6.84-3.96-.12-4.82 5.88-5.2 8.68-1.2 9.06 1.02 18.13.99 27.19"
+            />
+            <path
+              d="M2 63.17c3.72 2.33 4.35 6.6 7.4 9.48 1.05-3.02 3.44-9.07 6.13-11.11"
+            />
+          </g>
+        </svg>
+        <h5 class="scribble-text text-base sm:text-2xl select-none mt-4">
+          Here's how...
         </h5>
       </div>
     </div>
