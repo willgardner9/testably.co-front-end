@@ -23,6 +23,9 @@
   "Label": {
     "description": "Auto imported from components/Label.vue"
   },
+  "LandingPageStep": {
+    "description": "Auto imported from components/LandingPageStep.vue"
+  },
   "MobileNavigation": {
     "description": "Auto imported from components/MobileNavigation.vue"
   },

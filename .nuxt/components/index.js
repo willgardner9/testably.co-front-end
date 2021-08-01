@@ -8,6 +8,7 @@ export { default as ButtonJS } from '../../components/ButtonJS.vue'
 export { default as ChooseAPlanPrompt } from '../../components/ChooseAPlanPrompt.vue'
 export { default as CodeSnippet } from '../../components/CodeSnippet.vue'
 export { default as Label } from '../../components/Label.vue'
+export { default as LandingPageStep } from '../../components/LandingPageStep.vue'
 export { default as MobileNavigation } from '../../components/MobileNavigation.vue'
 export { default as Navbar } from '../../components/Navbar.vue'
 export { default as Navigation } from '../../components/Navigation.vue'
@@ -28,6 +29,7 @@ export const LazyButtonJS = import('../../components/ButtonJS.vue' /* webpackChu
 export const LazyChooseAPlanPrompt = import('../../components/ChooseAPlanPrompt.vue' /* webpackChunkName: "components/choose-a-plan-prompt" */).then(c => wrapFunctional(c.default || c))
 export const LazyCodeSnippet = import('../../components/CodeSnippet.vue' /* webpackChunkName: "components/code-snippet" */).then(c => wrapFunctional(c.default || c))
 export const LazyLabel = import('../../components/Label.vue' /* webpackChunkName: "components/label" */).then(c => wrapFunctional(c.default || c))
+export const LazyLandingPageStep = import('../../components/LandingPageStep.vue' /* webpackChunkName: "components/landing-page-step" */).then(c => wrapFunctional(c.default || c))
 export const LazyMobileNavigation = import('../../components/MobileNavigation.vue' /* webpackChunkName: "components/mobile-navigation" */).then(c => wrapFunctional(c.default || c))
 export const LazyNavbar = import('../../components/Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c))
 export const LazyNavigation = import('../../components/Navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c))

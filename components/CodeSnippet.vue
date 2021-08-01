@@ -340,7 +340,8 @@
           <p class="text-gray-600 text-sm dark:text-gray-400">
             Copy and paste this snippet just before the
             <span class="font-mono">{{ bodyTag }}</span> tag closes on the page
-            of your website running the A/B test.
+            of your website running the A/B test. You will need to update your
+            JavaScript snippet whenever you change your A/B test or variations.
           </p>
           <ButtonJS
             text="copy"

@@ -14,6 +14,7 @@ You can directly use them in pages and other components without the need to impo
 - `<ChooseAPlanPrompt>` | `<choose-a-plan-prompt>` (components/ChooseAPlanPrompt.vue)
 - `<CodeSnippet>` | `<code-snippet>` (components/CodeSnippet.vue)
 - `<Label>` | `<label>` (components/Label.vue)
+- `<LandingPageStep>` | `<landing-page-step>` (components/LandingPageStep.vue)
 - `<MobileNavigation>` | `<mobile-navigation>` (components/MobileNavigation.vue)
 - `<Navbar>` | `<navbar>` (components/Navbar.vue)
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)

@@ -30,7 +30,7 @@
       {{ pricingData.price }}
       <span class="text-gray-400 text-sm font-normal"> / month</span>
     </h5>
-    <div class="px-4 flex flex-col items-start text-green-600">
+    <div class="px-4 flex flex-col items-start text-green-500">
       <div
         v-for="benefit in pricingData.benefits"
         :key="benefit"

@@ -10,6 +10,7 @@ const components = {
   ChooseAPlanPrompt: () => import('../../components/ChooseAPlanPrompt.vue' /* webpackChunkName: "components/choose-a-plan-prompt" */).then(c => wrapFunctional(c.default || c)),
   CodeSnippet: () => import('../../components/CodeSnippet.vue' /* webpackChunkName: "components/code-snippet" */).then(c => wrapFunctional(c.default || c)),
   Label: () => import('../../components/Label.vue' /* webpackChunkName: "components/label" */).then(c => wrapFunctional(c.default || c)),
+  LandingPageStep: () => import('../../components/LandingPageStep.vue' /* webpackChunkName: "components/landing-page-step" */).then(c => wrapFunctional(c.default || c)),
   MobileNavigation: () => import('../../components/MobileNavigation.vue' /* webpackChunkName: "components/mobile-navigation" */).then(c => wrapFunctional(c.default || c)),
   Navbar: () => import('../../components/Navbar.vue' /* webpackChunkName: "components/navbar" */).then(c => wrapFunctional(c.default || c)),
   Navigation: () => import('../../components/Navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c)),

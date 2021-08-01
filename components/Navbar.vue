@@ -141,15 +141,17 @@ h2 {
   height: 9vh;
 }
 
-.shadow-drop {
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 2%), 0 4px 6px -2px rgb(0 0 0 / 2%);
-}
-
 .navbar {
   transition: box-shadow 0.3s ease-in-out;
 }
 
 html:not([data-scroll='0']) .navbar {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #efefef;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-scroll='0']) .navbar {
+    border-bottom: 1px solid #202937;
+  }
 }
 </style>

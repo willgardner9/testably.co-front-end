@@ -186,34 +186,23 @@
       </div>
 
       <!-- secondary tagline and copy -->
-      <div
-        class="
-          flex flex-col
-          sm:flex-row
-          max-w-6xl
-          my-4
-          bg-green-100
-          rounded-lg
-          p-4
-        "
-      >
+      <div class="flex flex-col sm:flex-row max-w-6xl my-4 rounded-lg p-4">
         <h4
           class="
             text-3xl text-black
             dark:text-white
             font-semibold
             flex-b
-            w-50%
+            sm:w-1/2
             p-4
           "
         >
           Use a <span class="gradient-text italic">data-driven</span> approach
           to optimise your landing page.
         </h4>
-        <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4">
-          With <span class="font-semibold">testably</span>, you can quickly and
-          easily A/B test different copy, colours, images, and videos to make
-          your landing page perform better.
+        <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4 sm:w-1/2">
+          With testably, you can quickly and easily A/B test different copy,
+          colours, images, and videos to make your landing page perform better.
         </h5>
       </div>
 
@@ -243,13 +232,64 @@
           Here's how...
         </h5>
       </div>
+
+      <!-- step by step -->
+      <div class="flex flex-col max-w-6xl mt-4 p-4">
+        <LandingPageStep
+          class="border-b border-gray-200"
+          step="1"
+          action="Set up your A/B test and variations"
+          :image="require('~/assets/newtestscreenshot.png')"
+          description="Start using testably by registering in under a minute and setting up your first A/B test. Then, add variations you want to A/B test."
+        />
+        <LandingPageStep
+          class="border-b border-gray-200"
+          step="2"
+          action="Add testably to your landing page"
+          :image="require('~/assets/snippetscreenshot.png')"
+          description="Follow our easy instructions to add the testably code snippets to your landing page. If you get stuck, you can reach out to us for support."
+        />
+        <LandingPageStep
+          class="pb-0"
+          step="3"
+          action="Watch your conversion rate increase"
+          :image="require('~/assets/conversionsscreenshot.png')"
+          description="Sit back, relax, and discover which of your variations performs the best - keep optimizing your landing page to boost conversions."
+        />
+      </div>
+
+      <!-- scribble text and arrow 4 -->
+      <div
+        class="flex flex-col w-full items-center justify-center text-gray-400"
+      >
+        <svg width="30" height="60" xmlns="http://www.w3.org/2000/svg">
+          <g
+            transform="rotate(-180 14.9625 30.022)"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+            fill="none"
+          >
+            <path
+              d="m10.30617,6.09899c5.58826,2.238 14.7369,5.858 15.54277,12.551c0.71398,5.938 -5.39498,11.437 -9.37784,15.21c-5.80583,5.502 -25.58706,21.344 -6.65711,23.567c6.24626,0.733 12.38056,-0.262 18.31102,-2.13"
+            />
+            <path
+              d="m10.4139,13.76499c-0.44993,-4.367 -4.20149,-6.833 -5.48898,-10.849c3.35549,0.411 10.19849,0.953 13.39027,-0.541"
+            />
+          </g>
+        </svg>
+
+        <h5 class="scribble-text text-base sm:text-2xl select-none mt-4">
+          A perfect fit for you
+        </h5>
+      </div>
     </div>
 
     <!-- below the fold -->
-    <div
-      class="flex flex-col w-full items-center bg-gray-50 dark:bg-gray-800 mt-8"
-    >
-      <PricingTable class="mt-12" />
+    <div class="flex flex-col w-full items-center mt-8">
+      <PricingTable />
     </div>
   </div>
 </template>
