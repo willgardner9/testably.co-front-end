@@ -228,28 +228,28 @@
             />
           </g>
         </svg>
-        <h5 class="scribble-text text-base sm:text-2xl select-none mt-4">
-          Here's how...
-        </h5>
+        <h5 class="scribble-text text-2xl select-none mt-4">Here's how...</h5>
       </div>
 
       <!-- step by step -->
       <div class="flex flex-col max-w-6xl mt-4 p-4">
         <LandingPageStep
-          class="border-b border-gray-200"
+          ltor
+          class="border-b border-gray-200 dark:border-gray-800"
           step="1"
           action="Set up your A/B test and variations"
           :image="require('~/assets/newtestscreenshot.png')"
           description="Start using testably by registering in under a minute and setting up your first A/B test. Then, add variations you want to A/B test."
         />
         <LandingPageStep
-          class="border-b border-gray-200"
+          class="border-b border-gray-200 dark:border-gray-800"
           step="2"
           action="Add testably to your landing page"
           :image="require('~/assets/snippetscreenshot.png')"
           description="Follow our easy instructions to add the testably code snippets to your landing page. If you get stuck, you can reach out to us for support."
         />
         <LandingPageStep
+          ltor
           class="pb-0"
           step="3"
           action="Watch your conversion rate increase"
@@ -281,15 +281,185 @@
           </g>
         </svg>
 
-        <h5 class="scribble-text text-base sm:text-2xl select-none mt-4">
-          A perfect fit for you
+        <h5 class="scribble-text text-2xl select-none mt-4">
+          Testably is a perfect fit for your landing page because we're...
         </h5>
       </div>
-    </div>
 
-    <!-- below the fold -->
-    <div class="flex flex-col w-full items-center mt-8">
-      <PricingTable />
+      <div
+        class="
+          flex flex-col
+          md:flex-row md:flex-wrap
+          w-full
+          max-w-6xl
+          mt-12
+          p-4
+        "
+      >
+        <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
+          <div class="flex items-center mb-2">
+            <div
+              class="
+                min-w-12 min-h-12
+                w-10
+                h-10
+                bg-green-500
+                text-white text-2xl
+                font-semibold
+                rounded-full
+                flex
+                items-center
+                justify-center
+                mr-4
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <h5 class="text-black dark:text-white font-semibold text-xl">
+              Lightning fast
+            </h5>
+          </div>
+          <p class="text-gray-700 dark:text-gray-400 text-lg">
+            Testably won't slow your landing page test down - our A/B tests run
+            directly on your website so visitors won't have to wait for content
+            to load.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
+          <div class="flex items-center mb-2">
+            <div
+              class="
+                min-w-12 min-h-12
+                w-10
+                h-10
+                bg-green-500
+                text-white text-2xl
+                font-semibold
+                rounded-full
+                flex
+                items-center
+                justify-center
+                mr-4
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <h5 class="text-black dark:text-white font-semibold text-xl">
+              Super Simple
+            </h5>
+          </div>
+          <p class="text-gray-700 dark:text-gray-400 text-lg">
+            Testably isn't a website builder-esque advanced A/B testing suite.
+            Set up your tests in under 5 minutes. Get stuck? Contact us for
+            support.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
+          <div class="flex items-center mb-2">
+            <div
+              class="
+                min-w-12 min-h-12
+                w-10
+                h-10
+                bg-green-500
+                text-white text-2xl
+                font-semibold
+                rounded-full
+                flex
+                items-center
+                justify-center
+                mr-4
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <h5 class="text-black dark:text-white font-semibold text-xl">
+              Flexible
+            </h5>
+          </div>
+          <p class="text-gray-700 dark:text-gray-400 text-lg">
+            No year-long contracts or high entry-level costs. Get started for
+            free or upgrade to a monthly rolling contract.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
+          <div class="flex items-center mb-2">
+            <div
+              class="
+                min-w-12 min-h-12
+                w-10
+                h-10
+                bg-green-500
+                text-white text-2xl
+                font-semibold
+                rounded-full
+                flex
+                items-center
+                justify-center
+                mr-4
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019.542 10C18.268 5.943 14.478 3 10 3a9.958 9.958 0 00-4.512 1.074l-1.78-1.781zm4.261 4.26l1.514 1.515a2.003 2.003 0 012.45 2.45l1.514 1.514a4 4 0 00-5.478-5.478z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  d="M12.454 16.697L9.75 13.992a4 4 0 01-3.742-3.741L2.335 6.578A9.98 9.98 0 00.458 10c1.274 4.057 5.065 7 9.542 7 .847 0 1.669-.105 2.454-.303z"
+                />
+              </svg>
+            </div>
+            <h5 class="text-black dark:text-white font-semibold text-xl">
+              Privacy friendly
+            </h5>
+          </div>
+          <p class="text-gray-700 dark:text-gray-400 text-lg">
+            All our data is anonymous by design: no cookies, trackers,
+            fingerprinting, or anything else. No cookie consent banners needed!
+          </p>
+        </div>
+      </div>
+
+      <PricingTable class="mt-8" />
     </div>
   </div>
 </template>
@@ -317,5 +487,11 @@ export default {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.min-w-12,
+.min-h-12 {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
 }
 </style>

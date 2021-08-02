@@ -21,7 +21,7 @@
       shadow-sm
     "
   >
-    <h4 class="text-gray-600 dark:text-white text-xl sm:mt-0 text-center">
+    <h4 class="text-gray-700 dark:text-gray-400 text-xl sm:mt-0 text-center">
       {{ pricingData.title }}
     </h4>
     <h5
@@ -48,7 +48,9 @@
             clip-rule="evenodd"
           />
         </svg>
-        <p class="text-black dark:text-gray-300 ml-2">{{ benefit }}</p>
+        <p class="text-gray-700 dark:text-gray-400 ml-2 text-lg">
+          {{ benefit }}
+        </p>
       </div>
     </div>
     <ButtonJS

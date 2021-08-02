@@ -1,14 +1,7 @@
 <template>
   <div
-    class="
-      flex flex-col
-      lg:flex-row-reverse
-      items-center
-      w-full
-      mb-8
-      mt-8
-      pb-12
-    "
+    class="flex flex-col items-center w-full mb-8 mt-8 pb-12"
+    :class="[ltor ? 'lg:flex-row-reverse' : 'lg:flex-row']"
   >
     <img
       :src="image"
@@ -27,7 +20,7 @@
         mb-4
       "
     />
-    <div class="w-full lg:w-1/2 flex flex-col p-4 mr-8">
+    <div class="w-full lg:w-1/2 flex flex-col p-4 mx-8">
       <div
         class="
           w-full
@@ -41,27 +34,25 @@
         <div
           class="
             min-w-12 min-h-12
-            w-12
-            h-12
             bg-green-500
-            text-white text-3xl
+            text-white text-2xl
             font-semibold
             rounded-full
             flex
             items-center
             justify-center
-            mr-4
+            mr-6
           "
         >
           {{ step }}
         </div>
         <h5
-          class="text-3xl text-black dark:text-white font-semibold mt-4 sm:mt-0"
+          class="text-xl text-black dark:text-white font-semibold mt-4 sm:mt-0"
         >
           {{ action }}
         </h5>
       </div>
-      <p class="text-xl text-gray-700 dark:text-gray-400 mt-4">
+      <p class="text-lg text-gray-700 dark:text-gray-400 mt-4">
         {{ description }}
       </p>
     </div>
@@ -87,6 +78,11 @@ export default {
       type: String,
       required: true,
     },
+    ltor: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 }
 </script>
@@ -94,7 +90,7 @@ export default {
 <style scoped>
 .min-w-12,
 .min-h-12 {
-  min-width: 3rem;
-  min-height: 3rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
 }
 </style>
