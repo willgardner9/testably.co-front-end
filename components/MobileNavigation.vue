@@ -56,12 +56,12 @@
       dark:bg-opacity-30
     "
   >
-    <Button
+    <!-- <Button
       destination="/pricing"
       text="Pricing"
       class="w-full justify-start px-4 py-4 text-md mt-4"
       ghost
-    />
+    /> -->
     <Button
       destination="/login"
       text="Sign in"

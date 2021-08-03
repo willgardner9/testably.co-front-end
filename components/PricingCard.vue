@@ -1,6 +1,7 @@
 <template>
   <div
     class="
+      relative
       md:w-1/3
       w-full
       p-4
@@ -21,7 +22,12 @@
       shadow-sm
     "
   >
-    <h4 class="text-gray-700 dark:text-gray-400 text-xl sm:mt-0 text-center">
+    <div v-show="pricingData.featured" class="absolute featured-tab">
+      recommended
+    </div>
+    <h4
+      class="text-gray-700 dark:text-gray-400 text-xl sm:mt-0 text-center mt-4"
+    >
       {{ pricingData.title }}
     </h4>
     <h5
@@ -110,5 +116,16 @@ export default {
 <style scoped>
 .min-width-1rem {
   min-width: 1rem;
+}
+
+.featured-tab {
+  top: 5px;
+  right: 5px;
+  padding: 0px 7.5px;
+  background: #12b981;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 </style>

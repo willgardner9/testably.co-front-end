@@ -20,6 +20,9 @@
   "CodeSnippet": {
     "description": "Auto imported from components/CodeSnippet.vue"
   },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
   "Label": {
     "description": "Auto imported from components/Label.vue"
   },
@@ -43,6 +46,9 @@
   },
   "PricingTable": {
     "description": "Auto imported from components/PricingTable.vue"
+  },
+  "ROICalc": {
+    "description": "Auto imported from components/ROICalc.vue"
   },
   "SkeletonLoader": {
     "description": "Auto imported from components/SkeletonLoader.vue"

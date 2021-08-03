@@ -1,6 +1,6 @@
 <template>
   <!-- section -->
-  <section class="w-full flex flex-col h-80vh items-center mt-10vh">
+  <section class="w-full flex flex-col items-center mt-10vh">
     <!-- container -->
     <form
       class="
@@ -206,7 +206,7 @@
       >
         By registering you agree to our
         <NuxtLink to="/terms" class="text-green-400 font-light mx-1"
-          >Terms</NuxtLink
+          >Terms of Service</NuxtLink
         >
         and
         <NuxtLink to="/privacy" class="text-green-400 font-light ml-1"
@@ -367,10 +367,6 @@ export default {
 <style scoped>
 button:focus {
   outline: none !important;
-}
-
-.h-80vh {
-  height: 80vh;
 }
 
 @media (max-width: 640px) {

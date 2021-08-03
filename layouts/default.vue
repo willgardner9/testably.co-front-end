@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
@@ -13,6 +14,18 @@
     margin-left: calc(100vw - 100%);
     margin-right: 0;
   }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 6rem;
 }
 </style>
 

@@ -6,7 +6,7 @@
       <ButtonJS text="Sign out" ghost class="ml-3" @click.native="logoutUser" />
     </nav>
     <nav v-else class="flex">
-      <Button destination="/pricing" text="Pricing" ghost />
+      <!-- <Button destination="/pricing" text="Pricing" ghost /> -->
       <Button destination="/login" text="Sign in" ghost class="ml-3" />
       <Button destination="/register/?plan=free" text="Sign up" class="ml-3" />
     </nav>

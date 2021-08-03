@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 <template>
   <!-- section -->
-  <section class="w-full flex flex-col h-80vh items-center mt-10vh">
+  <section class="w-full flex flex-col items-center mt-10vh">
     <!-- container -->
     <form
       class="
@@ -303,10 +303,6 @@ export default {
 <style scoped>
 button:focus {
   outline: none !important;
-}
-
-.h-80vh {
-  height: 80vh;
 }
 
 h3,

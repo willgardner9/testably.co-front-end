@@ -14,8 +14,8 @@
     "
     :class="[
       ghost
-        ? 'bg-white border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-gray-700 hover:shadow-sm dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:border-gray-500 dark:hover:text-white focus:ring-4 ring-gray-200 dark:ring-gray-700 outline-none focus:border-gray-300 dark:bg-gray-700 dark:focus:border-gray-500 dark:focus:bg-gray-600'
-        : 'bg-green-500 text-white border border-green-600 hover:border-green-500 hover:bg-green-400 hover:shadow-sm dark:bg-green-700 dark:border-green-600 dark:hover:bg-green-600 dark:hover-border-green-500 focus:ring-4 ring-green-200 dark:ring-green-800 outline-none dark:focus:border-green-500',
+        ? 'bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-300  dark:hover:bg-gray-600  dark:hover:text-white focus:ring-4 ring-gray-300 dark:ring-gray-700 outline-none dark:bg-gray-700  dark:focus:bg-gray-600'
+        : 'bg-green-500 text-white hover:bg-green-400 dark:bg-green-700 dark:hover:bg-green-600  focus:ring-4 ring-green-200 dark:ring-green-800 outline-none',
     ]"
   >
     {{ text }}

@@ -52,7 +52,6 @@
           max-w-6xl
           z-10
         "
-        aria-hidden
       >
         <h5 class="scribble-text text-base sm:text-2xl select-none">
           Which landing page copy do you think will convert more?
@@ -239,7 +238,7 @@
           step="1"
           action="Set up your A/B test and variations"
           :image="require('~/assets/newtestscreenshot.png')"
-          description="Start using testably by registering in under a minute and setting up your first A/B test. Then, add variations you want to A/B test."
+          description="Start using testably by registering in under a minute and setting up your first A/B test. You can A/B test different copy, colours, images, and videos on your landing page using testably."
         />
         <LandingPageStep
           class="border-b border-gray-200 dark:border-gray-800"
@@ -254,7 +253,7 @@
           step="3"
           action="Watch your conversion rate increase"
           :image="require('~/assets/conversionsscreenshot.png')"
-          description="Sit back, relax, and discover which of your variations performs the best - keep optimizing your landing page to boost conversions."
+          description="Sit back, relax, and discover which of your A/B test variations performs the best - keep optimizing your landing page to boost conversions."
         />
       </div>
 
@@ -286,6 +285,7 @@
         </h5>
       </div>
 
+      <!-- features -->
       <div
         class="
           flex flex-col
@@ -459,6 +459,41 @@
         </div>
       </div>
 
+      <!-- scribble text and arrow 5 -->
+      <div
+        class="flex flex-col w-full items-center justify-center text-gray-400"
+      >
+        <svg width="20" height="95" xmlns="http://www.w3.org/2000/svg">
+          <g
+            id="svg_1"
+            transform="rotate(90 10 47.5)"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+          >
+            <path
+              id="svg_2"
+              d="m-34.029,49.03c1.522,1.408 3.577,1.145 5.935,1.174c9.331,0.121 18.768,-0.963 28.067,-1.583c15.529,-1.034 32.082,-3.414 47.576,-0.777"
+            />
+            <path
+              id="svg_3"
+              d="m44.162,54.298c2.522,-3.59 6.828,-3.986 9.867,-6.88c-2.967,-1.208 -8.871,-3.928 -10.767,-6.716"
+              stroke-linejoin="round"
+            />
+          </g>
+        </svg>
+
+        <h5 class="scribble-text text-2xl select-none mt-4">
+          Simple pricing for simple A/B testing
+        </h5>
+      </div>
+
+      <!-- ROI Calculator -->
+      <ROICalc class="mt-12" />
+
+      <!-- Pricing table -->
       <PricingTable class="mt-8" />
     </div>
   </div>
