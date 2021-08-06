@@ -68,10 +68,10 @@
       class="w-full justify-start px-4 py-4 text-md mt-2"
       ghost
     />
-    <Button
-      destination="/register/?plan=free"
-      text="Sign up"
+    <ButtonJS
+      text="Pricing"
       class="w-full justify-start px-4 py-4 text-md mt-2"
+      @click.native="goToPricing"
     />
   </nav>
 </template>
@@ -91,6 +91,12 @@ export default {
       this.$store.commit('setUser', {})
       this.$router.push('/logout')
       this.$cookiz.set('hasLoggedIn', false)
+    },
+
+    goToPricing() {
+      const pricingEl =
+        this.$parent.$parent.$children[0].$children[0].$children[4].$el
+      pricingEl.scrollIntoView({ behavior: 'smooth' })
     },
   },
 }

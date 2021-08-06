@@ -6,9 +6,9 @@
       <ButtonJS text="Sign out" ghost class="ml-3" @click.native="logoutUser" />
     </nav>
     <nav v-else class="flex">
-      <!-- <Button destination="/pricing" text="Pricing" ghost /> -->
-      <Button destination="/login" text="Sign in" ghost class="ml-3" />
-      <Button destination="/register/?plan=free" text="Sign up" class="ml-3" />
+      <Button destination="/login" text="Sign in" ghost />
+      <ButtonJS text="Pricing" class="ml-3" @click.native="goToPricing" />
+      <!-- <Button destination="/register/?plan=free" text="Sign up" class="ml-3" /> -->
     </nav>
   </div>
 </template>
@@ -28,6 +28,12 @@ export default {
       this.$store.commit('setUser', {})
       this.$router.push('/logout')
       this.$cookiz.set('loggedOut', true)
+    },
+
+    goToPricing() {
+      const pricingEl =
+        this.$parent.$parent.$children[0].$children[0].$children[4].$el
+      pricingEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
     },
   },
 }

@@ -196,8 +196,9 @@
             p-4
           "
         >
-          Use a <span class="gradient-text italic">data-driven</span> approach
-          to optimise your landing page.
+          Don't focus on getting more visitors -
+          <span class="gradient-text italic">make the most</span> of the traffic
+          you have.
         </h4>
         <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4 sm:w-1/2">
           With testably, you can quickly and easily A/B test different copy,
@@ -297,7 +298,7 @@
         "
       >
         <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
-          <div class="flex items-center mb-2">
+          <div class="flex items-center mb-4">
             <div
               class="
                 min-w-12 min-h-12
@@ -337,7 +338,7 @@
           </p>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
-          <div class="flex items-center mb-2">
+          <div class="flex items-center mb-4">
             <div
               class="
                 min-w-12 min-h-12
@@ -377,7 +378,7 @@
           </p>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
-          <div class="flex items-center mb-2">
+          <div class="flex items-center mb-4">
             <div
               class="
                 min-w-12 min-h-12
@@ -416,7 +417,7 @@
           </p>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 rounded p-4 flex flex-col mb-8">
-          <div class="flex items-center mb-2">
+          <div class="flex items-center mb-4">
             <div
               class="
                 min-w-12 min-h-12
@@ -490,11 +491,46 @@
         </h5>
       </div>
 
-      <!-- ROI Calculator -->
-      <ROICalc class="mt-12" />
-
       <!-- Pricing table -->
-      <PricingTable class="mt-8" />
+      <PricingTable ref="pricing" class="mt-12 mb-8" />
+
+      <!-- scribble text and arrow 6 -->
+      <div
+        class="
+          flex flex-col
+          w-full
+          items-center
+          justify-center
+          text-gray-400
+          mt-8
+        "
+      >
+        <svg width="30" height="60" xmlns="http://www.w3.org/2000/svg">
+          <g
+            transform="rotate(-180 14.9625 30.022)"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="2"
+            fill="none"
+          >
+            <path
+              d="m10.30617,6.09899c5.58826,2.238 14.7369,5.858 15.54277,12.551c0.71398,5.938 -5.39498,11.437 -9.37784,15.21c-5.80583,5.502 -25.58706,21.344 -6.65711,23.567c6.24626,0.733 12.38056,-0.262 18.31102,-2.13"
+            />
+            <path
+              d="m10.4139,13.76499c-0.44993,-4.367 -4.20149,-6.833 -5.48898,-10.849c3.35549,0.411 10.19849,0.953 13.39027,-0.541"
+            />
+          </g>
+        </svg>
+
+        <h5 class="scribble-text text-2xl select-none mt-4">
+          Still not convinced? Fill in your stats and try our ROI calculator
+        </h5>
+      </div>
+
+      <!-- ROI Calculator -->
+      <ROICalc class="mt-12 mb-8" />
     </div>
   </div>
 </template>
