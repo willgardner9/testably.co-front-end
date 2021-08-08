@@ -25,8 +25,8 @@
             max-w-xl
           "
         >
-          Your landing page can
-          <span class="italic gradient-text">perform better.</span>
+          Make your landing page
+          <span class="italic gradient-text">convert more.</span>
         </h3>
         <p class="mt-6 text-center text-xl text-gray-700 dark:text-gray-400">
           A/B testing increases conversions and sales. But existing tools are

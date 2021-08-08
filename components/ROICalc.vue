@@ -2,7 +2,7 @@
   <div class="flex flex-col w-full max-w-6xl px-4 items-center justify-center">
     <div class="flex flex-col lg:flex-row w-full items-center justify-center">
       <!-- visitors -->
-      <div class="px-4 w-1/5 flex flex-col">
+      <div class="px-4 w-full lg:w-1/5 flex flex-col">
         <label
           for="visitors"
           class="text-xs font-light text-gray-500 dark:text-white"
@@ -28,7 +28,7 @@
             dark:focus:ring-gray-600
             outline-none
             border border-gray-200
-            dark:bg-gray-900
+            dark:bg-gray-800
             dark:border-gray-600
             dark:hover:ring-gray-600
             dark:text-white
@@ -38,7 +38,7 @@
       <!-- multiply sign -->
       <h4 class="text-xl text-gray-400 px-4 mt-5">x</h4>
       <!-- conversion rate -->
-      <div class="px-4 w-1/5 flex flex-col">
+      <div class="px-4 w-full lg:w-1/5 flex flex-col">
         <label
           for="conversion"
           class="text-xs font-light text-gray-500 dark:text-white"
@@ -64,7 +64,7 @@
             dark:focus:ring-gray-600
             outline-none
             border border-gray-200
-            dark:bg-gray-900
+            dark:bg-gray-800
             dark:border-gray-600
             dark:hover:ring-gray-600
             dark:text-white
@@ -74,7 +74,7 @@
       <!-- multiply sign -->
       <h4 class="text-xl text-gray-400 px-4 mt-5">x</h4>
       <!-- ARPU -->
-      <div class="px-4 w-1/5 flex flex-col">
+      <div class="px-4 w-full lg:w-1/5 flex flex-col">
         <label
           for="arpu"
           class="text-xs font-light text-gray-500 dark:text-white"
@@ -100,7 +100,7 @@
             dark:focus:ring-gray-600
             outline-none
             border border-gray-200
-            dark:bg-gray-900
+            dark:bg-gray-800
             dark:border-gray-600
             dark:hover:ring-gray-600
             dark:text-white
@@ -122,13 +122,13 @@
     >
       <!-- new MMR -->
       <div class="w-full flex flex-col items-center justify-center mt-4">
-        <h4 class="text-gray-500 text-md">
+        <h4 class="text-gray-500 dark:text-gray-400 text-md">
           Your current New MMR is
           <span class="font-semibold text-xl"
             >£{{ currentMMR.toFixed(2) }}</span
           >
         </h4>
-        <h4 class="text-black font-medium text-2xl mt-2">
+        <h4 class="text-black dark:text-white font-medium text-2xl mt-2">
           Your New MMR could be
           <span class="text-4xl font-extrabold"
             >£{{ futureMMR.toFixed(2) }}</span

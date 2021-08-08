@@ -4,6 +4,7 @@
       h-12
       w-full
       bg-gray-50
+      dark:bg-gray-800
       py-8
       dark:border-gray-800
       flex
