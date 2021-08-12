@@ -30,6 +30,9 @@
     >
       {{ pricingData.title }}
     </h4>
+    <h4 class="text-gray-500 dark:text-gray-400 text-sm text-center mt-2">
+      {{ pricingData.tagline }}
+    </h4>
     <h5
       class="text-black dark:text-white font-semibold text-3xl my-4 text-center"
     >
@@ -119,13 +122,22 @@ export default {
 }
 
 .featured-tab {
-  top: 5px;
-  right: 5px;
+  top: 0px;
+  right: 0px;
   padding: 0px 7.5px;
   background: #12b981;
   color: white;
   border-radius: 0.25rem;
   font-size: 0.75rem;
   font-weight: 500;
+  transform: translateY(-150%);
+}
+
+@media (max-width: 767px) {
+  .featured-tab {
+    transform: translateY(0%);
+    top: 5px;
+    right: 5px;
+  }
 }
 </style>

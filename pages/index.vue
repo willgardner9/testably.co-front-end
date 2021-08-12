@@ -530,7 +530,7 @@
       </div>
 
       <!-- ROI Calculator -->
-      <ROICalc class="mt-12 mb-8" />
+      <ROICalc class="mt-12 mb-12" />
     </div>
   </div>
 </template>

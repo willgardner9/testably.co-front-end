@@ -24,7 +24,7 @@ export default {
       freePricing: {
         featured: false,
         title: 'Free Plan',
-        tagline: 'Great for trying testably out',
+        tagline: 'Great for idea validation',
         price: 'Free',
         benefits: ['1 A/B test', '500 sessions a month'],
         stripePrice: 'price_1JDRsWBn4cPkjuwoDUnMQiia',
@@ -33,7 +33,7 @@ export default {
       basicPricing: {
         featured: true,
         title: 'Basic Plan',
-        tagline: 'Best for startups and small businesses',
+        tagline: 'Best for launches and early stage startups',
         price: '£6.99',
         benefits: ['3 A/B tests', '5000 sessions a month'],
         stripePrice: 'price_1JDRtBBn4cPkjuwouQMmS6S1',
