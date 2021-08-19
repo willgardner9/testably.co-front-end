@@ -192,7 +192,9 @@ export default {
             password: this.password,
           }
         )
-        return res ? this.processLogin() : ''
+        if (res) {
+          return this.$router.push('/login')
+        }
       } catch (error) {
         this.emailText = 'Oops, this email is already registered.'
         this.emailError = true
