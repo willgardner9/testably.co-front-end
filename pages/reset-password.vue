@@ -158,44 +158,8 @@
           dark:focus:border-green-500
         "
       >
-        Register
+        Set new password
       </button>
-
-      <p
-        class="
-          mt-6
-          sm:block
-          text-center
-          justify-center
-          text-xs text-gray-600
-          font-thin
-          dark:text-gray-300
-        "
-      >
-        By registering you agree to our
-        <NuxtLink to="/terms" class="text-green-400 font-light mx-1"
-          >Terms of Service</NuxtLink
-        >
-        and
-        <NuxtLink to="/privacy" class="text-green-400 font-light ml-1"
-          >Privacy Policy</NuxtLink
-        >
-      </p>
-      <p
-        class="
-          mt-2
-          flex
-          justify-center
-          text-xs text-gray-600
-          dark:text-gray-300
-          font-thin
-        "
-      >
-        Already have an account?
-        <NuxtLink to="/login" class="ml-1 text-green-400 font-light"
-          >Login</NuxtLink
-        >
-      </p>
     </form>
   </section>
 </template>
@@ -205,7 +169,7 @@ export default {
   data() {
     return {
       email: this.$route.query.email,
-      token: this.$route.query.token,
+      token: this.$route.query.accessToken,
       password: '',
       passwordFieldType: 'password',
       isVisible: false,

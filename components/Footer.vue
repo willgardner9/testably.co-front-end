@@ -18,7 +18,7 @@
     <section
       class="max-w-6xl w-full flex justify-between text-gray-400 text-sm px-4"
     >
-      <h1>© 2021 Testably, made in 🇪🇺</h1>
+      <h1>© 2021 Testably</h1>
       <h1
         class="
           text-gray-400
