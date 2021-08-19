@@ -43,6 +43,7 @@
         <input
           v-model="email"
           :class="[emailError ? 'text-red-600 input-error' : '']"
+          autocomplete="on"
           class="
             input
             w-full
@@ -79,6 +80,7 @@
           <input
             v-model="password"
             :class="[passwordError ? 'text-red-600 input-error' : '']"
+            autocomplete="on"
             class="
               input
               w-full
