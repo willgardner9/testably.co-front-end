@@ -48,7 +48,7 @@
             />
           </div>
         </div>
-        <PricingTable no-buttons-control class="mt-8" />
+        <PricingTable no-buttons-control class="mt-20" />
       </div>
     </div>
   </section>

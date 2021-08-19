@@ -41,7 +41,7 @@ export default {
       'nuxt-stripe-module',
       {
         publishableKey:
-          'pk_test_51InUqNBn4cPkjuwoy3Wsd4Lj5u4xU4jinXXCYt2aeNptAY22iM3W8X4W4Q9U09QkoUClqiBgeaekva5DVxNco9TX00bhGjSnIQ',
+          'pk_live_51InUqNBn4cPkjuwojNadJZCW5DsOcLkbbnbjs2uvH8iIRnfVA4Q0OrsVMfcelvyF8hzYM1Np3OZum6iF8tCIgNbe00GVTZgl7C',
       },
     ],
   ],

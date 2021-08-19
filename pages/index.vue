@@ -18,24 +18,24 @@
       >
         <h3
           class="
-            text-6xl text-black
+            text-5xl text-black
             dark:text-white
             font-semibold
             text-center
-            max-w-xl
+            max-w-3xl
           "
         >
-          Make your landing page
+          Start A/B testing your landing page and
           <span class="italic gradient-text">convert more.</span>
         </h3>
         <p class="mt-6 text-center text-xl text-gray-700 dark:text-gray-400">
-          A/B testing increases conversions and sales. But existing tools are
+          A/B testing can increase conversions and sales. But existing tools are
           complex, expensive, and slow. We built testably so you can start
           optimising your landing page in 5 minutes at a fraction of the cost.
         </p>
         <Button
           destination="/register/?plan=free"
-          text="Try for FREE"
+          text="Try for free"
           class="text-base mt-6"
         />
       </div>

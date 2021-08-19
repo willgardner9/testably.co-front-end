@@ -27,7 +27,7 @@ export default {
         tagline: 'Great for idea validation',
         price: 'Free',
         benefits: ['1 A/B test', '500 sessions a month'],
-        stripePrice: 'price_1JDRsWBn4cPkjuwoDUnMQiia',
+        stripePrice: 'price_1J9xSNBn4cPkjuwoqHrQbulB',
         routerName: 'free',
       },
       basicPricing: {
@@ -36,7 +36,7 @@ export default {
         tagline: 'Best for launches and early stage startups',
         price: '£6.99',
         benefits: ['3 A/B tests', '5000 sessions a month'],
-        stripePrice: 'price_1JDRtBBn4cPkjuwouQMmS6S1',
+        stripePrice: 'price_1J9xTQBn4cPkjuwoCQi7Dzux',
         routerName: 'basic',
       },
       premiumPricing: {
@@ -45,7 +45,7 @@ export default {
         tagline: 'Perfect for scale-up online businesses',
         price: '£14.99',
         benefits: ['Unlimited A/B tests', 'Unlimited sessions a month'],
-        stripePrice: 'price_1JDRthBn4cPkjuwonqCcVJvQ',
+        stripePrice: 'price_1J9xUeBn4cPkjuwoK815Zt3h',
         routerName: 'premium',
       },
     }

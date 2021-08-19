@@ -14,6 +14,13 @@
     "_name": "_3c3831d6"
   },
   {
+    "name": "forgot-password",
+    "path": "/forgot-password",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/forgot-password.vue",
+    "chunkName": "pages/forgot-password",
+    "_name": "_63ae3978"
+  },
+  {
     "name": "login",
     "path": "/login",
     "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/login.vue",
@@ -40,6 +47,13 @@
     "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/register.vue",
     "chunkName": "pages/register",
     "_name": "_19878718"
+  },
+  {
+    "name": "reset-password",
+    "path": "/reset-password",
+    "component": "/Users/willgardner/Documents/GitHub/testably.co-front-end/pages/reset-password.vue",
+    "chunkName": "pages/reset-password",
+    "_name": "_be99852c"
   },
   {
     "name": "dashboard-abtest",

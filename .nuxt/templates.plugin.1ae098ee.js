@@ -1,7 +1,7 @@
 import { loadStripe } from '@stripe/stripe-js/pure'
 
 export default async function (context, inject) {
-  const parsedOptions = {"stripeAccount":"","publishableKey":"pk_test_51InUqNBn4cPkjuwoy3Wsd4Lj5u4xU4jinXXCYt2aeNptAY22iM3W8X4W4Q9U09QkoUClqiBgeaekva5DVxNco9TX00bhGjSnIQ","locale":"en","apiVersion":null}
+  const parsedOptions = {"stripeAccount":"","publishableKey":"pk_live_51InUqNBn4cPkjuwojNadJZCW5DsOcLkbbnbjs2uvH8iIRnfVA4Q0OrsVMfcelvyF8hzYM1Np3OZum6iF8tCIgNbe00GVTZgl7C","locale":"en","apiVersion":null}
 
   let stripePlugin = null
   try {

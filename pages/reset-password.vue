@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+
 <template>
   <!-- section -->
   <section class="w-full flex flex-col items-center mt-10vh">
@@ -19,61 +20,27 @@
         dark:border-gray-600
         shadow-sm
       "
-      @submit.prevent="processLogin"
+      @submit.prevent="processResetPassword"
     >
       <h4
         class="
-          text-black
-          dark:text-white
+          text-gray-900
           font-semibold
           text-3xl
           sm:mt-0
           text-center
+          dark:text-white
         "
       >
-        Login
+        Reset password
       </h4>
-      <div class="field">
-        <Label
-          :class="[emailError ? 'text-red-600' : '']"
-          class="label"
-          label="email"
-          :text="emailText"
-        />
-        <input
-          v-model="email"
-          :class="[emailError ? 'text-red-600 input-error' : '']"
-          class="
-            input
-            w-full
-            transition
-            duration-150
-            ease-in-out
-            rounded-lg
-            hover:border-green-200
-            dark:hover:border-gray-500
-            hover:ring-4 hover:ring-green-200
-            focus:ring-4 focus:ring-green-200
-            dark:focus:ring-gray-600
-            outline-none
-            border border-gray-200
-            dark:bg-gray-900
-            dark:border-gray-600
-            dark:hover:ring-gray-600
-            dark:text-white
-          "
-          type="email"
-          name="email"
-          @focus="dismissError"
-        />
-      </div>
 
       <div class="field">
         <Label
-          :class="[passwordError ? 'input-error-text' : '']"
           class="label"
           label="password"
           :text="passwordText"
+          :class="[passwordError ? 'text-red-600' : '']"
         />
         <div class="relative">
           <input
@@ -191,26 +158,32 @@
           dark:focus:border-green-500
         "
       >
-        Login
+        Register
       </button>
+
       <p
         class="
           mt-6
-          flex
+          sm:block
+          text-center
           justify-center
           text-xs text-gray-600
-          dark:text-gray-300
           font-thin
+          dark:text-gray-300
         "
       >
-        Forgot password?
-        <NuxtLink to="/forgot-password" class="ml-1 text-green-400 font-light"
-          >Click here to reset</NuxtLink
+        By registering you agree to our
+        <NuxtLink to="/terms" class="text-green-400 font-light mx-1"
+          >Terms of Service</NuxtLink
+        >
+        and
+        <NuxtLink to="/privacy" class="text-green-400 font-light ml-1"
+          >Privacy Policy</NuxtLink
         >
       </p>
       <p
         class="
-          mt-6
+          mt-2
           flex
           justify-center
           text-xs text-gray-600
@@ -218,9 +191,9 @@
           font-thin
         "
       >
-        Don't have an account?
-        <NuxtLink to="/register" class="ml-1 text-green-400 font-light"
-          >Register</NuxtLink
+        Already have an account?
+        <NuxtLink to="/login" class="ml-1 text-green-400 font-light"
+          >Login</NuxtLink
         >
       </p>
     </form>
@@ -229,76 +202,42 @@
 
 <script>
 export default {
-  middleware: ['refreshOnLoad', 'redirectIfLoggedIn', 'checkAccessExpiry'],
-
   data() {
     return {
-      email: '',
+      email: this.$route.query.email,
+      token: this.$route.query.token,
       password: '',
       passwordFieldType: 'password',
       isVisible: false,
-      emailError: false,
       passwordError: false,
-      passwordText: 'Password',
-      emailText: 'Email',
-      errorText: '',
+      passwordText: 'New password',
     }
   },
   methods: {
-    async processLogin() {
-      console.log('firing processLogin')
-
+    async processResetPassword() {
       try {
-        if (!this.email) {
-          this.emailError = true
-          this.emailText = 'Email required'
-          return
-        }
         if (!this.password) {
           this.passwordError = true
           this.passwordText = 'Password required'
           return
         }
 
-        console.log('still here')
-
         const res = await this.$axios.post(
-          `https://testably-back-end-iadh5.ondigitalocean.app/user/login`,
+          `user/reset-password?token=${this.token}&email=${this.email}`,
           {
-            email: this.email,
             password: this.password,
           }
         )
-
-        console.log('res', res)
-
-        this.$cookiz.set('loggedOut', false)
-        this.errorMessage = ''
-        this.$store.commit('toggleAuth', true)
-        this.$store.commit(
-          'setAccessToken',
-          res.data.accessTokenObj.accessToken
-        )
-        this.$store.commit(
-          'setAccessTokenExpiresIn',
-          res.data.accessTokenObj.accessTokenExpiresIn
-        )
-        this.$store.commit('setUser', res.data.user)
-        this.$router.push('/dashboard')
-        return res
+        return res ? this.processLogin() : ''
       } catch (error) {
+        this.emailText = 'Oops, this email is already registered.'
         this.emailError = true
-        this.emailText = 'Email or password incorrect'
-        this.passwordError = true
-        this.passwordText = 'Email or password incorrect'
         return error
       }
     },
 
     dismissError() {
-      this.emailText = 'Email'
-      this.passwordText = 'Password'
-      this.emailError = false
+      this.passwordText = 'New password'
       this.passwordError = false
     },
 
@@ -307,10 +246,6 @@ export default {
         this.passwordFieldType === 'password' ? 'text' : 'password'
       this.isVisible = !this.isVisible
     },
-
-    dismissLoginError() {
-      this.errorText = false
-    },
   },
 }
 </script>
@@ -318,6 +253,12 @@ export default {
 <style scoped>
 button:focus {
   outline: none !important;
+}
+
+@media (max-width: 640px) {
+  .h-80vh {
+    height: auto;
+  }
 }
 
 h3,
@@ -336,10 +277,6 @@ h4 {
 
 .input-error {
   border: 1px solid #fc8181 !important;
-}
-
-.input-error-text {
-  color: #fc8181 !important;
 }
 
 .label {

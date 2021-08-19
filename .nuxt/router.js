@@ -6,10 +6,12 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _abe80328 = () => interopDefault(import('../pages/account.vue' /* webpackChunkName: "pages/account" */))
 const _3c3831d6 = () => interopDefault(import('../pages/dashboard/index.vue' /* webpackChunkName: "pages/dashboard/index" */))
+const _63ae3978 = () => interopDefault(import('../pages/forgot-password.vue' /* webpackChunkName: "pages/forgot-password" */))
 const _31cd7930 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _4920321b = () => interopDefault(import('../pages/logout.vue' /* webpackChunkName: "pages/logout" */))
 const _596ac0f6 = () => interopDefault(import('../pages/pricing.vue' /* webpackChunkName: "pages/pricing" */))
 const _19878718 = () => interopDefault(import('../pages/register.vue' /* webpackChunkName: "pages/register" */))
+const _be99852c = () => interopDefault(import('../pages/reset-password.vue' /* webpackChunkName: "pages/reset-password" */))
 const _2e91975f = () => interopDefault(import('../pages/dashboard/abtest.vue' /* webpackChunkName: "pages/dashboard/abtest" */))
 const _385c28a8 = () => interopDefault(import('../pages/dashboard/new-abtest.vue' /* webpackChunkName: "pages/dashboard/new-abtest" */))
 const _1d71a051 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -34,6 +36,10 @@ export const routerOptions = {
     component: _3c3831d6,
     name: "dashboard"
   }, {
+    path: "/forgot-password",
+    component: _63ae3978,
+    name: "forgot-password"
+  }, {
     path: "/login",
     component: _31cd7930,
     name: "login"
@@ -49,6 +55,10 @@ export const routerOptions = {
     path: "/register",
     component: _19878718,
     name: "register"
+  }, {
+    path: "/reset-password",
+    component: _be99852c,
+    name: "reset-password"
   }, {
     path: "/dashboard/abtest",
     component: _2e91975f,
