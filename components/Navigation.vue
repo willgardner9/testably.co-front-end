@@ -23,6 +23,8 @@ export default {
   mounted() {
     this.pricingEl =
       this.$parent.$parent.$children[0].$children[0].$children[4].$el
+    console.log(this.pricingEl, 'this.pricingEl')
+    console.log(this.$parent, 'this.parent')
   },
   methods: {
     logoutUser() {
