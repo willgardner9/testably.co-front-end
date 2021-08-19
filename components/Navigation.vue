@@ -21,9 +21,9 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$parent.$parent.$children[0].$el.children[0].children[10])
-    this.pricingEl =
-      this.$parent.$parent.$children[0].$el.children[0].children[10]
+    console.log(this)
+    // this.pricingEl =
+    //   this.$parent.$parent.$children[0].$el.children[0].children[10]
   },
   methods: {
     logoutUser() {
@@ -41,7 +41,8 @@ export default {
     },
 
     goToPricing() {
-      this.pricingEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      console.log('firing')
+      // this.pricingEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
     },
   },
 }
