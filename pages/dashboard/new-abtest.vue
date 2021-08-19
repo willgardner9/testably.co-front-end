@@ -13,7 +13,7 @@
         class="
           w-full
           bg-white
-          dark:bg-gray-800
+          dark:bg-gray-900
           mt-8
           flex flex-col
           items-center
