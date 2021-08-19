@@ -269,6 +269,7 @@ export default {
           email: this.email,
           password: this.password,
         })
+        console.log('res', res)
         return res ? this.processLogin() : ''
       } catch (error) {
         this.emailText = 'Oops, this email is already registered.'
