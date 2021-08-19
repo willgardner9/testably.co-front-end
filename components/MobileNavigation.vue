@@ -78,16 +78,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      pricingEl: '',
-    }
-  },
-  mounted() {
-    console.log(this.$parent.$parent.$children[0].$el.children[0].children[10])
-    this.pricingEl =
-      this.$parent.$parent.$children[0].$el.children[0].children[10]
-  },
   methods: {
     logoutUser() {
       this.$axios.get(
@@ -104,7 +94,8 @@ export default {
     },
 
     goToPricing() {
-      this.pricingEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const el = document.getElementById('pricing-section')
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     },
   },
 }

@@ -130,19 +130,7 @@
         </h4>
         <h4 class="text-black dark:text-white font-medium text-2xl mt-2">
           Your New MMR could be
-          <span
-            class="
-              text-4xl text-green-500
-              opacity-25
-              font-extrabold
-              absolute
-              inline-flex
-              animate-ping
-            "
-            >£{{ futureMMR.toFixed(2) }}</span
-          >
-          <span
-            class="text-4xl font-extrabold relative inline-flex text-green-500"
+          <span class="text-4xl font-extrabold text-green-500"
             >£{{ futureMMR.toFixed(2) }}</span
           >
         </h4>

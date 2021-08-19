@@ -462,6 +462,7 @@
 
       <!-- scribble text and arrow 5 -->
       <div
+        id="pricing-section"
         class="flex flex-col w-full items-center justify-center text-gray-400"
       >
         <svg width="20" height="95" xmlns="http://www.w3.org/2000/svg">
@@ -492,7 +493,7 @@
       </div>
 
       <!-- Pricing table -->
-      <PricingTable ref="pricing" class="mt-12 mb-8" />
+      <PricingTable class="mt-12 mb-8" />
 
       <!-- scribble text and arrow 6 -->
       <div
