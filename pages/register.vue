@@ -314,16 +314,16 @@ export default {
       let activePlan
       switch (this.$route.query.plan) {
         case null || undefined || '':
-          activePlan = 'price_1JDRsWBn4cPkjuwoDUnMQiia'
+          activePlan = 'price_1J9xSNBn4cPkjuwoqHrQbulB'
           break
         case 'free':
-          activePlan = 'price_1JDRsWBn4cPkjuwoDUnMQiia'
+          activePlan = 'price_1J9xSNBn4cPkjuwoqHrQbulB'
           break
         case 'basic':
-          activePlan = 'price_1JDRtBBn4cPkjuwouQMmS6S1'
+          activePlan = 'price_1J9xTQBn4cPkjuwoCQi7Dzux'
           break
         case 'premium':
-          activePlan = 'price_1JDRthBn4cPkjuwonqCcVJvQ'
+          activePlan = 'price_1J9xUeBn4cPkjuwoK815Zt3h'
           break
       }
 
