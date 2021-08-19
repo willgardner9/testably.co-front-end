@@ -84,8 +84,9 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$parent.$parent.$children[0].$el.children[0].children[10])
     this.pricingEl =
-      this.$parent.$parent.$children[0].$children[0].$children[4].$el
+      this.$parent.$parent.$children[0].$el.children[0].children[10]
   },
   methods: {
     logoutUser() {

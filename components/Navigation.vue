@@ -21,11 +21,9 @@ export default {
     }
   },
   mounted() {
-    this.pricingEl = this.$parent.$children[1].$children[0].$children[4].$el
-    console.log(
-      this.$parent.$children[1].$children[0].$children[4].$el,
-      'this.parent'
-    )
+    console.log(this.$parent.$parent.$children[0].$el.children[0].children[10])
+    this.pricingEl =
+      this.$parent.$parent.$children[0].$el.children[0].children[10]
   },
   methods: {
     logoutUser() {
