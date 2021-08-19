@@ -8,10 +8,10 @@
         >
           Hi
           <span class="font-medium dark:text-white">{{ userObj.email }}</span>
-          you don't currently have an active plan. Please Choose a plan below to
+          you don't currently have an active plan. Please choose a plan below to
           start A/B testing.
         </h3>
-        <PricingTable class="mt-12" />
+        <PricingTable class="mt-20" />
       </div>
       <div v-else>
         <div class="flex flex-col sm:flex-row w-full items-center px-4 mt-12">

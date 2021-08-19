@@ -15,6 +15,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      pricingEl: '',
+    }
+  },
+  mounted() {
+    this.pricingEl =
+      this.$parent.$parent.$children[0].$children[0].$children[4].$el
+  },
   methods: {
     logoutUser() {
       this.$axios.get(
@@ -31,9 +40,7 @@ export default {
     },
 
     goToPricing() {
-      const pricingEl =
-        this.$parent.$parent.$children[0].$children[0].$children[4].$el
-      pricingEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      this.pricingEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
     },
   },
 }

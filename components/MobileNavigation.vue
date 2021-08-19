@@ -78,6 +78,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      pricingEl: '',
+    }
+  },
+  mounted() {
+    this.pricingEl =
+      this.$parent.$parent.$children[0].$children[0].$children[4].$el
+  },
   methods: {
     logoutUser() {
       this.$axios.get(
@@ -90,13 +99,11 @@ export default {
       this.$store.commit('setAccessToken', undefined)
       this.$store.commit('setUser', {})
       this.$router.push('/logout')
-      this.$cookiz.set('hasLoggedIn', false)
+      this.$cookiz.set('loggedOut', true)
     },
 
     goToPricing() {
-      const pricingEl =
-        this.$parent.$parent.$children[0].$children[0].$children[4].$el
-      pricingEl.scrollIntoView({ behavior: 'smooth' })
+      this.pricingEl.scrollIntoView({ behavior: 'smooth', block: 'start' })
     },
   },
 }
