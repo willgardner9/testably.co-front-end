@@ -273,6 +273,7 @@ export default {
       } catch (error) {
         this.emailText = 'Oops, this email is already registered.'
         this.emailError = true
+        console.log('error', error)
         return error
       }
     },
