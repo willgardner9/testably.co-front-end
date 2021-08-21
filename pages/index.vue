@@ -197,8 +197,7 @@
           "
         >
           Don't focus on getting more visitors -
-          <span class="italic">make the most</span> of the traffic
-          you have.
+          <span class="italic">make the most</span> of the traffic you have.
         </h4>
         <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4 sm:w-1/2">
           With testably, you can quickly and easily A/B test different copy,
