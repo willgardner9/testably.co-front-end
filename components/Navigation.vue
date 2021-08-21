@@ -31,6 +31,9 @@ export default {
     },
 
     goToPricing() {
+      if (this.$route.name !== 'index') {
+        this.$router.push('/?section=pricing')
+      }
       const el = document.getElementById('pricing-section')
       el.scrollIntoView({ behavior: 'smooth', block: 'start' })
     },

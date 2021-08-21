@@ -25,8 +25,7 @@
             max-w-3xl
           "
         >
-          Start A/B testing your landing page and
-          <span class="italic">convert more.</span>
+          Start A/B testing your landing page and convert more.
         </h3>
         <p class="mt-6 text-center text-xl text-gray-700 dark:text-gray-400">
           A/B testing can increase conversions and sales. But existing tools are
@@ -196,8 +195,8 @@
             p-4
           "
         >
-          Don't focus on getting more visitors -
-          <span class="italic">make the most</span> of the traffic you have.
+          Don't focus on getting more visitors - make the most of the traffic
+          you have.
         </h4>
         <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4 sm:w-1/2">
           With testably, you can quickly and easily A/B test different copy,
@@ -492,7 +491,7 @@
       </div>
 
       <!-- Pricing table -->
-      <PricingTable class="mt-12 mb-8" />
+      <PricingTable ref="pricing" class="mt-12 mb-8" />
 
       <!-- scribble text and arrow 6 -->
       <div
@@ -539,9 +538,18 @@
 export default {
   middleware: ['refreshOnLoad', 'checkAccessExpiry'],
   data() {
-    return {}
+    return {
+      jumpToPricing: this.$route.query.section,
+    }
   },
-  methods: {},
+  mounted() {
+    if (this.jumpToPricing) {
+      setTimeout(function () {
+        const el = document.getElementById('pricing-section')
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 300)
+    }
+  },
 }
 </script>
 
