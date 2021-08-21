@@ -26,7 +26,7 @@
           "
         >
           Start A/B testing your landing page and
-          <span class="italic gradient-text">convert more.</span>
+          <span class="italic">convert more.</span>
         </h3>
         <p class="mt-6 text-center text-xl text-gray-700 dark:text-gray-400">
           A/B testing can increase conversions and sales. But existing tools are
@@ -197,7 +197,7 @@
           "
         >
           Don't focus on getting more visitors -
-          <span class="gradient-text italic">make the most</span> of the traffic
+          <span class="italic">make the most</span> of the traffic
           you have.
         </h4>
         <h5 class="text-xl text-gray-700 dark:text-gray-400 p-4 sm:w-1/2">
@@ -547,12 +547,6 @@ export default {
 </script>
 
 <style scoped>
-.gradient-text {
-  background: -webkit-linear-gradient(#047857, #34d399);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-left: 3px;
-}
 .scribble-text {
   font-family: 'Caveat', cursive;
 }
