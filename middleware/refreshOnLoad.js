@@ -9,7 +9,6 @@ export default function ({ app, store, redirect, route, from }) {
         withCredentials: true,
       })
       .then((res) => {
-        console.log('refreshonload res', res)
         // refresh token is valid: login user, set new access token, redirect to dashboard
         if (res.status === 200) {
           store.commit('toggleAuth', true)
@@ -25,7 +24,6 @@ export default function ({ app, store, redirect, route, from }) {
               }
             )
             .then((res) => {
-              console.log('user', res)
               store.commit('setUser', res.data)
             })
             .then(() => {
