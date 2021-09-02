@@ -1,20 +1,18 @@
-# frontend
+# Testably (front end)
 
-## Build Setup
+Testably is a micro-SaaS product providing easy-to-use A/B testing tools for startups and small businesses. I developed Testably after growing frustrated in my day job about the lack of simple, affordable A/B testing solutions available for startups. Testably is built with Express and MongoDB on the back end and Vue.js with Nuxt.js on the front end.
 
-```bash
-# install dependencies
-$ npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+[View live](http://testably.co/)
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+[View source code](https://github.com/willgardner9/testably.co-front-end)
 
-# generate static project
-$ npm run generate
-```
+[View demo](https://www.youtube.com/watch?v=GgGV66XkDKk)
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Technology (front end)
+
+- Vue.js
+- Nuxt.js
+- Continuous deployment with Vercel
+- Tailwind CSS
+- Stripe SDK
