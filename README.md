@@ -3,7 +3,7 @@
 Testably is a micro-SaaS product providing easy-to-use A/B testing tools for startups and small businesses. I developed Testably after growing frustrated in my day job about the lack of simple, affordable A/B testing solutions available for startups. Testably is built with Express and MongoDB on the back end and Vue.js with Nuxt.js on the front end.
 
 
-[View live](testably-co-front-end.vercel.app)
+[View live](https://testably-co-front-end.vercel.app/)
 
 [View source code](https://github.com/willgardner9/testably.co-front-end)
 
